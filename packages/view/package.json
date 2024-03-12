@@ -1,0 +1,30 @@
+{
+  "name": "@viteland/view",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "xiyueyezibile <2859439384@qq.com>",
+  "homepage": "https://github.com/xiyueyezibile/viteland#readme",
+  "license": "ISC",
+  "main": "index.mjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiyueyezibile/viteland.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/view.test.js",
+    "build": "tsup --minify",
+    "dev": "tsup --watch"
+  },
+  "bugs": {
+    "url": "https://github.com/xiyueyezibile/viteland/issues"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.65",
+    "@types/react-dom": "^18.2.21",
+    "tsup": "^8.0.2"
+  }
+}
