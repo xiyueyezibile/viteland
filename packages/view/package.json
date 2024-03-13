@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/xiyueyezibile/viteland.git"
   },
+  "type": "module",
   "scripts": {
     "test": "node ./__tests__/view.test.js",
     "build": "tsup --minify",
@@ -19,12 +20,14 @@
     "url": "https://github.com/xiyueyezibile/viteland/issues"
   },
   "dependencies": {
+    "@viteland/cli": "workspace:^",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.65",
     "@types/react-dom": "^18.2.21",
+    "serve": "^14.2.1",
     "tsup": "^8.0.2"
   }
 }

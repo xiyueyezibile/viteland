@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export function Layout() {
+export default function App() {
   const [count, setCount] = useState(0);
   return (
     <div>
