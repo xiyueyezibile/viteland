@@ -5,12 +5,26 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx --quiet ./"
+    "lint": "eslint packages --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:lint-staged": "lint-staged",
+    "prepare": "husky install"
   },
-  "prepare": "husky install",
   "lint-staged": {
-    "**/*.{js,jsx,tsx,ts}": [
-      "eslint --fix"
+    "*.{js,jsx,ts,tsx}": [
+      "pnpm run lint --fix",
+      "npx prettier --write"
+    ],
+    "{!(package)*.json,*.code-snippets,.!(browserslist)*rc}": [
+      "npx prettier --write--parser json"
+    ],
+    "package.json": [
+      "npx prettier --write"
+    ],
+    "*.{scss,less,styl,html}": [
+      "npx prettier --write"
+    ],
+    "*.md": [
+      "npx prettier --write"
     ]
   },
   "keywords": [],
