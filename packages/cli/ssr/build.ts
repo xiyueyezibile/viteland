@@ -8,7 +8,7 @@ import { join } from 'path';
  */
 export async function build(root: string = process.cwd()) {
   const [clientBundle, serverBundle] = await bundle(root);
-  const { render } = require(join(PACKAGE_ROOT, 'packages/view/.temp/ssr-entry.cjs'));
+  const { render } = await import(join(PACKAGE_ROOT, 'packages/view/.temp/ssr-entry.cjs'));
   await renderPage(render, root, clientBundle);
 }
 

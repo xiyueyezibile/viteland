@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "jsx": "react",
-    "jsx": "react",
     "target": "ESNext" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
     "module": "commonjs" /* Specify what module code is generated. */,
   }

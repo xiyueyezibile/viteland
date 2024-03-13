@@ -1,33 +1,12 @@
-var __create = Object.create;
-var __defProp = Object.defineProperty;
-var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
-var __getOwnPropNames = Object.getOwnPropertyNames;
-var __getProtoOf = Object.getPrototypeOf;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
+"use strict"; function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { newObj[key] = obj[key]; } } } newObj.default = obj; return newObj; } } function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; } function _optionalChain(ops) { let lastAccessLHS = undefined; let value = ops[0]; let i = 1; while (i < ops.length) { const op = ops[i]; const fn = ops[i + 1]; i += 2; if ((op === 'optionalAccess' || op === 'optionalCall') && value == null) { return undefined; } if (op === 'access' || op === 'optionalAccess') { lastAccessLHS = value; value = fn(value); } else if (op === 'call' || op === 'optionalCall') { value = fn((...args) => value.call(lastAccessLHS, ...args)); lastAccessLHS = undefined; } } return value; }var __getOwnPropNames = Object.getOwnPropertyNames;
 var __commonJS = (cb, mod) => function __require() {
   return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
 };
-var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === "object" || typeof from === "function") {
-    for (let key of __getOwnPropNames(from))
-      if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
-  }
-  return to;
-};
-var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
-  // If the importer is in node compatibility mode or this is not an ESM
-  // file that has been converted to a CommonJS file using a Babel-
-  // compatible transform (i.e. "__esModule" has not been set), then set
-  // "default" to the CommonJS "module.exports" for node compatibility.
-  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
-  mod
-));
 
 // ../../package.json
 var require_package = __commonJS({
-  "../../package.json"(exports2, module2) {
-    module2.exports = {
+  "../../package.json"(exports, module) {
+    module.exports = {
       name: "viteland",
       version: "1.0.0",
       description: "",
@@ -57,15 +36,15 @@ var require_package = __commonJS({
 });
 
 // index.ts
-var import_cac = require("cac");
-var import_path3 = __toESM(require("path"));
+var _cac = require('cac');
+var _path = require('path'); var _path2 = _interopRequireDefault(_path);
 
 // createServer.ts
-var import_vite = require("vite");
+var _vite = require('vite');
 
 // plugins/pluginIndexHtml.ts
-var import_promises = require("fs/promises");
-var import_utils = require("@viteland/utils");
+var _promises = require('fs/promises');
+var _utils = require('@viteland/utils');
 function pluginIndexHtml() {
   return {
     name: "viteland-html",
@@ -80,7 +59,7 @@ function pluginIndexHtml() {
             attrs: {
               type: "module",
               // vite约定 @fs 标识后面为一个绝对路径
-              src: `/@fs/${import_utils.CLIENT_ENTRY_PATH}`
+              src: `/@fs/${_utils.CLIENT_ENTRY_PATH}`
             },
             injectTo: "body"
           }
@@ -91,7 +70,7 @@ function pluginIndexHtml() {
     configureServer(server) {
       return () => {
         server.middlewares.use(async (req, res, next) => {
-          let html = await (0, import_promises.readFile)(import_utils.DEFAULT_HTML_PATH, "utf-8");
+          let html = await _promises.readFile.call(void 0, _utils.DEFAULT_HTML_PATH, "utf-8");
           try {
             html = await server.transformIndexHtml(req.url, html, req.originalUrl);
             res.statusCode = 200;
@@ -108,20 +87,20 @@ function pluginIndexHtml() {
 
 // createServer.ts
 async function createServer(root = process.cwd()) {
-  return (0, import_vite.createServer)({
+  return _vite.createServer.call(void 0, {
     plugins: [pluginIndexHtml()],
     root
   });
 }
 
 // ssr/build.ts
-var import_utils2 = require("@viteland/utils");
-var import_plugin_react = __toESM(require("@vitejs/plugin-react"));
-var import_vite2 = require("vite");
+
+var _pluginreact = require('@vitejs/plugin-react'); var _pluginreact2 = _interopRequireDefault(_pluginreact);
+
 
 // ssr/renderPage.ts
-var fs = __toESM(require("fs-extra"));
-var import_path = require("path");
+var _fsextra = require('fs-extra'); var fs = _interopRequireWildcard(_fsextra);
+
 async function renderPage(render, root, clientBundle) {
   const clientChunk = clientBundle.output.find((chunk) => chunk.type === "chunk" && chunk.isEntry);
   console.log(`Rendering page in server side...`);
@@ -137,19 +116,19 @@ async function renderPage(render, root, clientBundle) {
   </head>
   <body>
     <div id="root">${appHtml}</div>
-    <script type="module" src="/${clientChunk?.fileName}"></script>
+    <script type="module" src="/${_optionalChain([clientChunk, 'optionalAccess', _ => _.fileName])}"></script>
   </body>
 </html>`.trim();
-  await fs.ensureDir((0, import_path.join)(root, "build"));
-  await fs.writeFile((0, import_path.join)(root, "build/index.html"), html);
-  await fs.remove((0, import_path.join)(root, ".temp"));
+  await fs.ensureDir(_path.join.call(void 0, root, "build"));
+  await fs.writeFile(_path.join.call(void 0, root, "build/index.html"), html);
+  await fs.remove(_path.join.call(void 0, root, ".temp"));
 }
 
 // ssr/build.ts
-var import_path2 = require("path");
+
 async function build(root = process.cwd()) {
   const [clientBundle, serverBundle] = await bundle(root);
-  const { render } = require((0, import_path2.join)(import_utils2.PACKAGE_ROOT, "packages/view/.temp/ssr-entry.cjs"));
+  const { render } = await Promise.resolve().then(() => _interopRequireWildcard(require(_path.join.call(void 0, _utils.PACKAGE_ROOT, "packages/view/.temp/ssr-entry.cjs"))));
   await renderPage(render, root, clientBundle);
 }
 async function bundle(root) {
@@ -157,12 +136,12 @@ async function bundle(root) {
     mode: "production",
     root,
     // 自动注入 import React from 'react'，避免 React is not defined 的错误
-    plugins: [(0, import_plugin_react.default)()],
+    plugins: [_pluginreact2.default.call(void 0, )],
     build: {
       ssr: isServer,
       outDir: isServer ? ".temp" : "build",
       rollupOptions: {
-        input: isServer ? import_utils2.SERVER_ENTRY_PATH : import_utils2.CLIENT_ENTRY_PATH,
+        input: isServer ? _utils.SERVER_ENTRY_PATH : _utils.CLIENT_ENTRY_PATH,
         output: {
           format: isServer ? "cjs" : "esm"
         }
@@ -173,9 +152,9 @@ async function bundle(root) {
   try {
     const [clientBundle, serverBundle] = await Promise.all([
       // client build
-      (0, import_vite2.build)(resolveViteConfig(false)),
+      _vite.build.call(void 0, resolveViteConfig(false)),
       // server build
-      (0, import_vite2.build)(resolveViteConfig(true))
+      _vite.build.call(void 0, resolveViteConfig(true))
     ]);
     return [clientBundle, serverBundle];
   } catch (e) {
@@ -184,11 +163,11 @@ async function bundle(root) {
 }
 
 // index.ts
-var import_utils3 = require("@viteland/utils");
+
 var version = require_package().version;
-var cli = (0, import_cac.cac)("island").version(version).help();
+var cli = _cac.cac.call(void 0, "island").version(version).help();
 cli.command("[root]", "start dev server").alias("dev").action(async (root) => {
-  const serverRoot = root ? import_path3.default.resolve(__dirname, "../../../" + root) : process.cwd();
+  const serverRoot = root ? _path2.default.resolve(__dirname, "../../../" + root) : process.cwd();
   try {
     const server = await createServer(serverRoot);
     await server.listen();
@@ -199,8 +178,7 @@ cli.command("[root]", "start dev server").alias("dev").action(async (root) => {
   }
 });
 cli.command("build [root]", "build for production").action(async (root) => {
-  const serverRoot = root ? import_path3.default.resolve(__dirname, "../../../" + root) : import_path3.default.join(import_utils3.PACKAGE_ROOT, "packages/view");
-  console.log(serverRoot);
+  const serverRoot = root ? _path2.default.resolve(__dirname, "../../../" + root) : _path2.default.join(_utils.PACKAGE_ROOT, "packages/view");
   try {
     await build(serverRoot);
   } catch (e) {

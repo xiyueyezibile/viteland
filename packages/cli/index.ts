@@ -27,7 +27,6 @@ cli
 
 cli.command('build [root]', 'build for production').action(async (root: string) => {
   const serverRoot = root ? path.resolve(__dirname, '../../../' + root) : path.join(PACKAGE_ROOT, 'packages/view');
-  console.log(serverRoot);
   try {
     await build(serverRoot);
   } catch (e) {
