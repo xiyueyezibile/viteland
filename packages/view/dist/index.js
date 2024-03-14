@@ -1,2 +1,0 @@
-import{createRoot as i}from"react-dom/client";import{useState as d}from"react";import{jsx as n,jsxs as e}from"react/jsx-runtime";function t(){let[o,r]=d(0);return e("div",{children:[n("h1",{children:"This is Layout Component"}),e("div",{children:[o,n("button",{onClick:()=>r(o+1),children:"Add Count"})]})]})}import{jsx as p}from"react/jsx-runtime";function u(){let o=document.getElementById("root");if(!o)throw new Error("#root element not found");i(o).render(p(t,{}))}u();
-//# sourceMappingURL=index.js.map
