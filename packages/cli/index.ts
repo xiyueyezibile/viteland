@@ -6,7 +6,7 @@ import { PACKAGE_ROOT } from '@viteland/utils';
 
 const version = require('../../package.json').version;
 
-const cli = cac('island').version(version).help();
+const cli = cac('viteland').version(version).help();
 
 cli
   .command('[root]', 'start dev server')
@@ -14,15 +14,21 @@ cli
   .action(async (root: string) => {
     // 添加以下逻辑
     const serverRoot = root ? path.resolve(__dirname, '../../../' + root) : process.cwd();
+    const create = async () => {
+      try {
+        const server = await createServer(serverRoot, async () => {
+          await server.close();
+          await create();
+        });
+        await server.listen();
+        server.printUrls();
+      } catch (error) {
+        console.log(serverRoot);
+        console.log(error);
+      }
+    };
 
-    try {
-      const server = await createServer(serverRoot);
-      await server.listen();
-      server.printUrls();
-    } catch (error) {
-      console.log(serverRoot);
-      console.log(error);
-    }
+    await create();
   });
 
 cli.command('build [root]', 'build for production').action(async (root: string) => {
