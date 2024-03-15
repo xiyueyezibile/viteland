@@ -28,6 +28,10 @@ export async function bundle(root: string, config: SiteConfig) {
     root: root,
     // 自动注入 import React from 'react'，避免 React is not defined 的错误
     plugins: [pluginReact(), pluginConfig(config, async () => {})],
+    ssr: {
+      //  Error [ERR_REQUIRE_ESM]: require() of ES Module, 注意加上这个配置，防止 cjs 产物中 require ESM 的产物，因为 react-router-dom 的产物为 ESM 格式
+      noExternal: ['react-router-dom']
+    },
     build: {
       ssr: isServer,
       outDir: isServer ? '.temp' : 'build',

@@ -5,7 +5,7 @@
   "author": "xiyueyezibile <2859439384@qq.com>",
   "homepage": "https://github.com/xiyueyezibile/viteland#readme",
   "license": "ISC",
-  "main": "dist/index.ts",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xiyueyezibile/viteland.git"
@@ -23,13 +23,20 @@
     "url": "https://github.com/xiyueyezibile/viteland/issues"
   },
   "dependencies": {
+    "@mdx-js/rollup": "^3.0.1",
     "@vitejs/plugin-react": "^4.2.1",
     "@viteland/utils": "workspace:^",
     "cac": "^6.7.14",
+    "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
+    "rehype-stringify": "^10.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.0",
+    "unified": "^11.0.4",
     "vite": "^5.1.6"
   },
   "devDependencies": {
+    "@loadable/component": "^5.16.3",
     "@types/fs-extra": "^11.0.4",
     "lightningcss": "^1.24.0",
     "tsup": "^8.0.2"
