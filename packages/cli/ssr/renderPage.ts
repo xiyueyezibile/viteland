@@ -1,4 +1,5 @@
-import * as fs from 'fs-extra';
+import * as fs2 from 'fs-extra';
+import fs from 'fs';
 import { join } from 'path';
 
 export async function renderPage(render: () => string, root: string, clientBundle) {
@@ -18,12 +19,16 @@ export async function renderPage(render: () => string, root: string, clientBundl
   </head>
   <body>
     <div id="root">${appHtml}</div>
-    <script type="module" src="/${clientChunk?.fileName}"></script>
+    <script type="module" src="./${clientChunk?.fileName}"></script>
   </body>
 </html>`.trim();
   // 生成文件夹
-  await fs.ensureDir(join(root, 'build'));
+  await fs2.ensureDir(join(root, 'build'));
   // 注入页面
-  await fs.writeFile(join(root, 'build/index.html'), html);
-  await fs.remove(join(root, '.temp'));
+  /**
+   * 可能会出现 fs2.writeFile is not a function，进行兼容性处理
+   */
+  if (fs2.writeFile) await fs2.writeFile(join(root, 'build/index.html'), html);
+  else fs.writeFileSync(join(root, 'build/index.html'), html);
+  await fs2.remove(join(root, '.temp'));
 }

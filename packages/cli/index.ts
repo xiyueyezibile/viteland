@@ -3,6 +3,7 @@ import path, { resolve } from 'path';
 import { createServer } from './createServer';
 import { build } from './ssr/build';
 import { PACKAGE_ROOT } from '@viteland/utils';
+import { resolveConfig } from './config';
 
 const version = require('../../package.json').version;
 
@@ -33,9 +34,12 @@ cli
 
 cli.command('build [root]', 'build for production').action(async (root: string) => {
   const serverRoot = root ? path.resolve(__dirname, '../../../' + root) : path.join(PACKAGE_ROOT, 'packages/view');
+  const config = await resolveConfig(serverRoot, 'build', 'production');
+
   try {
-    await build(serverRoot);
+    await build(serverRoot, config);
   } catch (e) {
+    console.log(config);
     console.log(serverRoot);
     console.log(e);
   }
