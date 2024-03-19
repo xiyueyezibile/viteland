@@ -4,10 +4,8 @@ import { InlineConfig, build as viteBuild } from 'vite';
 import { renderPage } from './renderPage';
 import { join } from 'path';
 import { SiteConfig } from '../types';
-import { pluginConfig } from '../plugins/pluginConfig';
 import { pathToFileURL } from 'url';
-import { pluginRoutes } from '../plugins/plugin-routes/pluginRoutes';
-import { createPluginMdx } from '../plugins/plugin-mdx';
+import { commonPlugins } from '../commonPlugins';
 /**
  * @link https://cn.vitejs.dev/guide/api-javascript.html#build
  */
@@ -35,9 +33,11 @@ export async function bundle(root: string, config: SiteConfig) {
     // 自动注入 import React from 'react'，避免 React is not defined 的错误
     plugins: [
       pluginReact(),
-      pluginConfig(config, async () => {}),
-      await createPluginMdx(),
-      pluginRoutes({ root: config.root, isSSR: true })
+      ...(await commonPlugins({
+        config,
+        restartServer: async () => {},
+        isSSR: true
+      }))
     ],
     ssr: {
       //  Error [ERR_REQUIRE_ESM]: require() of ES Module, 注意加上这个配置，防止 cjs 产物中 require ESM 的产物，因为 react-router-dom 的产物为 ESM 格式
