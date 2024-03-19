@@ -5,6 +5,7 @@ import { RouteService } from './RouteService';
 
 interface PluginOptions {
   root: string;
+  isSSR?: boolean;
 }
 
 export const CONVENTIONAL_ROUTE_ID = 'viteland:routes';
@@ -28,7 +29,7 @@ export function pluginRoutes(options: PluginOptions): Plugin {
 
     load(id: string) {
       if (id === '\0' + CONVENTIONAL_ROUTE_ID) {
-        return routeService.generateRoutesCode();
+        return routeService.generateRoutesCode(options.isSSR === true);
       }
     }
   };

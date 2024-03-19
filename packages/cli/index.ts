@@ -15,7 +15,9 @@ const initCli = () => {
     .alias('dev')
     .action(async (root: string) => {
       // 添加以下逻辑
-      const serverRoot = root ? path.resolve(__dirname, '../../../' + root) : path.resolve(PACKAGE_ROOT, 'docs');
+      const serverRoot = root ? path.resolve(PACKAGE_ROOT, root) : path.resolve(PACKAGE_ROOT, 'docs');
+      console.log(serverRoot);
+
       const create = async () => {
         try {
           const server = await createServer(serverRoot, async () => {
@@ -34,15 +36,16 @@ const initCli = () => {
     });
 
   cli.command('build [root]', 'build for production').action(async (root: string) => {
-    const serverRoot = root ? path.resolve(__dirname, '../../../' + root) : path.join(PACKAGE_ROOT, 'packages/view');
+    const serverRoot = root ? path.resolve(PACKAGE_ROOT, root) : path.join(PACKAGE_ROOT, 'docs');
+    const clientRoot = path.join(PACKAGE_ROOT, 'packages/view');
+    console.log(serverRoot, clientRoot, 1);
+
     const config = await resolveConfig(serverRoot, 'build', 'production');
 
     try {
-      await build(serverRoot, config);
+      await build(clientRoot, config);
     } catch (e) {
-      console.log(config);
-      console.log(serverRoot);
-      console.log(e);
+      console.log('build error');
     }
   });
 

@@ -18,7 +18,7 @@ export async function createServer(root = process.cwd(), restartServer: () => Pr
       pluginRoutes({
         root: config.root
       }),
-      createPluginMdx()
+      await createPluginMdx()
     ],
     root
   });
