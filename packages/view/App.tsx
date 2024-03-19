@@ -1,7 +1,7 @@
 import { createElement, useState } from 'react';
-//@ts-ignore .d.ts 报错 namespace child (hoisting) not supported yet，但实际存在
-import siteData from 'viteland:site-data';
+
 import Content from './Content';
+import siteData from './virtual-modules/site-data';
 
 export default function App() {
   console.log(siteData);
