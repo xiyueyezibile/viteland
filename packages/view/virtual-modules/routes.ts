@@ -1,9 +1,10 @@
 //@ts-ignore .d.ts 报错，但实际存在
 import { routes as VitelandRoutes } from 'viteland:routes';
-import { ComponentClass, FunctionComponent } from 'react';
-const routes = VitelandRoutes as {
-  path: string;
-  element: string | FunctionComponent<{}> | ComponentClass<{}, any>;
-}[];
+import { createElement } from 'react';
+import { VRoute } from '../types';
 
+const routes = VitelandRoutes.map((route) => {
+  const reactElement = createElement(route.element);
+  return { element: reactElement, ...route };
+}) as VRoute[];
 export default routes;

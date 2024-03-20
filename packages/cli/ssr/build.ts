@@ -30,8 +30,8 @@ export async function bundle(root: string, config: SiteConfig) {
      * Only URLs with a scheme in: file, data, and node are supported by the default ESM loader. On Windows, absolute paths must be valid file:// URLs. Received protocol 'd:'
      */
     root: root,
-    // 自动注入 import React from 'react'，避免 React is not defined 的错误
     plugins: [
+      // 自动注入 import React from 'react'，避免 React is not defined 的错误
       pluginReact(),
       ...(await commonPlugins({
         config,

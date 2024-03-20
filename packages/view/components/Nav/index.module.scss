@@ -1,0 +1,35 @@
+
+.link {
+  &-box {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  &-box:hover {
+    color: var(--viteland-c-brand);
+    transition: color 0.2s;
+  }
+}
+
+.social-link-icon {
+  display: flex;
+  fill: currentColor;
+  transition: color 0.2s;
+  color: var(--viteland-c-text-2);
+  &:hover {
+    color: var(--viteland-c-text-1);
+  }
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+  }
+}

@@ -72,7 +72,7 @@ export const routes = [
 ${this.#routeData
   .map((route, index) => {
     // 暴露 routes
-    return `{ path: '${route.routePath}', element: Route${index} }`;
+    return `{ path: '${route.routePath}', element: Route${index}, preload: () => import('${route.absolutePath}') }`;
   })
   .join(',\n')}
 ];
