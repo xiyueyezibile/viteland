@@ -31,6 +31,7 @@ module.exports = {
     'no-param-reassign': ['error', { props: false }], // 函数形参可修改
     'react/jsx-uses-react': 'off', // React 17及以后引入了新的 JSX 编译方式，无须在组件中显式地 import React，可关闭
     'react/react-in-jsx-scope': 'off',
+    'react/no-unknown-property': 'off',
     'no-plusplus': 'off',
     'no-shadow': 'off'
   }

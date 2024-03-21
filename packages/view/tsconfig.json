@@ -4,9 +4,4 @@
     "esModuleInterop": true,
     "jsx": "react-jsx",
   },
-  "baseUrl": "./",
-    "paths": {
-	  // 根据别名配置相关路径
-      "@/*": ["./*"]
-    },
 }

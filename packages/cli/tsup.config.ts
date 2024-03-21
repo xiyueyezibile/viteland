@@ -6,7 +6,7 @@ export default defineConfig({
   splitting: true,
   sourcemap: true,
   format: ['cjs', 'esm'],
-  external: ['lightningcss'],
+  external: ['lightningcss', 'unocss'],
   clean: true,
   dts: true,
   shims: true

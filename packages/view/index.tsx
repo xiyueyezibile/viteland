@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import { initPageData } from './initPageData';
 import { DataContext } from './hooks/usePageData';
+import 'uno.css';
 import './base.css';
 import './vars.css';
 

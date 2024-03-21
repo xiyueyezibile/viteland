@@ -1,0 +1,356 @@
+/**
+ * Colors Base
+ *
+ * These are the pure base color presets. Most of the time, you should not be
+ * using these colors directly in the theme but rather use "Colors Theme"
+ * instead because those are "Theme (light or dark)" dependant.
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --viteland-c-white: #ffffff;
+  --viteland-c-white-soft: #f9f9f9;
+  --viteland-c-white-mute: #f1f1f1;
+
+  --viteland-c-black: #1a1a1a;
+  --viteland-c-black-pure: #000000;
+  --viteland-c-black-soft: #242424;
+  --viteland-c-black-mute: #2f2f2f;
+
+  --viteland-c-gray: #8e8e8e;
+  --viteland-c-gray-light-1: #aeaeae;
+  --viteland-c-gray-light-2: #c7c7c7;
+  --viteland-c-gray-light-3: #d1d1d1;
+  --viteland-c-gray-light-4: #e5e5e5;
+  --viteland-c-gray-light-5: #f2f2f2;
+  --viteland-c-gray-dark-1: #636363;
+  --viteland-c-gray-dark-2: #484848;
+  --viteland-c-gray-dark-3: #3a3a3a;
+  --viteland-c-gray-dark-4: #282828;
+  --viteland-c-gray-dark-5: #202020;
+
+  --viteland-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --viteland-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --viteland-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --viteland-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --viteland-c-indigo: #213547;
+  --viteland-c-indigo-soft: #476582;
+  --viteland-c-indigo-light: #aac8e4;
+  --viteland-c-indigo-lighter: #c9def1;
+  --viteland-c-indigo-dark: #1d2f3f;
+  --viteland-c-indigo-darker: #14212e;
+
+  --viteland-c-text-light-1: var(--viteland-c-indigo);
+  --viteland-c-text-light-2: rgba(60, 60, 60, 0.7);
+  --viteland-c-text-light-3: rgba(60, 60, 60, 0.33);
+  --viteland-c-text-light-4: rgba(60, 60, 60, 0.18);
+
+  --viteland-c-text-dark-1: rgba(255, 255, 255, 0.87);
+  --viteland-c-text-dark-2: rgba(235, 235, 235, 0.6);
+  --viteland-c-text-dark-3: rgba(235, 235, 235, 0.38);
+  --viteland-c-text-dark-4: rgba(235, 235, 235, 0.18);
+
+  --viteland-c-green: #21b8a3;
+  --viteland-c-green-light: #41c6b0;
+  --viteland-c-green-lighter: #41c6b0;
+  --viteland-c-green-dark: #149684;
+  --viteland-c-green-darker: #149684;
+  --viteland-c-green-dimm: #062521;
+
+  --viteland-c-green-dimm-1: rgba(66, 184, 131, 0.5);
+  --viteland-c-green-dimm-2: rgba(66, 184, 131, 0.25);
+  --viteland-c-green-dimm-3: rgba(66, 184, 131, 0.05);
+
+  --viteland-c-blue: #646cff;
+  --viteland-c-blue-light: #747bff;
+  --viteland-c-blue-lighter: #9499ff;
+  --viteland-c-blue-lightest: #bcc0ff;
+  --viteland-c-blue-dark: #535bf2;
+  --viteland-c-blue-darker: #454ce1;
+  --viteland-c-blue-dimm: rgba(100, 108, 255, 0.08);
+
+  --viteland-c-yellow: #ffc517;
+  --viteland-c-yellow-light: #fcd253;
+  --viteland-c-yellow-lighter: #fcfc7c;
+  --viteland-c-yellow-darker: #ad850e;
+  --viteland-c-yellow-dimm-1: rgba(255, 197, 23, 0.5);
+  --viteland-c-yellow-dimm-2: rgba(255, 197, 23, 0.25);
+  --viteland-c-yellow-dimm-3: rgba(255, 197, 23, 0.05);
+
+  --viteland-c-red: #ed3c50;
+  --viteland-c-red-light: #f54e82;
+  --viteland-c-red-lighter: #fd1d7c;
+  --viteland-c-red-darker: #ab2131;
+  --viteland-c-red-dimm-1: rgba(237, 60, 80, 0.5);
+  --viteland-c-red-dimm-2: rgba(237, 60, 80, 0.25);
+  --viteland-c-red-dimm-3: rgba(237, 60, 80, 0.05);
+}
+
+/**
+ * Colors Theme
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --viteland-c-bg: var(--viteland-c-white);
+  --viteland-c-bg-soft: var(--viteland-c-white-soft);
+  --viteland-c-bg-mute: var(--viteland-c-white-mute);
+  --viteland-c-bg-alt: var(--viteland-c-white-soft);
+
+  --viteland-c-divider: var(--viteland-c-divider-light-1);
+  --viteland-c-divider-light: var(--viteland-c-divider-light-2);
+
+  --viteland-c-text-1: var(--viteland-c-text-light-1);
+  --viteland-c-text-2: var(--viteland-c-text-light-2);
+  --viteland-c-text-3: var(--viteland-c-text-light-3);
+  --viteland-c-text-4: var(--viteland-c-text-light-4);
+
+  --viteland-c-text-code: var(--viteland-c-indigo-soft);
+
+  --viteland-c-brand: var(--viteland-c-green);
+  --viteland-c-brand-light: var(--viteland-c-green-light);
+  --viteland-c-brand-lighter: var(--viteland-c-green-lighter);
+  --viteland-c-brand-dark: var(--viteland-c-green-dark);
+  --viteland-c-brand-darker: var(--viteland-c-green-darker);
+}
+
+.dark {
+  --viteland-c-bg: var(--viteland-c-black-soft);
+  --viteland-c-bg-soft: var(--viteland-c-black-mute);
+  --viteland-c-bg-mute: var(--viteland-c-gray-dark-3);
+  --viteland-c-bg-alt: var(--viteland-c-black);
+
+  --viteland-c-divider: var(--viteland-c-divider-dark-1);
+  --viteland-c-divider-light: var(--viteland-c-divider-dark-2);
+
+  --viteland-c-divider-inverse: var(--viteland-c-divider-light-1);
+  --viteland-c-divider-inverse-light: var(--viteland-c-divider-light-2);
+
+  --viteland-c-text-1: var(--viteland-c-text-dark-1);
+  --viteland-c-text-2: var(--viteland-c-text-dark-2);
+  --viteland-c-text-3: var(--viteland-c-text-dark-3);
+  --viteland-c-text-4: var(--viteland-c-text-dark-4);
+
+  --viteland-c-text-inverse-1: var(--viteland-c-text-light-1);
+  --viteland-c-text-inverse-2: var(--viteland-c-text-light-2);
+  --viteland-c-text-inverse-3: var(--viteland-c-text-light-3);
+  --viteland-c-text-inverse-4: var(--viteland-c-text-light-4);
+
+  --viteland-c-text-code: var(--viteland-c-indigo-lighter);
+}
+
+/**
+ * Typography
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --viteland-font-family-base: 'Inter var experimental', 'Inter var',
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --viteland-font-family-mono: Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/**
+ * Layouts
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --viteland-layout-max-width: 1440px;
+}
+
+/**
+ * Component: Code
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --viteland-code-line-height: 1.7;
+  --viteland-code-font-size: 0.875em;
+
+  --viteland-code-block-color: var(--viteland-c-text-dark-1);
+  --viteland-code-block-bg: #292d3e;
+
+  --viteland-code-line-highlight-color: rgba(0, 0, 0, 0.5);
+  --viteland-code-line-number-color: var(--viteland-c-text-dark-3);
+
+  --viteland-code-copy-code-hover-bg: rgba(255, 255, 255, 0.05);
+  --viteland-code-copy-code-active-text: var(--viteland-c-text-dark-2);
+}
+
+/**
+ * Icons
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --viteland-icon-copy: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='20' width='20' stroke='rgba(128,128,128,1)' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2'/%3E%3C/svg%3E");
+  --viteland-icon-copied: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='20' width='20' stroke='rgba(128,128,128,1)' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2m-6 9 2 2 4-4'/%3E%3C/svg%3E");
+  --viteland-icon-tip: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M512 960C264.58 960 64 759.42 64 512S264.58 64 512 64s448 200.58 448 448-200.58 448-448 448z m0-832c-212.08 0-384 171.92-384 384s171.92 384 384 384 384-171.92 384-384-171.92-384-384-384z m0 112c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z m0 160c-17.67 0-32 14.33-32 32v320c0 17.67 14.33 32 32 32 17.67 0 32-14.33 32-32V432c0-17.67-14.33-32-32-32z' fill='%2321b8a3'/%3E%3C/svg%3E");
+}
+
+.dark {
+  --viteland-code-block-bg: var(--viteland-c-bg-alt);
+}
+
+/**
+ * Z-indexes
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --viteland-z-index-local-nav: 10;
+  --viteland-z-index-nav: 20;
+  --viteland-z-index-layout-top: 30;
+  --viteland-z-index-backdrop: 40;
+  --viteland-z-index-sidebar: 50;
+  --viteland-z-index-footer: 60;
+}
+
+/**
+ * Component: Button
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --viteland-button-brand-border: var(--viteland-c-brand-light);
+  --viteland-button-brand-text: var(--viteland-c-text-dark-1);
+  --viteland-button-brand-bg: var(--viteland-c-brand);
+  --viteland-button-brand-hover-border: var(--viteland-c-brand-light);
+  --viteland-button-brand-hover-text: var(--viteland-c-text-dark-1);
+  --viteland-button-brand-hover-bg: var(--viteland-c-brand-light);
+  --viteland-button-brand-active-border: var(--viteland-c-brand-light);
+  --viteland-button-brand-active-text: var(--viteland-c-text-dark-1);
+  --viteland-button-brand-active-bg: var(--viteland-button-brand-bg);
+
+  --viteland-button-alt-border: var(--viteland-c-gray-light-3);
+  --viteland-button-alt-text: var(--viteland-c-text-light-1);
+  --viteland-button-alt-bg: var(--viteland-c-gray-light-5);
+  --viteland-button-alt-hover-border: var(--viteland-c-gray-light-3);
+  --viteland-button-alt-hover-text: var(--viteland-c-text-light-1);
+  --viteland-button-alt-hover-bg: var(--viteland-c-gray-light-4);
+  --viteland-button-alt-active-border: var(--viteland-c-gray-light-3);
+  --viteland-button-alt-active-text: var(--viteland-c-text-light-1);
+  --viteland-button-alt-active-bg: var(--viteland-c-gray-light-3);
+
+  --viteland-button-sponsor-border: var(--viteland-c-gray-light-3);
+  --viteland-button-sponsor-text: var(--viteland-c-text-light-2);
+  --viteland-button-sponsor-bg: transparent;
+  --viteland-button-sponsor-hover-border: var(--viteland-c-sponsor);
+  --viteland-button-sponsor-hover-text: var(--viteland-c-sponsor);
+  --viteland-button-sponsor-hover-bg: transparent;
+  --viteland-button-sponsor-active-border: var(--viteland-c-sponsor);
+  --viteland-button-sponsor-active-text: var(--viteland-c-sponsor);
+  --viteland-button-sponsor-active-bg: transparent;
+}
+
+.dark {
+  --viteland-button-brand-border: var(--viteland-c-brand-light);
+  --viteland-button-brand-text: var(--viteland-c-text-dark-1);
+  --viteland-button-brand-bg: var(--viteland-c-brand-dark);
+  --viteland-button-brand-hover-border: var(--viteland-c-brand-lighter);
+  --viteland-button-brand-hover-text: var(--viteland-c-text-dark-1);
+  --viteland-button-brand-hover-bg: var(--viteland-c-brand);
+  --viteland-button-brand-active-border: var(--viteland-c-brand-lighter);
+  --viteland-button-brand-active-text: var(--viteland-c-text-dark-1);
+  --viteland-button-brand-active-bg: var(--viteland-button-brand-bg);
+
+  --viteland-button-alt-border: var(--viteland-c-gray-dark-2);
+  --viteland-button-alt-text: var(--viteland-c-text-dark-1);
+  --viteland-button-alt-bg: var(--viteland-c-bg-mute);
+  --viteland-button-alt-hover-border: var(--viteland-c-gray-dark-2);
+  --viteland-button-alt-hover-text: var(--viteland-c-text-dark-1);
+  --viteland-button-alt-hover-bg: var(--viteland-c-gray-dark-2);
+  --viteland-button-alt-active-border: var(--viteland-c-gray-dark-2);
+  --viteland-button-alt-active-text: var(--viteland-c-text-dark-1);
+  --viteland-button-alt-active-bg: var(--viteland-button-alt-bg);
+
+  --viteland-button-sponsor-border: var(--viteland-c-gray-dark-1);
+  --viteland-button-sponsor-text: var(--viteland-c-text-dark-2);
+}
+
+/**
+ * Component: Custom Block
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --viteland-custom-block-code-font-size: 13px;
+
+  --viteland-custom-block-info-border: var(--viteland-c-divider-light);
+  --viteland-custom-block-info-text: var(--viteland-c-text-2);
+  --viteland-custom-block-info-bg: var(--viteland-c-white-soft);
+  --viteland-custom-block-info-code-bg: var(--viteland-c-gray-light-4);
+
+  --viteland-custom-block-tip-border: var(--viteland-c-green-dimm-1);
+  --viteland-custom-block-tip-text: var(--viteland-c-green-darker);
+  --viteland-custom-block-tip-bg: var(--viteland-c-green-dimm-3);
+  --viteland-custom-block-tip-code-bg: var(--viteland-custom-block-tip-bg);
+
+  --viteland-custom-block-warning-border: var(--viteland-c-yellow-dimm-1);
+  --viteland-custom-block-warning-text: var(--viteland-c-yellow-darker);
+  --viteland-custom-block-warning-bg: var(--viteland-c-yellow-dimm-3);
+  --viteland-custom-block-warning-code-bg: var(--viteland-custom-block-warning-bg);
+
+  --viteland-custom-block-danger-border: var(--viteland-c-red-dimm-1);
+  --viteland-custom-block-danger-text: var(--viteland-c-red-darker);
+  --viteland-custom-block-danger-bg: var(--viteland-c-red-dimm-3);
+  --viteland-custom-block-danger-code-bg: var(--viteland-custom-block-danger-bg);
+}
+
+.dark {
+  --viteland-custom-block-info-border: var(--viteland-c-divider-light);
+  --viteland-custom-block-info-bg: var(--viteland-c-black-mute);
+  --viteland-custom-block-info-code-bg: var(--viteland-c-gray-dark-4);
+
+  --viteland-custom-block-tip-border: var(--viteland-c-green-dimm-2);
+  --viteland-custom-block-tip-text: var(--viteland-c-green-light);
+
+  --viteland-custom-block-warning-border: var(--viteland-c-yellow-dimm-2);
+  --viteland-custom-block-warning-text: var(--viteland-c-yellow-light);
+
+  --viteland-custom-block-danger-border: var(--viteland-c-red-dimm-2);
+  --viteland-custom-block-danger-text: var(--viteland-c-red-light);
+}
+
+/**
+ * Component: Nav
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --viteland-nav-height: 56px;
+}
+
+/**
+ * Component: Sidebar
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --viteland-sidebar-width: 272px;
+}
+
+/**
+ * Component: Home
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --viteland-home-hero-name-color: transparent;
+  --viteland-home-hero-name-background: -webkit-linear-gradient(
+    120deg,
+    var(--viteland-c-brand) 30%,
+    #41d1ff
+  );
+
+  --viteland-home-hero-image-background-image: none;
+  --viteland-home-hero-image-filter: none;
+}
+
+/**
+ * Shadows
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --viteland-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.04),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+  --viteland-shadow-2: 0 3px 12px rgba(0, 0, 0, 0.07),
+    0 1px 4px rgba(0, 0, 0, 0.07);
+  --viteland-shadow-3: 0 12px 32px rgba(0, 0, 0, 0.1),
+    0 2px 6px rgba(0, 0, 0, 0.08);
+  --viteland-shadow-4: 0 14px 44px rgba(0, 0, 0, 0.12),
+    0 3px 9px rgba(0, 0, 0, 0.12);
+  --viteland-shadow-5: 0 18px 56px rgba(0, 0, 0, 0.16),
+    0 4px 12px rgba(0, 0, 0, 0.16);
+}

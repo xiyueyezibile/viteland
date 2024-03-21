@@ -16,7 +16,6 @@ export default function App() {
       return (
         <div>
           <Nav></Nav>
-          <Content></Content>正文页面
         </div>
       );
     } else {

@@ -24,11 +24,6 @@ export function pluginConfig(config: SiteConfig, restartServer: () => Promise<vo
     config() {
       return {
         root: PACKAGE_ROOT,
-        resolve: {
-          alias: {
-            '@': join(PACKAGE_ROOT, 'pacakges', 'view')
-          }
-        },
         css: {
           modules: {
             // 用驼峰链接
