@@ -1,4 +1,4 @@
-
+/* 
 *{
   box-sizing: border-box;
 }
@@ -54,7 +54,7 @@ p {
 strong,
 b {
   font-weight: 600;
-}
+} */
 
 /**
  * Avoid 300ms click delay on touch devices that support the `touch-action`
@@ -71,7 +71,7 @@ b {
  * - http://caniuse.com/#feat=css-touch-action
  * - http://patrickhlauke.github.io/touch/tests/results/#suppressing-300ms-delay
  */
-a,
+/* a,
 area,
 button,
 [role='button'],
@@ -212,4 +212,4 @@ select {
 fieldset {
   margin: 0;
   padding: 0;
-}
+} */

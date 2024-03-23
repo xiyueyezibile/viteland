@@ -4,8 +4,8 @@ import App from './App';
 import { initPageData } from './initPageData';
 import { DataContext } from './hooks/usePageData';
 import 'uno.css';
-import './base.css';
-import './vars.css';
+import './styles/base.css';
+import './styles/vars.css';
 
 async function renderInBrowser() {
   const containerEl = document.getElementById('root');

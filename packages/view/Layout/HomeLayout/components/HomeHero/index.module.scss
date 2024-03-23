@@ -1,0 +1,6 @@
+.clip {
+  background: var(--viteland-home-hero-name-background);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: var(--viteland-home-hero-name-color);
+}

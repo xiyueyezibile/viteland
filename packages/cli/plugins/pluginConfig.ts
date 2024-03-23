@@ -1,7 +1,9 @@
-import { join, relative, sep } from 'path';
+import path, { join, relative, sep } from 'path';
 import { Plugin, ViteDevServer } from 'vite';
 import { SiteConfig } from '../types';
+import fs from 'fs-extra';
 import { PACKAGE_ROOT } from '@viteland/utils';
+import sirv from 'sirv';
 
 const SITE_DATA_ID = 'viteland:site-data';
 /**
@@ -20,6 +22,12 @@ export function pluginConfig(config: SiteConfig, restartServer: () => Promise<vo
         return `export default ${JSON.stringify(config.siteData)}`;
       }
     },
+    configureServer(server) {
+      const publicDir = path.join(config.root, 'public');
+      if (fs.pathExistsSync(publicDir)) {
+        server.middlewares.use(sirv(publicDir));
+      }
+    },
     // vite.config.ts
     config() {
       return {
@@ -28,6 +36,11 @@ export function pluginConfig(config: SiteConfig, restartServer: () => Promise<vo
           modules: {
             // 用驼峰链接
             localsConvention: 'camelCaseOnly'
+          }
+        },
+        resolve: {
+          alias: {
+            '@': '/packages/view/'
           }
         }
       };

@@ -1,5 +1,5 @@
 .link:hover {
-  color: var(--island-c-brand);
+  color: var(--viteland-c-brand);
   transition: color 0.2s;
 }
 
@@ -13,8 +13,19 @@
   display: flex;
   fill: currentColor;
   transition: color 0.2s;
-  color: var(--island-c-text-2);
+  color: var(--viteland-c-text-2);
   &:hover {
-    color: var(--island-c-text-1);
+    color: var(--viteland-c-text-1);
   }
+}
+.nav {
+  padding-left: max(
+    32px,
+    calc(32px + (100vw - var(--viteland-layout-max-width)) / 2)
+  );
+  padding-right: max(
+    32px,
+    calc(32px + (100vw - var(--viteland-layout-max-width)) / 2)
+  );
+  background-color: var(--viteland-c-bg);
 }
