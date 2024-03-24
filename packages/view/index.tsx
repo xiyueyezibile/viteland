@@ -6,6 +6,7 @@ import { DataContext } from './hooks/usePageData';
 import 'uno.css';
 import './styles/base.css';
 import './styles/vars.css';
+import './styles/doc.css';
 
 async function renderInBrowser() {
   const containerEl = document.getElementById('root');

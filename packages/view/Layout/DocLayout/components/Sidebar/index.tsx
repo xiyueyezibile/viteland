@@ -8,7 +8,10 @@ interface SidebarProps {
 
 export function Sidebar(props: SidebarProps) {
   const { sidebarData, pathname } = props;
-
+  console.log(sidebarData);
+  /**
+   * @description 渲染分组每项
+   */
   const renderGroupItem = (item: SidebarItem) => {
     const active = item.link === pathname;
     return (
@@ -19,7 +22,9 @@ export function Sidebar(props: SidebarProps) {
       </div>
     );
   };
-
+  /**
+   * @description 渲染分组
+   */
   const renderGroup = (item: SidebarGroup) => {
     return (
       <section key={item.text} block="~" not-first="divider-top mt-4">

@@ -11,12 +11,17 @@ export function DocLayout() {
   const { siteData, toc } = usePageData();
   const sidebarData = siteData.themeConfig?.sidebar || {};
   const { pathname } = useLocation();
+  /**
+   * @description 获取对应页面的 sidebar Key
+   */
   const matchedSidebarKey = Object.keys(sidebarData).find((key) => {
     if (pathname.startsWith(key)) {
       return true;
     }
   });
-
+  /**
+   * @description 对应页面的 sidebar
+   */
   const matchedSidebar = sidebarData[matchedSidebarKey] || [];
 
   return (
