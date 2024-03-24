@@ -1,9 +1,6 @@
 import { createServer as createViteDevServer } from 'vite';
 import { pluginIndexHtml } from './plugins/pluginIndexHtml';
 import { resolveConfig } from './config';
-import { pluginConfig } from './plugins/pluginConfig';
-import { pluginRoutes } from './plugins/plugin-routes/pluginRoutes';
-import { createPluginMdx } from './plugins/plugin-mdx';
 import { commonPlugins } from './commonPlugins';
 /**
  * @link https://cn.vitejs.dev/guide/api-javascript.html#createserver

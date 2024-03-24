@@ -2,8 +2,8 @@ import path, { join, relative, sep } from 'path';
 import { Plugin, ViteDevServer } from 'vite';
 import { SiteConfig } from '../types';
 import fs from 'fs-extra';
-import { PACKAGE_ROOT } from '@viteland/utils';
 import sirv from 'sirv';
+import { PACKAGE_ROOT } from '../constants';
 
 const SITE_DATA_ID = 'viteland:site-data';
 /**

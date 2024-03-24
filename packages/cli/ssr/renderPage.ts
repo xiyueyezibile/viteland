@@ -3,7 +3,7 @@ import fs from 'fs';
 import { dirname, join, sep } from 'path';
 
 export async function renderPage(
-  render: (pagePath: string) => string,
+  render: (pagePath: string) => Promise<string>,
   routes: { path: string; element: unknown }[],
   root: string,
   clientBundle
@@ -15,7 +15,7 @@ export async function renderPage(
   return Promise.all(
     routes.map(async (route) => {
       const routePath = route.path;
-      const appHtml = render(routePath);
+      const appHtml = await render(routePath);
       const sepCount = routePath.split('/').length - 2;
       const preDir = new Array(sepCount).fill('../').reduce((str, cur) => {
         const sum = str + cur;

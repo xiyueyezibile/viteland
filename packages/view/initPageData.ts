@@ -8,6 +8,8 @@ export async function initPageData(routePath: string): Promise<PageData> {
   const matched = matchRoutes(routes, routePath === '/' ? routePath : routePath + '/');
 
   if (matched) {
+    console.log(matched[0]);
+
     const moduleInfo = await matched[0].route.preload();
     return {
       pageType: moduleInfo.frontmatter?.pageType ?? 'doc',

@@ -2,8 +2,8 @@ import { cac } from 'cac';
 import path, { resolve } from 'path';
 import { createServer } from './createServer';
 import { build } from './ssr/build';
-import { PACKAGE_ROOT } from '@viteland/utils';
 import { resolveConfig } from './config';
+import { PACKAGE_ROOT } from './constants';
 
 const initCli = () => {
   const version = require('../../package.json').version;
@@ -38,7 +38,7 @@ const initCli = () => {
   cli.command('build [root]', 'build for production').action(async (root: string) => {
     const serverRoot = root ? path.resolve(process.cwd(), root) : path.join(PACKAGE_ROOT, 'docs');
     const clientRoot = path.join(PACKAGE_ROOT, 'packages/view');
-    console.log(serverRoot, clientRoot, 1);
+    console.log(serverRoot, clientRoot);
 
     const config = await resolveConfig(serverRoot, 'build', 'production');
 

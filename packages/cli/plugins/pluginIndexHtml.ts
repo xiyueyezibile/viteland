@@ -1,6 +1,6 @@
 import { readFile } from 'fs/promises';
 import { Plugin } from 'vite';
-import { CLIENT_ENTRY_PATH, DEFAULT_HTML_PATH } from '@viteland/utils';
+import { CLIENT_ENTRY_PATH, DEFAULT_HTML_PATH } from '../constants';
 /**
  * @description 操纵 index.html 钩子
  */

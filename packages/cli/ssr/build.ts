@@ -1,4 +1,3 @@
-import { CLIENT_ENTRY_PATH, PACKAGE_ROOT, SERVER_ENTRY_PATH } from '@viteland/utils';
 import pluginReact from '@vitejs/plugin-react';
 import { InlineConfig, build as viteBuild } from 'vite';
 import { renderPage } from './renderPage';
@@ -6,6 +5,7 @@ import { join } from 'path';
 import { SiteConfig } from '../types';
 import { pathToFileURL } from 'url';
 import { commonPlugins } from '../commonPlugins';
+import { PACKAGE_ROOT, SERVER_ENTRY_PATH, CLIENT_ENTRY_PATH } from '../constants';
 /**
  * @link https://cn.vitejs.dev/guide/api-javascript.html#build
  */
@@ -15,8 +15,8 @@ export async function build(root: string = process.cwd(), config: SiteConfig) {
    * pathToFileURL 兼容windows， 否则报错
    * Only URLs with a scheme in: file, data, and node are supported by the default ESM loader. On Windows, absolute paths must be valid file:// URLs. Received protocol 'd:'
    */
-  const { render, routes } = await import(pathToFileURL(join(PACKAGE_ROOT, 'packages/view/.temp/ssr-entry.cjs')).href);
   try {
+    const { render, routes } = await import(pathToFileURL(join(PACKAGE_ROOT, 'packages/view/.temp/ssr-entry.js')).href);
     await renderPage(render, routes, root, clientBundle);
   } catch (e) {
     console.log('renderPage error', e);
