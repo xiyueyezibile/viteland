@@ -1,6 +1,7 @@
 import Content from './Content';
 import { DocLayout } from './Layout/DocLayout';
 import { HomeLayout } from './Layout/HomeLayout';
+import { NotFoundLayout } from './Layout/NotFoundLayout';
 import { Nav } from './components/Nav';
 import { usePageData } from './hooks/usePageData';
 
@@ -17,7 +18,7 @@ export default function App() {
     } else if (pageType === 'doc') {
       return <DocLayout />;
     } else {
-      return <div>404 页面</div>;
+      return <NotFoundLayout />;
     }
   };
   return (

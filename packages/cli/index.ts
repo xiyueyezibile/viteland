@@ -4,6 +4,7 @@ import { createServer } from './createServer';
 import { build } from './ssr/build';
 import { resolveConfig } from './config';
 import { PACKAGE_ROOT } from './constants';
+import { preview } from './preview';
 
 const initCli = () => {
   const version = require('../../package.json').version;
@@ -48,7 +49,17 @@ const initCli = () => {
       console.log('build error');
     }
   });
-
+  cli
+    .command('preview [root]', 'preview production build')
+    .option('--port <port>', 'port to use for preview server')
+    .action(async (root: string, { port }: { port: number }) => {
+      const absoluteRoot = resolve(root);
+      try {
+        await preview(absoluteRoot, { port });
+      } catch (e) {
+        console.log(e, absoluteRoot);
+      }
+    });
   cli.parse();
 };
 initCli();

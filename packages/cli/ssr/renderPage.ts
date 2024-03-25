@@ -10,10 +10,11 @@ export async function renderPage(
 ) {
   // 找出所有客户端入口文件chunk
   const clientChunk = clientBundle.output.find((chunk) => chunk.type === 'chunk' && chunk.isEntry);
+  const styleAssets = clientBundle.output.filter((chunk) => chunk.type === 'asset' && chunk.fileName.endsWith('.css'));
   console.log(`Rendering page in server side...`);
   // 生产服务端页面
   return Promise.all(
-    routes.map(async (route) => {
+    [...routes, { path: '/404' }].map(async (route) => {
       const routePath = route.path;
       const appHtml = await render(routePath);
       const sepCount = routePath.split('/').length - 2;
@@ -30,6 +31,7 @@ export async function renderPage(
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>title</title>
     <meta name="description" content="xxx">
+    ${styleAssets.map((item) => `<link rel="stylesheet" href="/${item.fileName}">`).join('\n')}
   </head>
   <body>
     <div id="root">${appHtml}</div>
