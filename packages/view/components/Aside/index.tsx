@@ -1,12 +1,12 @@
-import { Header } from '@/types';
-import { bindingAsideScroll, scrollToTarget } from '@/utils/asideScroll';
+import { Header, PropsWithIsland } from '@/types';
+import { bindingAsideScroll, scrollToTarget } from '../../utils/asideScroll';
 import { useRef, useEffect } from 'react';
 
 interface AsideProps {
   headers: Header[];
 }
 
-export function Aside(props: AsideProps) {
+export function Aside(props: AsideProps & PropsWithIsland) {
   const { headers = [] } = props;
   // 是否展示大纲栏
   const hasOutline = headers.length > 0;
@@ -33,7 +33,7 @@ export function Aside(props: AsideProps) {
           }}
           onClick={(e) => {
             e.preventDefault();
-            const target = document.getElementById(header.id);
+            const target = document.getElementById(header.id.split('-')[0] || header.id);
             console.log(target, header);
 
             target && scrollToTarget(target, false);

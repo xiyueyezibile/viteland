@@ -68,3 +68,7 @@ export interface FrontMatter {
   features?: Feature[];
   hero?: Hero;
 }
+
+export interface PropsWithIsland {
+  __island?: boolean;
+}

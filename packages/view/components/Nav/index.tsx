@@ -3,7 +3,7 @@ import styles from './index.module.scss';
 import { usePageData } from '../../hooks/usePageData';
 import { SwitchAppearance } from '../SwitchAppearance';
 
-export function MenuItem(item: NavItemWithLink) {
+export function MenuItem({ item }: { item: NavItemWithLink }) {
   return (
     <div className="text-sm font-medium mx-3">
       <a href={item.link} className={styles.link}>
@@ -28,7 +28,7 @@ export function Nav() {
           {/* 普通菜单 */}
           <div flex="~">
             {nav.map((item) => (
-              <MenuItem {...item} key={item.text} />
+              <MenuItem item={item} key={item.text} />
             ))}
             {/* 白天/夜间模式切换 */}
 

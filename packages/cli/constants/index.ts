@@ -7,3 +7,7 @@ export const DEFAULT_HTML_PATH = join(PACKAGE_ROOT, 'template.html');
 export const CLIENT_ENTRY_PATH = join(PACKAGE_ROOT, 'packages/view/index.tsx');
 // 服务端入口路径
 export const SERVER_ENTRY_PATH = join(PACKAGE_ROOT, 'packages/view/ssr/ssr-entry.tsx');
+
+export const MASK_SPLITTER = '!!ISLAND!!';
+
+export const JSX_ENTRY_PATH = join(PACKAGE_ROOT, 'packages/view');

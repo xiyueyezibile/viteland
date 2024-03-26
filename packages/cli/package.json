@@ -23,6 +23,10 @@
     "url": "https://github.com/xiyueyezibile/viteland/issues"
   },
   "dependencies": {
+    "@babel/core": "^7.24.3",
+    "@babel/helper-plugin-utils": "^7.24.0",
+    "@babel/preset-react": "^7.24.1",
+    "@babel/traverse": "^7.24.1",
     "@mdx-js/rollup": "^3.0.1",
     "@vitejs/plugin-react": "^4.2.1",
     "acorn": "^8.11.3",

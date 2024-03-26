@@ -1,4 +1,3 @@
-import pluginReact from '@vitejs/plugin-react';
 import { InlineConfig, build as viteBuild } from 'vite';
 import { renderPage } from './renderPage';
 import { join } from 'path';
@@ -17,6 +16,8 @@ export async function build(root: string = process.cwd(), config: SiteConfig) {
    */
   try {
     const { render, routes } = await import(pathToFileURL(join(PACKAGE_ROOT, 'packages/view/.temp/ssr-entry.js')).href);
+    console.log(render);
+
     await renderPage(render, routes, root, clientBundle);
   } catch (e) {
     console.log('renderPage error', e);
@@ -31,8 +32,6 @@ export async function bundle(root: string, config: SiteConfig) {
      */
     root: root,
     plugins: [
-      // 自动注入 import React from 'react'，避免 React is not defined 的错误
-      pluginReact(),
       ...(await commonPlugins({
         config,
         restartServer: async () => {},
