@@ -7,6 +7,7 @@ import 'uno.css';
 import './styles/base.css';
 import './styles/vars.css';
 import './styles/doc.css';
+import { HelmetProvider } from 'react-helmet-async';
 
 async function renderInBrowser() {
   const containerEl = document.getElementById('root');
@@ -15,11 +16,13 @@ async function renderInBrowser() {
   }
   const pageData = await initPageData(location.pathname);
   createRoot(containerEl).render(
-    <DataContext.Provider value={pageData}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </DataContext.Provider>
+    <HelmetProvider>
+      <DataContext.Provider value={pageData}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </DataContext.Provider>
+    </HelmetProvider>
   );
 }
 

@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import Content from './Content';
 import { DocLayout } from './Layout/DocLayout';
 import { HomeLayout } from './Layout/HomeLayout';
@@ -8,7 +9,7 @@ import { usePageData } from './hooks/usePageData';
 export default function App() {
   const pageData = usePageData();
   // 获取 pageType
-  const { pageType } = pageData;
+  const { pageType, title } = pageData;
   console.log(pageData);
 
   // 根据 pageType 分发不同的页面内容
@@ -23,6 +24,9 @@ export default function App() {
   };
   return (
     <div>
+      <Helmet>
+        <title>{title}</title>
+      </Helmet>
       <Nav />
       <section
         style={{

@@ -16,7 +16,6 @@ export async function build(root: string = process.cwd(), config: SiteConfig) {
    */
   try {
     const { render, routes } = await import(pathToFileURL(join(PACKAGE_ROOT, 'packages/view/.temp/ssr-entry.js')).href);
-    console.log(render);
 
     await renderPage(render, routes, root, clientBundle);
   } catch (e) {

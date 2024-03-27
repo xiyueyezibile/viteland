@@ -3,6 +3,7 @@ import fs from 'fs';
 import path, { dirname, join, sep } from 'path';
 import { MASK_SPLITTER, PACKAGE_ROOT } from '../constants';
 import { build as viteBuild } from 'vite';
+import { HelmetData } from 'react-helmet-async';
 
 async function buildIslands(root: string, islandPathToMap: Record<string, string>) {
   // 根据 islandPathToMap 拼接模块代码内容
@@ -70,7 +71,8 @@ window.ISLAND_PROPS = JSON.parse(
 
 export async function renderPage(
   render: (
-    pagePath: string
+    pagePath: string,
+    helmetContext: object
   ) => Promise<{ appHtml: string; islandProps: unknown[]; islandToPathMap: Record<string, string> }>,
   routes: { path: string; element: unknown }[],
   root: string,
@@ -83,7 +85,10 @@ export async function renderPage(
   return Promise.all(
     [...routes, { path: '/404' }].map(async (route) => {
       const routePath = route.path;
-      const { appHtml, islandProps, islandToPathMap } = await render(routePath);
+      const helmetContext = {
+        context: {}
+      } as HelmetData;
+      const { appHtml, islandProps, islandToPathMap } = await render(routePath, helmetContext.context);
       const styleAssets = clientBundle.output.filter(
         (chunk) => chunk.type === 'asset' && chunk.fileName.endsWith('.css')
       );
@@ -94,15 +99,19 @@ export async function renderPage(
         const sum = str + cur;
         return sum;
       }, '');
+      const { helmet } = helmetContext.context;
       const html = `
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>title</title>
+    ${helmet?.title?.toString() || ''}
+    ${helmet?.meta?.toString() || ''}
+    ${helmet?.link?.toString() || ''}
+    ${helmet?.style?.toString() || ''}
     <meta name="description" content="xxx">
-    ${styleAssets.map((item) => `<link rel="stylesheet" href="/${item.fileName}">`).join('\n')}
+    ${styleAssets.map((item) => `<link rel="stylesheet" href="./${preDir + item.fileName}">`).join('\n')}
   </head>
   <body>
     <div id="root">${appHtml}</div>
