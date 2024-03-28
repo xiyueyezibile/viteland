@@ -17,7 +17,6 @@ const initCli = () => {
     .action(async (root: string) => {
       // 添加以下逻辑
       const serverRoot = root ? path.resolve(process.cwd(), root) : path.resolve(PACKAGE_ROOT, 'docs');
-      console.log(serverRoot);
 
       const create = async () => {
         try {
@@ -39,7 +38,6 @@ const initCli = () => {
   cli.command('build [root]', 'build for production').action(async (root: string) => {
     const serverRoot = root ? path.resolve(process.cwd(), root) : path.join(PACKAGE_ROOT, 'docs');
     const clientRoot = path.join(PACKAGE_ROOT, 'packages/view');
-    console.log(serverRoot, clientRoot);
 
     const config = await resolveConfig(serverRoot, 'build', 'production');
 
@@ -53,7 +51,7 @@ const initCli = () => {
     .command('preview [root]', 'preview production build')
     .option('--port <port>', 'port to use for preview server')
     .action(async (root: string, { port }: { port: number }) => {
-      const absoluteRoot = resolve(root);
+      const absoluteRoot = root ? resolve(root) : resolve('packages/view');
       try {
         await preview(absoluteRoot, { port });
       } catch (e) {

@@ -5,6 +5,28 @@ import { SiteConfig } from '../types';
 import { pathToFileURL } from 'url';
 import { commonPlugins } from '../commonPlugins';
 import { PACKAGE_ROOT, SERVER_ENTRY_PATH, CLIENT_ENTRY_PATH } from '../constants';
+import fs from 'fs';
+import * as fs2 from 'fs-extra';
+// async function copyAllFiles(targetDir: string, sourceDir: string) {
+//   if (fs.existsSync(sourceDir)) {
+//     const files = fs.readdirSync(sourceDir);
+//     for (let file of files) {
+//       const curFilePath = sourceDir + '/' + file;
+//       const stats = fs.lstatSync(curFilePath);
+//       if (stats.isDirectory()) {
+//         await fs2.ensureDir(join(targetDir, file));
+//         copyAllFiles(join(targetDir, file), join(sourceDir, file));
+//       } else {
+//         const data = fs.readFileSync(curFilePath);
+//         if (fs2.writeFile) await fs2.writeFile(join(targetDir, file), data);
+//         else fs.writeFileSync(join(targetDir, file), data);
+//       }
+//     }
+//   } else {
+//     console.warn(`源目录${sourceDir}不存在`);
+//   }
+// }
+
 /**
  * @link https://cn.vitejs.dev/guide/api-javascript.html#build
  */
@@ -16,7 +38,8 @@ export async function build(root: string = process.cwd(), config: SiteConfig) {
    */
   try {
     const { render, routes } = await import(pathToFileURL(join(PACKAGE_ROOT, 'packages/view/.temp/ssr-entry.js')).href);
-
+    // await fs2.ensureDir(join(root, 'build', 'public'));
+    // await copyAllFiles(join(root, 'build', 'public'), join(config.root, 'public'));
     await renderPage(render, routes, root, clientBundle);
   } catch (e) {
     console.log('renderPage error', e);

@@ -16,7 +16,6 @@ async function buildIslands(root: string, islandPathToMap: Record<string, string
         ).replace(/\\/g, '/')}'`
     )
     .join('');
-  console.log(importIsland);
 
   const islandsInjectCode = `
     ${importIsland}
@@ -81,6 +80,7 @@ export async function renderPage(
   // 找出所有客户端入口文件chunk
   const clientChunk = clientBundle.output.find((chunk) => chunk.type === 'chunk' && chunk.isEntry);
   console.log(`Rendering page in server side...`);
+
   // 生产服务端页面
   return Promise.all(
     [...routes, { path: '/404' }].map(async (route) => {
@@ -122,7 +122,8 @@ export async function renderPage(
 </html>`.trim();
       const fileName = routePath.endsWith('/') ? `${routePath}index.html` : `${routePath}.html`;
       // 生成文件夹
-      await fs2.ensureDir(join(root, 'build', routePath));
+      if (routePath.endsWith('/')) await fs2.ensureDir(join(root, 'build', routePath));
+
       // 注入页面
       /**
        * 可能会出现 fs2.writeFile is not a function，进行兼容性处理

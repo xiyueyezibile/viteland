@@ -8,7 +8,6 @@ const Content = () => {
       return { path: route.path, element: createElement(route.element) };
     }) as RouteObject[]
   );
-  console.log(routeElement);
 
   return routeElement;
 };

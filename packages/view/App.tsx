@@ -10,7 +10,6 @@ export default function App() {
   const pageData = usePageData();
   // 获取 pageType
   const { pageType, title } = pageData;
-  console.log(pageData);
 
   // 根据 pageType 分发不同的页面内容
   const getContent = () => {

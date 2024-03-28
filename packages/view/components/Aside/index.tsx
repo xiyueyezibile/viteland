@@ -34,7 +34,6 @@ export function Aside(props: AsideProps & PropsWithIsland) {
           onClick={(e) => {
             e.preventDefault();
             const target = document.getElementById(header.id.split('-')[0] || header.id);
-            console.log(target, header);
 
             target && scrollToTarget(target, false);
           }}>

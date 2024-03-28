@@ -60,8 +60,6 @@ ${ssr ? '' : 'import loadable from "@loadable/component";'}
 
 ${this.#routeData
   .map((route, index) => {
-    console.log(route.absolutePath);
-
     // 动态加载
     return ssr
       ? `import Route${index} from "${route.absolutePath}";`

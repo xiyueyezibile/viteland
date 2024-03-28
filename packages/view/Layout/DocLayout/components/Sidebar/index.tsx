@@ -8,7 +8,6 @@ interface SidebarProps {
 
 export function Sidebar(props: SidebarProps) {
   const { sidebarData, pathname } = props;
-  console.log(sidebarData);
   /**
    * @description 渲染分组每项
    */

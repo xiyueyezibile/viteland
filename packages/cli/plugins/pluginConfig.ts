@@ -24,6 +24,7 @@ export function pluginConfig(config: SiteConfig, restartServer: () => Promise<vo
     },
     configureServer(server) {
       const publicDir = path.join(config.root, 'public');
+
       if (fs.pathExistsSync(publicDir)) {
         server.middlewares.use(sirv(publicDir));
       }
@@ -38,6 +39,7 @@ export function pluginConfig(config: SiteConfig, restartServer: () => Promise<vo
             localsConvention: 'camelCaseOnly'
           }
         },
+        publicDir: join(config.root, 'public'),
         resolve: {
           alias: {
             '@': '/packages/view/'
@@ -50,7 +52,6 @@ export function pluginConfig(config: SiteConfig, restartServer: () => Promise<vo
       const customWatchedFiles = [config.configPath];
 
       const include = (id: string) => customWatchedFiles.some((file) => id.includes(file));
-      console.log(ctx.file);
 
       // include 为 Unix 分隔符， ctx.file在windows系统下为 windows 分隔符，进行替换进而匹配
       if (include(ctx.file.replace(/\//g, sep))) {
