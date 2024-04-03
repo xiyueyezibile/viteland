@@ -1,13 +1,14 @@
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import React = require('react');
 import App from './App';
 import { initPageData } from './initPageData';
 import { DataContext } from './hooks/usePageData';
+import { HelmetProvider } from 'react-helmet-async';
 import 'uno.css';
 import './styles/base.css';
 import './styles/vars.css';
 import './styles/doc.css';
-import { HelmetProvider } from 'react-helmet-async';
 
 async function renderInBrowser() {
   const containerEl = document.getElementById('root');
