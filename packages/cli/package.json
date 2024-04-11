@@ -60,5 +60,6 @@
     "tsup": "^8.0.2",
     "unist-util-visit": "^5.0.0"
   },
-  "gitHead": "afd3413f3b29b0ecdeae76f48894c776e34b35e5"
+  "private":"false",
+  "gitHead": "36abfce8b9e343da9089a4a3632ab12d983afaa8"
 }
