@@ -1,6 +1,6 @@
 {
   "name": "@viteland/cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "> TODO: description",
   "author": "xiyueyezibile <2859439384@qq.com>",
   "homepage": "https://github.com/xiyueyezibile/viteland#readme",
@@ -60,6 +60,6 @@
     "tsup": "^8.0.2",
     "unist-util-visit": "^5.0.0"
   },
-  "private":"false",
+  "private": "false",
   "gitHead": "36abfce8b9e343da9089a4a3632ab12d983afaa8"
 }
