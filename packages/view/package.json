@@ -28,6 +28,9 @@
     "serve": "^14.2.1",
     "tsup": "^8.0.2"
   },
+  "files": [
+    "build"
+  ],
   "private": "false",
   "gitHead": "36abfce8b9e343da9089a4a3632ab12d983afaa8"
 }

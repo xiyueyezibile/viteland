@@ -60,6 +60,10 @@
     "tsup": "^8.0.2",
     "unist-util-visit": "^5.0.0"
   },
+  "files": [
+    "dist",
+    "bin"
+  ],
   "private": "false",
   "gitHead": "36abfce8b9e343da9089a4a3632ab12d983afaa8"
 }
