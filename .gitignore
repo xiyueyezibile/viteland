@@ -4,9 +4,6 @@
 # git rm -r --cached .
 
 node_modules/
-packages/cli/dist
-packages/utils/dist
-packages/view/dist
-packages/view/build
-packages/view/.temp
+dist
+playwright-report
 test-results

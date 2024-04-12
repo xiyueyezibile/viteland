@@ -1,7 +1,15 @@
 {
   "compilerOptions": {
-    "jsx": "react",
+    "jsx": "react-jsx",
+    "outDir": "dist",
+    "rootDir": ".",
     "target": "ESNext" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
     "module": "commonjs" /* Specify what module code is generated. */,
+    "baseUrl": "./src",
+    "paths": {
+      // 根据别名配置相关路径
+        "@/*": ["./*"]
+    },
+    "esModuleInterop": true
   }
 }
