@@ -1,4 +1,4 @@
-import { UserConfig } from '@viteland/cli/types';
+import { UserConfig } from '@/node/types';
 import { ComponentClass, ComponentType, FunctionComponent } from 'react';
 
 export type PageType = 'home' | 'doc' | 'custom' | '404';

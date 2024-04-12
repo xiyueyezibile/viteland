@@ -1,9 +1,9 @@
-import App from '@/App';
-import { DataContext } from '@/hooks/usePageData';
-import { initPageData } from '@/initPageData';
 import { renderToString } from 'react-dom/server';
 import { HelmetProvider } from 'react-helmet-async';
 import { StaticRouter } from 'react-router-dom/server';
+import { initPageData } from '../initPageData';
+import { DataContext } from '../hooks/usePageData';
+import App from '../App';
 // ssr 入口
 export async function render(pagePath: string, helmetContext: object) {
   const pageData = await initPageData(pagePath);

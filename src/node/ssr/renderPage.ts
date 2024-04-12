@@ -11,8 +11,8 @@ async function buildIslands(root: string, islandPathToMap: Record<string, string
     .map(
       ([islandName, islandPath]) =>
         `import { ${islandName} } from '${(islandPath.split(MASK_SPLITTER)[0].startsWith('@')
-          ? join(PACKAGE_ROOT, 'packages', 'view', islandPath.split(MASK_SPLITTER)[0].slice(1))
-          : join(PACKAGE_ROOT, 'packages', 'view', islandPath.split(MASK_SPLITTER)[0])
+          ? join(PACKAGE_ROOT, 'src', islandPath.split(MASK_SPLITTER)[0].slice(1))
+          : join(PACKAGE_ROOT, 'src', islandPath.split(MASK_SPLITTER)[0])
         ).replace(/\\/g, '/')}'`
     )
     .join('');

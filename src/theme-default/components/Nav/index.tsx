@@ -1,7 +1,7 @@
-import { NavItemWithLink } from '@viteland/cli/types';
 import styles from './index.module.scss';
 import { usePageData } from '../../hooks/usePageData';
 import { SwitchAppearance } from '../SwitchAppearance';
+import { NavItemWithLink } from '@/node/types';
 
 export function MenuItem({ item }: { item: NavItemWithLink }) {
   return (

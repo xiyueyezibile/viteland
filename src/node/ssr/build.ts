@@ -1,10 +1,10 @@
 import { InlineConfig, build as viteBuild } from 'vite';
 import { renderPage } from './renderPage';
 import { join } from 'path';
-import { SiteConfig } from '../../types';
+import { SiteConfig } from '../types';
 import { pathToFileURL } from 'url';
 import { commonPlugins } from '../commonPlugins';
-import { PACKAGE_ROOT, SERVER_ENTRY_PATH, CLIENT_ENTRY_PATH } from '../constants';
+import { PACKAGE_ROOT, SERVER_ENTRY_PATH, CLIENT_ENTRY_PATH, CLIENT_ROOT } from '../constants';
 import fs from 'fs';
 import * as fs2 from 'fs-extra';
 // async function copyAllFiles(targetDir: string, sourceDir: string) {
@@ -31,16 +31,16 @@ import * as fs2 from 'fs-extra';
  * @link https://cn.vitejs.dev/guide/api-javascript.html#build
  */
 export async function build(root: string = process.cwd(), config: SiteConfig) {
-  const [clientBundle, serverBundle] = await bundle(root, config);
+  const [clientBundle, serverBundle] = await bundle(PACKAGE_ROOT, config);
   /**
    * pathToFileURL 兼容windows， 否则报错
    * Only URLs with a scheme in: file, data, and node are supported by the default ESM loader. On Windows, absolute paths must be valid file:// URLs. Received protocol 'd:'
    */
   try {
-    const { render, routes } = await import(pathToFileURL(join(PACKAGE_ROOT, 'packages/view/.temp/ssr-entry.js')).href);
+    const { render, routes } = await import(pathToFileURL(join(PACKAGE_ROOT, '.temp/ssr-entry.js')).href);
     // await fs2.ensureDir(join(root, 'build', 'public'));
     // await copyAllFiles(join(root, 'build', 'public'), join(config.root, 'public'));
-    await renderPage(render, routes, root, clientBundle);
+    await renderPage(render, routes, PACKAGE_ROOT, clientBundle);
   } catch (e) {
     console.log('renderPage error', e);
   }

@@ -1,6 +1,6 @@
 // theme-default/components/HomeFeature/index.tsx
 
-import { Feature } from '@/types';
+import { Feature } from '@/theme-default/types';
 
 export function HomeFeature(props: { features: Feature[] }) {
   return (

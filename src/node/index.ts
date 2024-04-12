@@ -38,7 +38,7 @@ const initCli = () => {
 
   cli.command('build [root]', 'build for production').action(async (root: string) => {
     const serverRoot = root ? path.resolve(process.cwd(), root) : path.join(PACKAGE_ROOT, 'docs');
-    const clientRoot = path.join(PACKAGE_ROOT, 'packages/view');
+    const clientRoot = path.join(PACKAGE_ROOT, 'src/theme-default');
 
     const config = await resolveConfig(serverRoot, 'build', 'production');
 
@@ -52,7 +52,7 @@ const initCli = () => {
     .command('preview [root]', 'preview production build')
     .option('--port <port>', 'port to use for preview server')
     .action(async (root: string, { port }: { port: number }) => {
-      const absoluteRoot = root ? path.resolve(root) : path.resolve('packages/view');
+      const absoluteRoot = root ? path.resolve(root) : PACKAGE_ROOT;
       try {
         await preview(absoluteRoot, { port });
       } catch (e) {

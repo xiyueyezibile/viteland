@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import { usePageData } from './usePageData';
-import { SidebarItem } from '@viteland/cli/types';
+import { SidebarItem } from '@/node/types';
 
 export function usePrevNextPage() {
   const { pathname } = useLocation();

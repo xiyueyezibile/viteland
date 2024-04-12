@@ -1,4 +1,4 @@
-import { Header, PropsWithIsland } from '@/types';
+import { Header, PropsWithIsland } from '@/theme-default/types';
 import { bindingAsideScroll, scrollToTarget } from '../../utils/asideScroll';
 import { useRef, useEffect } from 'react';
 
