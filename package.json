@@ -17,6 +17,12 @@
     "prepare": "husky install",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
+  "files": [
+    "dist",
+    "bin",
+    "README.md",
+    "src/theme-default"
+  ],
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "pnpm run lint --fix",
