@@ -16,7 +16,7 @@ const initCli = () => {
     .alias('dev')
     .action(async (root: string) => {
       // 添加以下逻辑
-      const serverRoot = root ? path.resolve(process.cwd(), root) : path.resolve(PACKAGE_ROOT, 'docs');
+      const serverRoot = root ? path.resolve(process.cwd(), root) : path.resolve(process.cwd(), 'docs');
       console.log(serverRoot, PACKAGE_ROOT, 1);
 
       const create = async () => {
@@ -37,7 +37,7 @@ const initCli = () => {
     });
 
   cli.command('build [root]', 'build for production').action(async (root: string) => {
-    const serverRoot = root ? path.resolve(process.cwd(), root) : path.join(PACKAGE_ROOT, 'docs');
+    const serverRoot = root ? path.resolve(process.cwd(), root) : path.join(process.cwd(), 'docs');
     const clientRoot = path.join(PACKAGE_ROOT, 'src/theme-default');
 
     const config = await resolveConfig(serverRoot, 'build', 'production');
@@ -52,7 +52,7 @@ const initCli = () => {
     .command('preview [root]', 'preview production build')
     .option('--port <port>', 'port to use for preview server')
     .action(async (root: string, { port }: { port: number }) => {
-      const absoluteRoot = root ? path.resolve(root) : PACKAGE_ROOT;
+      const absoluteRoot = root ? path.resolve(root) : process.cwd();
       try {
         await preview(absoluteRoot, { port });
       } catch (e) {

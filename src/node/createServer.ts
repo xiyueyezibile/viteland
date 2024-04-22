@@ -11,6 +11,6 @@ export async function createServer(root = process.cwd(), restartServer: () => Pr
   console.log(config);
   return createViteDevServer({
     plugins: [pluginIndexHtml(), ...(await commonPlugins({ config, restartServer }))],
-    root
+    root: process.cwd()
   });
 }

@@ -7,6 +7,8 @@ import { HelmetData } from 'react-helmet-async';
 
 async function buildIslands(root: string, islandPathToMap: Record<string, string>) {
   // 根据 islandPathToMap 拼接模块代码内容
+  console.log(Object.entries(islandPathToMap));
+
   const importIsland = Object.entries(islandPathToMap)
     .map(
       ([islandName, islandPath]) =>

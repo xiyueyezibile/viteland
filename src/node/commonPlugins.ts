@@ -2,12 +2,12 @@ import path, { join } from 'path';
 import { createPluginMdx } from './plugins/plugin-mdx';
 import { pluginRoutes } from './plugins/plugin-routes/pluginRoutes';
 import { pluginConfig } from './plugins/pluginConfig';
-import { SiteConfig } from '../types';
 import pluginUnocss from 'unocss/vite';
 import unocssOptions from './unocssOptions';
 import pluginReact from '@vitejs/plugin-react';
 import { JSX_ENTRY_PATH, PACKAGE_ROOT } from './constants';
 import pluginIsland from './plugins/plugin-island';
+import { SiteConfig } from './types';
 
 interface IcommonPlugin {
   config: SiteConfig;

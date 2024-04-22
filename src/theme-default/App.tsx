@@ -1,5 +1,4 @@
 import { Helmet } from 'react-helmet-async';
-import Content from './Content';
 import { DocLayout } from './Layout/DocLayout';
 import { HomeLayout } from './Layout/HomeLayout';
 import { NotFoundLayout } from './Layout/NotFoundLayout';

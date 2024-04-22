@@ -7,40 +7,21 @@ import { commonPlugins } from '../commonPlugins';
 import { PACKAGE_ROOT, SERVER_ENTRY_PATH, CLIENT_ENTRY_PATH, CLIENT_ROOT } from '../constants';
 import fs from 'fs';
 import * as fs2 from 'fs-extra';
-// async function copyAllFiles(targetDir: string, sourceDir: string) {
-//   if (fs.existsSync(sourceDir)) {
-//     const files = fs.readdirSync(sourceDir);
-//     for (let file of files) {
-//       const curFilePath = sourceDir + '/' + file;
-//       const stats = fs.lstatSync(curFilePath);
-//       if (stats.isDirectory()) {
-//         await fs2.ensureDir(join(targetDir, file));
-//         copyAllFiles(join(targetDir, file), join(sourceDir, file));
-//       } else {
-//         const data = fs.readFileSync(curFilePath);
-//         if (fs2.writeFile) await fs2.writeFile(join(targetDir, file), data);
-//         else fs.writeFileSync(join(targetDir, file), data);
-//       }
-//     }
-//   } else {
-//     console.warn(`源目录${sourceDir}不存在`);
-//   }
-// }
 
 /**
  * @link https://cn.vitejs.dev/guide/api-javascript.html#build
  */
 export async function build(root: string = process.cwd(), config: SiteConfig) {
-  const [clientBundle, serverBundle] = await bundle(PACKAGE_ROOT, config);
+  const [clientBundle, serverBundle] = await bundle(process.cwd(), config);
   /**
    * pathToFileURL 兼容windows， 否则报错
    * Only URLs with a scheme in: file, data, and node are supported by the default ESM loader. On Windows, absolute paths must be valid file:// URLs. Received protocol 'd:'
    */
   try {
-    const { render, routes } = await import(pathToFileURL(join(PACKAGE_ROOT, '.temp/ssr-entry.js')).href);
+    const { render, routes } = await import(pathToFileURL(join(process.cwd(), '.temp/ssr-entry.js')).href);
     // await fs2.ensureDir(join(root, 'build', 'public'));
     // await copyAllFiles(join(root, 'build', 'public'), join(config.root, 'public'));
-    await renderPage(render, routes, PACKAGE_ROOT, clientBundle);
+    await renderPage(render, routes, process.cwd(), clientBundle);
   } catch (e) {
     console.log('renderPage error', e);
   }
