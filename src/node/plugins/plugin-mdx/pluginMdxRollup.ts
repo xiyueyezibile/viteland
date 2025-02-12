@@ -28,7 +28,7 @@ export async function pluginMdxRollup() {
       // 为每个标题元素生成唯一的 slug（用于锚点链接的 ID）。被用来配合 rehype-autolink-headings 为每个标题生成 ID
       rehypePluginSlug,
       [
-      // 自动为文档中的标题生成链接，实现页面内导航。
+        // 自动为文档中的标题生成链接，实现页面内导航。
         rehypePluginAutolinkHeadings,
         {
           properties: {

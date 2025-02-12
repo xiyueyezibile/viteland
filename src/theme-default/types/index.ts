@@ -1,6 +1,6 @@
 import { UserConfig } from '@/node/types';
 import { ComponentClass, ComponentType, FunctionComponent } from 'react';
-
+/** 页面类型 */
 export type PageType = 'home' | 'doc' | 'custom' | '404';
 
 export interface Header {
@@ -16,13 +16,16 @@ export interface FrontMatter {
   sidebar?: boolean;
   outline?: boolean;
 }
-
+/**页面配置 */
 export interface PageData {
   siteData: UserConfig;
+  /** guide 路径 */
   pagePath: string;
   frontmatter: FrontMatter;
   pageType: PageType;
+  /** 目录 */
   toc?: Header[];
+  /** 标题 */
   title?: string;
 }
 

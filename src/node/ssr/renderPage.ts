@@ -7,8 +7,14 @@ import { HelmetData } from 'react-helmet-async';
 
 async function buildIslands(root: string, islandPathToMap: Record<string, string>) {
   // 根据 islandPathToMap 拼接模块代码内容
-  console.log(Object.entries(islandPathToMap));
 
+  // console.log(Object.entries(islandPathToMap));
+  /**
+   * [
+    'Aside',
+    '@/theme-default/components/Aside!!ISLAND!!/Users/panqilin/Desktop/response/viteland/src/theme-default/Layout/DocLayout/index.tsx'
+  ]
+   */
   const importIsland = Object.entries(islandPathToMap)
     .map(
       ([islandName, islandPath]) =>
@@ -71,12 +77,17 @@ window.ISLAND_PROPS = JSON.parse(
 }
 /** build 环境才会执行 */
 export async function renderPage(
-  /** 自定义 ssr 的渲染函数，来源 theme下的 jsx-runtime.js */
+  /** 客户端 的 srr 渲染函数 */
   render: (
     pagePath: string,
     helmetContext: object
   ) => Promise<{ appHtml: string; islandProps: unknown[]; islandToPathMap: Record<string, string> }>,
-  routes: { path: string; element: unknown }[],
+  routes: {
+    // /guide/b/
+    path: string;
+    element: unknown;
+    preload: () => Promise<unknown>;
+  }[],
   root: string,
   clientBundle
 ) {

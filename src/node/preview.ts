@@ -12,6 +12,7 @@ export async function preview(root: string, { port }: { port?: number }) {
   const listenPort = port ?? DEFAULT_PORT;
   const outputDir = path.resolve(root, 'build');
   const notFoundPage = fs.readFileSync(path.resolve(outputDir, '404.html'), 'utf-8');
+  // 资源压缩中间件
   const compress = compression();
 
   // 静态资源服务

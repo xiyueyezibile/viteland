@@ -5,7 +5,7 @@ import { SiteConfig } from '../types';
 import { pathToFileURL } from 'url';
 import { commonPlugins } from '../commonPlugins';
 import { PACKAGE_ROOT, SERVER_ENTRY_PATH, CLIENT_ENTRY_PATH, CLIENT_ROOT } from '../constants';
-
+// import * as fs2 from 'fs-extra';
 
 /**
  * @link https://cn.vitejs.dev/guide/api-javascript.html#build
@@ -17,8 +17,10 @@ export async function build(root: string = process.cwd(), config: SiteConfig) {
    * Only URLs with a scheme in: file, data, and node are supported by the default ESM loader. On Windows, absolute paths must be valid file:// URLs. Received protocol 'd:'
    */
   try {
-    /** 引入自定义 jsx */
+    /** 获取服务端入口 */
     const { render, routes } = await import(pathToFileURL(join(process.cwd(), '.temp/ssr-entry.js')).href);
+
+    /** 处理静态资源 */
     // await fs2.ensureDir(join(root, 'build', 'public'));
     // await copyAllFiles(join(root, 'build', 'public'), join(config.root, 'public'));
     /** 渲染页面 */

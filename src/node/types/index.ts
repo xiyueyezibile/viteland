@@ -26,7 +26,7 @@ export interface Footer {
   message?: string;
   copyright?: string;
 }
-
+/** 用户配置 */
 export interface UserConfig {
   title?: string;
   description?: string;

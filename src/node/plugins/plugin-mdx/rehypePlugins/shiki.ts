@@ -16,7 +16,7 @@ export const rehypePluginShiki: Plugin<[Options], Root> = ({ highlighter }) => {
         const codeNode = node.children[0];
         const codeContent = (codeNode.children[0] as Text).value;
         const codeClassName = codeNode.properties?.className?.toString() || '';
-        // 语言，例如：‘lang-js’,取‘js’ 
+        // 语言，例如：‘lang-js’,取‘js’
         const lang = codeClassName.split('-')[1];
         if (!lang) {
           return;
