@@ -5,8 +5,7 @@ import { SiteConfig } from '../types';
 import { pathToFileURL } from 'url';
 import { commonPlugins } from '../commonPlugins';
 import { PACKAGE_ROOT, SERVER_ENTRY_PATH, CLIENT_ENTRY_PATH, CLIENT_ROOT } from '../constants';
-import fs from 'fs';
-import * as fs2 from 'fs-extra';
+
 
 /**
  * @link https://cn.vitejs.dev/guide/api-javascript.html#build
@@ -18,15 +17,17 @@ export async function build(root: string = process.cwd(), config: SiteConfig) {
    * Only URLs with a scheme in: file, data, and node are supported by the default ESM loader. On Windows, absolute paths must be valid file:// URLs. Received protocol 'd:'
    */
   try {
+    /** 引入自定义 jsx */
     const { render, routes } = await import(pathToFileURL(join(process.cwd(), '.temp/ssr-entry.js')).href);
     // await fs2.ensureDir(join(root, 'build', 'public'));
     // await copyAllFiles(join(root, 'build', 'public'), join(config.root, 'public'));
+    /** 渲染页面 */
     await renderPage(render, routes, process.cwd(), clientBundle);
   } catch (e) {
     console.log('renderPage error', e);
   }
 }
-
+/** 对代码进行打包 */
 export async function bundle(root: string, config: SiteConfig) {
   const resolveViteConfig = async (isServer: boolean): Promise<InlineConfig> => ({
     mode: 'production',

@@ -15,10 +15,10 @@ const initCli = () => {
     .command('[root]', 'start dev server')
     .alias('dev')
     .action(async (root: string) => {
-      // 添加以下逻辑
+      /** 服务器端入口 */
       const serverRoot = root ? path.resolve(process.cwd(), root) : path.resolve(process.cwd(), 'docs');
       console.log(serverRoot, PACKAGE_ROOT, 1);
-
+      /** 创建 server */
       const create = async () => {
         try {
           const server = await createServer(serverRoot, async () => {

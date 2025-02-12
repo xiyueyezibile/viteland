@@ -37,6 +37,7 @@ export interface PageModule {
 export interface VRoute {
   path: string;
   element: string | FunctionComponent<{}> | ComponentClass<{}, any>;
+  /** 组件 Info */
   preload: () => Promise<any>;
 }
 export interface Feature {

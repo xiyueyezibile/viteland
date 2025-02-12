@@ -7,7 +7,9 @@ import { normalizePath } from 'vite';
 import path from 'path';
 
 interface RouteMeta {
+  /** C端路由路径 */
   routePath: string;
+  /** 绝对路径 */
   absolutePath: string;
 }
 
@@ -48,13 +50,14 @@ export class RouteService {
   getRouteMeta(): RouteMeta[] {
     return this.#routeData;
   }
-
+  /** 统一处理文件路径 */
   normalizeRoutePath(rawPath: string) {
     const routePath = rawPath.replace(/\.(.*)?$/, '').replace(/index$/, '');
     return routePath.startsWith('/') ? routePath : `/${routePath}`;
   }
 
   generateRoutesCode(ssr: boolean = false) {
+    // loadable 动态加载组件的库
     return `
 ${ssr ? '' : 'import loadable from "@loadable/component";'}
 

@@ -6,7 +6,7 @@ interface IElement extends Element {
   isVisited?: boolean;
 }
 /**
- * @description 更改代码块语法 dom 结构插件
+ * @description 增强代码块功能增加语言提示
  */
 export const rehypePluginPreWrapper: Plugin<[], Root> = () => {
   return (tree) => {
@@ -40,6 +40,7 @@ export const rehypePluginPreWrapper: Plugin<[], Root> = () => {
         node.properties.className = codeClassName;
 
         // 构造 div 标签的子元素
+        // <div><span class="lang">xxx</span><pre>...</pre></div>
         node.children = [
           {
             type: 'element',

@@ -20,6 +20,7 @@ export const commonPlugins = async ({ config, isSSR = false, restartServer }: Ic
     // 自动注入 import React from 'react'，避免 React is not defined 的错误
     pluginReact({
       jsxRuntime: 'automatic',
+      /** JSX 导入路径，ssr情况会运行 theme根目录下的jsx 文件 */
       jsxImportSource: isSSR ? JSX_ENTRY_PATH : 'react',
       babel: {
         plugins: [pluginIsland]

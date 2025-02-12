@@ -26,5 +26,5 @@ export async function render(pagePath: string, helmetContext: object) {
     islandToPathMap
   };
 }
-
+/** 暴露虚拟模块的路由 */
 export { default as routes } from '../virtual-modules/routes';

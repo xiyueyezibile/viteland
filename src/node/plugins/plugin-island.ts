@@ -4,7 +4,7 @@ import type { PluginPass } from '@babel/core';
 import { types as t } from '@babel/core';
 import { MASK_SPLITTER } from '../constants';
 import { normalizePath } from 'vite';
-
+/** 将 __island 修改成组件导入路径 + 分隔符 + 组件所在文件路径 */
 export default declare((api) => {
   api.assertVersion(7);
 

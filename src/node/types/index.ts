@@ -33,10 +33,12 @@ export interface UserConfig {
   themeConfig?: ThemeConfig;
   vite?: ViteConfiguration;
 }
-
+/**总Config */
 export interface SiteConfig {
   root: string;
+  /** 配置文件路径 */
   configPath: string;
+  /** 用户输入的Config */
   siteData: UserConfig;
 }
 export function defineConfig(config: UserConfig) {

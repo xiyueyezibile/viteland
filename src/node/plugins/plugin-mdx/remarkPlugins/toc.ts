@@ -17,7 +17,7 @@ interface TocItem {
   text: string;
   depth: number;
 }
-
+/** 获取 toc 内容 */
 export const remarkPluginToc: Plugin<[], Root> = () => {
   return (tree) => {
     // 初始化 toc 数组
@@ -43,7 +43,7 @@ export const remarkPluginToc: Plugin<[], Root> = () => {
             }
           })
           .join('');
-        // 对标题文本进行规范化
+        // 对标题文本进行规范化,生成唯一且稳定的字符串标识符（slug）
         const id = slugger.slug(originText);
         toc.push({
           id,
@@ -53,7 +53,7 @@ export const remarkPluginToc: Plugin<[], Root> = () => {
       }
     });
     const insertCode = `export const toc = ${JSON.stringify(toc, null, 2)};`;
-
+    // 在 MDX 文件中插入
     tree.children.push({
       type: 'mdxjsEsm',
       value: insertCode,

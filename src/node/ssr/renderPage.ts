@@ -1,5 +1,5 @@
 import * as fs2 from 'fs-extra';
-import fs from 'fs';
+import * as fs from 'fs';
 import path, { dirname, join, sep } from 'path';
 import { MASK_SPLITTER, PACKAGE_ROOT } from '../constants';
 import { build as viteBuild } from 'vite';
@@ -69,8 +69,9 @@ window.ISLAND_PROPS = JSON.parse(
     ]
   });
 }
-
+/** build 环境才会执行 */
 export async function renderPage(
+  /** 自定义 ssr 的渲染函数，来源 theme下的 jsx-runtime.js */
   render: (
     pagePath: string,
     helmetContext: object
@@ -79,7 +80,7 @@ export async function renderPage(
   root: string,
   clientBundle
 ) {
-  // 找出所有客户端入口文件chunk
+  // 找出所有客户端入口文件 chunk
   const clientChunk = clientBundle.output.find((chunk) => chunk.type === 'chunk' && chunk.isEntry);
   console.log(`Rendering page in server side...`);
 
@@ -91,12 +92,15 @@ export async function renderPage(
         context: {}
       } as HelmetData;
       const { appHtml, islandProps, islandToPathMap } = await render(routePath, helmetContext.context);
+      /** css 样式 Chunk */
       const styleAssets = clientBundle.output.filter(
         (chunk) => chunk.type === 'asset' && chunk.fileName.endsWith('.css')
       );
+      /** 编译 island 模块 */
       const islandBundle = await buildIslands(root, islandToPathMap);
       const islandCode = (islandBundle as unknown as any).output[0].code;
       const sepCount = routePath.split('/').length - 2;
+      /** 获取目录前缀 */
       const preDir = new Array(sepCount).fill('../').reduce((str, cur) => {
         const sum = str + cur;
         return sum;

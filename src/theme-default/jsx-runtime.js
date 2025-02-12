@@ -1,12 +1,14 @@
 import * as jsxRuntime from 'react/jsx-runtime';
-
+/** build 阶段调用 */
 // 拿到 React 原始的 jsxRuntime 方法，包括 jsx 和 jsxs
 // 注: 对于一些静态节点，React 会使用 jsxs 来进行创建，优化渲染性能
 const originJsx = jsxRuntime.jsx;
 const originJsxs = jsxRuntime.jsxs;
 
 export const data = {
+  /** 记录 island 组件 */
   islandProps: [],
+  /** 记录组件名到导入路径的map */
   islandToPathMap: {}
 };
 const internalJsx = (jsx, type, props, ...args) => {

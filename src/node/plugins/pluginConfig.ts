@@ -26,10 +26,11 @@ export function pluginConfig(config: SiteConfig, restartServer: () => Promise<vo
       const publicDir = path.join(config.root, 'public');
 
       if (fs.pathExistsSync(publicDir)) {
+        /** 提供该目录下的静态服务 */
         server.middlewares.use(sirv(publicDir));
       }
     },
-    // vite.config.ts
+    // vite.config.ts 配置！
     config() {
       return {
         root: PACKAGE_ROOT,

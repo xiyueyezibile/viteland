@@ -53,7 +53,7 @@ export function resolveSiteData(userConfig: UserConfig): UserConfig {
     vite: userConfig.vite || {}
   };
 }
-
+/** 解析成配置文件 */
 export async function resolveConfig(root: string, command: 'serve' | 'build', mode: 'development' | 'production') {
   const [configPath, userConfig] = await resolveUserConfig(root, command, mode);
   const siteConfig: SiteConfig = {

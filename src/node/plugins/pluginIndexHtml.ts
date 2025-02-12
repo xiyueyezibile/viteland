@@ -8,7 +8,7 @@ export function pluginIndexHtml(): Plugin {
   return {
     name: 'viteland-html',
     apply: 'serve',
-    // 插入入口 script 标签
+    // 插入客户端入口 script 标签
     transformIndexHtml(html) {
       return {
         html,
@@ -25,7 +25,7 @@ export function pluginIndexHtml(): Plugin {
         ]
       };
     },
-    // 开发服务器钩子
+    // 开发服务器钩子,配置热更新能力
     configureServer(server) {
       return () => {
         // 添加中间件
