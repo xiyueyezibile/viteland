@@ -3,6 +3,7 @@ import { ComponentClass, ComponentType, FunctionComponent } from 'react';
 /** 页面类型 */
 export type PageType = 'home' | 'doc' | 'custom' | '404';
 
+/** TOC */
 export interface Header {
   id: string;
   text: string;
