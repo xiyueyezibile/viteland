@@ -16,10 +16,12 @@ export interface SidebarGroup {
 
 export type SidebarItem = { text: string; link: string } | { text: string; link?: string; items: SidebarItem[] };
 
+/** 主题配置 */
 export interface ThemeConfig {
   nav?: NavItemWithLink[];
   sidebar?: Sidebar;
   footer?: Footer;
+  github?: string;
 }
 
 export interface Footer {

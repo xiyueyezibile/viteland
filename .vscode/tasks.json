@@ -1,0 +1,14 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        // 用npm而不是pnpm启动
+        "label": "start",
+        "type": "npm", // 指定任务类型为 npm
+        // 需要执行的命令（对应于 package.json 中的 scripts 命令）
+        "script": "dev:vl",
+        "isBackground": true
+      }
+    ]
+  }
+  

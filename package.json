@@ -13,6 +13,7 @@
     "test": "vitest",
     "test:e2e": "playwright test",
     "dev": "tsup --watch",
+    "dev:vl": "vl dev",
     "build": "tsup",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "lint:lint-staged": "lint-staged",

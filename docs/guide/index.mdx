@@ -1,7 +1,7 @@
 ---
 title: 'viteland'
 ---
-
+import MyComponent from '../MyComponent'
 
 欢迎使用我们基于 Vite 的强大静态站点生成器！这个工具不仅提供了丰富的开发体验，还支持在 Markdown 文件中编写 React 组件，并拥有强大的默认全文搜索主题。让我们开始快速创建您的静态站点吧。
 
@@ -15,7 +15,7 @@ title: 'viteland'
 
 ## 快速开始
 
-```bash
+```js
 npm install -g viteland
 vl dev
 ```
@@ -25,14 +25,29 @@ vl dev
 
 在 content 目录中，创建一个新的 Markdown 文件（例如：index.mdx），编写您的内容并添加 React 组件：
 
-```markdown
-# 欢迎使用我的网站
+```js
 
-<MyComponent />
+interface MyComponentProps {
+  title: string;
+}
 
-一些介绍内容...
+const MyComponent: React.FC<MyComponentProps> = ({ title }) => {
+  return (
+    <div>
+      <h1>{title}</h1>
+    </div>
+  );
+};
+
+export default MyComponent;
+
+
+import MyComponent from '../MyComponent'
+
+<MyComponent title='hello world' />
+
 ```
-您可以在该文件中直接使用 React 组件，如 <MyComponent />。
+您可以在该文件中直接使用 React 组件，如 <MyComponent title='hello world' />
 
 ## 配置项目：
 

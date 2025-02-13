@@ -11,6 +11,7 @@ import remarkPluginFrontmatter from 'remark-frontmatter';
 import { rehypePluginShiki } from './rehypePlugins/shiki';
 import { getHighlighter } from 'shiki/bundle/full';
 import { remarkPluginToc } from './remarkPlugins/toc';
+import { rehypePluginPreWrapper } from './rehypePlugins/preWrapper';
 
 export async function pluginMdxRollup() {
   return pluginMdx({
@@ -27,6 +28,8 @@ export async function pluginMdxRollup() {
     rehypePlugins: [
       // 为每个标题元素生成唯一的 slug（用于锚点链接的 ID）。被用来配合 rehype-autolink-headings 为每个标题生成 ID
       rehypePluginSlug,
+      // 美化 代码块 的样式
+      rehypePluginPreWrapper,
       [
         // 自动为文档中的标题生成链接，实现页面内导航。
         rehypePluginAutolinkHeadings,
@@ -45,7 +48,7 @@ export async function pluginMdxRollup() {
         rehypePluginShiki,
         {
           highlighter: await getHighlighter({
-            langs: ['html', 'css', 'js'],
+            langs: ['html', 'css', 'js', 'ts', 'tsx', 'json', 'mdx', 'bash', 'shell', 'markdown'],
             themes: ['github-dark', 'github-light']
           })
         }

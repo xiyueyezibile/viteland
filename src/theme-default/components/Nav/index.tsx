@@ -16,6 +16,7 @@ export function MenuItem({ item }: { item: NavItemWithLink }) {
 export function Nav() {
   const { siteData } = usePageData();
   const nav = siteData.themeConfig.nav || [];
+  const github = siteData.themeConfig.github || '';
   return (
     <header position="fixed" pos="t-0 l-0" w="full" z="10">
       <div flex="~" items="center" justify="between" className={`h-14 divider-bottom ${styles.nav}`}>
@@ -36,11 +37,13 @@ export function Nav() {
               <SwitchAppearance />
             </div>
             {/* 相关链接 */}
-            <div className={styles.socialLinkIcon} ml="2" before="menu-item-before">
-              <a href="/">
-                <div className="i-carbon-logo-github w-5 h-5 fill-current"></div>
-              </a>
-            </div>
+            {github && (
+              <div className={styles.socialLinkIcon} ml="2" before="menu-item-before">
+                <a href={github} target="__blank">
+                  <div className="i-carbon-logo-github w-5 h-5 fill-current"></div>
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </div>

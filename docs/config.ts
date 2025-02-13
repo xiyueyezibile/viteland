@@ -6,7 +6,7 @@ export default {
       {text: "指南", link: '/guide/'}
     ],
     sidebar: {
-      '/guide/': [
+      '/guide': [
         {
           text: '教程',
           items: [
@@ -25,6 +25,7 @@ export default {
           ]
         }
       ]
-    }
+    },
+    github: 'https://github.com/xiyueyezibile/viteland'
   }
 }

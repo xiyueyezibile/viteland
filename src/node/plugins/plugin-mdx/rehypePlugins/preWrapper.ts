@@ -15,13 +15,15 @@ export const rehypePluginPreWrapper: Plugin<[], Root> = () => {
       // 1. 找到 pre 元素
       // 2. 解析出代码的语言名称
       // 3. 变换 Html AST
+
       if (
         node.tagName === 'pre' &&
         node.children[0]?.type === 'element' &&
         node.children[0].tagName === 'code' &&
-        node.isVisited
+        !node.isVisited
       ) {
         const codeNode = node.children[0];
+
         const codeClassName = codeNode.properties?.className?.toString() || '';
         // language-xxx
         const lang = codeClassName.split('-')[1];

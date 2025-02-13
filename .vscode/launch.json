@@ -1,0 +1,17 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 调试 nodejs 通过 vl dev
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "调试",
+            "runtimeExecutable": "npm", // 使用npm命令启动chrome
+            "webRoot": "${workspaceFolder}", // 指定项目根目录
+            "skipFiles": ["<node_internals>/**"],
+            "preLaunchTask": "start"
+        }
+    ]
+}
