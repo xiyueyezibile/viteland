@@ -1,6 +1,7 @@
 import { SidebarGroup, SidebarItem } from '@/node/types';
 import styles from './index.module.scss';
 import { Link } from '@/theme-default/components/Link';
+import { useI18n } from '@/theme-default/hooks/useI18n';
 interface SidebarProps {
   sidebarData: SidebarGroup[];
   pathname: string;
@@ -8,15 +9,17 @@ interface SidebarProps {
 
 export function Sidebar(props: SidebarProps) {
   const { sidebarData, pathname } = props;
+  const lang = useI18n();
   /**
    * @description 渲染分组每项
    */
   const renderGroupItem = (item: SidebarItem) => {
+    item.link = lang ? `/${lang}${item.link}` : item.link;
     const active = item.link === pathname;
     return (
       <div ml="5">
         <div p="1" block="~" text="sm" font-medium="~" className={`${active ? 'text-brand' : 'text-text-2'}`}>
-          <Link href={item.link}>{item.text}</Link>
+          <Link href={item.link}>{lang ? item[`text-${lang}`] : item.text}</Link>
         </div>
       </div>
     );

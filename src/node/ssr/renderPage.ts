@@ -81,13 +81,17 @@ export async function renderPage(
   render: (
     pagePath: string,
     helmetContext: object
-  ) => Promise<{ appHtml: string; islandProps: {
-    headers: {
-      id: string;
-      text: string;
-      depth: number;
-    }[]
-  }[]; islandToPathMap: Record<string, string> }>,
+  ) => Promise<{
+    appHtml: string;
+    islandProps: {
+      headers: {
+        id: string;
+        text: string;
+        depth: number;
+      }[];
+    }[];
+    islandToPathMap: Record<string, string>;
+  }>,
   routes: {
     // /guide/b/
     path: string;

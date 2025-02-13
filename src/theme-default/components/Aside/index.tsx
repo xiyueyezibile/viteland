@@ -21,10 +21,12 @@ export function Aside(props: AsideProps & PropsWithIsland) {
     };
   }, []);
 
+  // 渲染头部
   const renderHeader = (header: Header) => {
     return (
       <li key={header.id}>
         <a
+          // 链接地址
           href={`#${header.id}`}
           className="block leading-7 text-text-2 hover:text-text-1"
           transition="color duration-300"

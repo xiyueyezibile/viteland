@@ -1,11 +1,13 @@
 import { Plugin } from 'vite';
 import { RouteService } from './RouteService';
+import { I18nConfig } from '@/node/types';
 
 // 本质: 把文件目录结构 -> 路由数据
 
 interface PluginOptions {
   root: string;
   isSSR?: boolean;
+  i18n?: I18nConfig[];
 }
 
 export const CONVENTIONAL_ROUTE_ID = 'viteland:routes';
@@ -13,7 +15,7 @@ export const CONVENTIONAL_ROUTE_ID = 'viteland:routes';
  * @description 注入 viteland:routes 虚拟模块， 获取C端路由
  */
 export function pluginRoutes(options: PluginOptions): Plugin {
-  const routeService = new RouteService(options.root);
+  const routeService = new RouteService(options.root, options.i18n);
 
   return {
     name: CONVENTIONAL_ROUTE_ID,

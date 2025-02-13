@@ -5,6 +5,7 @@
 import fastGlob from 'fast-glob';
 import { normalizePath } from 'vite';
 import path from 'path';
+import { I18nConfig } from '@/node/types';
 
 interface RouteMeta {
   /** C端路由路径 */
@@ -22,8 +23,11 @@ export class RouteService {
    * @description 路由
    */
   #routeData: RouteMeta[] = [];
-  constructor(scanDir: string) {
+  /** i18n配置 */
+  #i18n: I18nConfig[];
+  constructor(scanDir: string, i18n: I18nConfig[] = []) {
     this.#scanDir = scanDir;
+    this.#i18n = i18n;
   }
 
   async init() {
@@ -35,10 +39,10 @@ export class RouteService {
       })
       .sort();
     files.forEach((file) => {
+      // 输出内容例子：guide/index.mdx
       const fileRelativePath = normalizePath(path.relative(this.#scanDir, file));
-      // 1. 路由路径
+      // 输出例子：/guide/
       const routePath = this.normalizeRoutePath(fileRelativePath);
-      // 2. 文件绝对路径
       this.#routeData.push({
         routePath,
         absolutePath: file
@@ -72,8 +76,14 @@ ${this.#routeData
 export const routes = [
 ${this.#routeData
   .map((route, index) => {
-    // 暴露 routes
-    return `{ path: '${route.routePath}', element: Route${index}, preload: () => import('${route.absolutePath}') }`;
+    const routeAbsoluteName = route.absolutePath.split('.');
+    const lang =
+      routeAbsoluteName.length >= 3 &&
+      this.#i18n.find((item) => item.value === routeAbsoluteName[routeAbsoluteName.length - 2])
+        ? `/${routeAbsoluteName[routeAbsoluteName.length - 2]}`
+        : '';
+    // 暴露 routes, 添加国际化路由
+    return `{ path: '${lang}${route.routePath}', element: Route${index}, preload: () => import('${route.absolutePath}') }`;
   })
   .join(',\n')}
 ];

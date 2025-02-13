@@ -12,9 +12,16 @@ export interface Sidebar {
 export interface SidebarGroup {
   text?: string;
   items: SidebarItem[];
+  // 以 text-xxx 为 key
+  [key: string]: string | SidebarItem[];
 }
 
 export type SidebarItem = { text: string; link: string } | { text: string; link?: string; items: SidebarItem[] };
+
+export interface I18nConfig {
+  value: string;
+  text: string;
+}
 
 /** 主题配置 */
 export interface ThemeConfig {
@@ -22,6 +29,7 @@ export interface ThemeConfig {
   sidebar?: Sidebar;
   footer?: Footer;
   github?: string;
+  i18n?: I18nConfig[];
 }
 
 export interface Footer {
@@ -40,7 +48,7 @@ export interface SiteConfig {
   root: string;
   /** 配置文件路径 */
   configPath: string;
-  /** 用户输入的Config */
+  /** 用户具体配置 */
   siteData: UserConfig;
 }
 export function defineConfig(config: UserConfig) {

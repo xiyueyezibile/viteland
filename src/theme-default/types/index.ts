@@ -19,9 +19,11 @@ export interface FrontMatter {
 }
 /**页面配置 */
 export interface PageData {
+  /** config.ts 内容 */
   siteData: UserConfig;
   /** guide 路径 */
   pagePath: string;
+  /** 标题锚点信息 */
   frontmatter: FrontMatter;
   pageType: PageType;
   /** 目录 */

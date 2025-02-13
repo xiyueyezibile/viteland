@@ -6,10 +6,18 @@ import { FrontMatter, Header, PageData, PageType } from './types';
 export async function initPageData(routePath: string): Promise<PageData> {
   // 获取路由组件编译后的模块内容
   const matched = matchRoutes(routes, routePath === '/' ? routePath : routePath + '/');
+  console.log(routePath);
 
   if (matched) {
     const moduleInfo = await matched[0].route.preload();
-    console.log(moduleInfo);
+    console.log({
+      pageType: (moduleInfo.frontmatter?.pageType as PageType) ?? 'doc',
+      siteData,
+      frontmatter: moduleInfo.frontmatter as FrontMatter,
+      pagePath: routePath,
+      toc: moduleInfo.toc as Header[],
+      title: moduleInfo.title
+    });
 
     return {
       pageType: (moduleInfo.frontmatter?.pageType as PageType) ?? 'doc',

@@ -6,16 +6,18 @@ import { usePageData } from '@/theme-default/hooks/usePageData';
 import Content from '@/theme-default/Content';
 import { DocFooter } from '@/theme-default/components/DocFooter';
 import { Aside } from '@/theme-default/components/Aside';
+import { useI18n } from '@/theme-default/hooks/useI18n';
 
 export function DocLayout() {
   const { siteData, toc } = usePageData();
   const sidebarData = siteData.themeConfig?.sidebar || {};
+  const lang = useI18n();
   const { pathname } = useLocation();
   /**
    * @description 获取对应页面的 sidebar Key
    */
   const matchedSidebarKey = Object.keys(sidebarData).find((key) => {
-    if (pathname.startsWith(key)) {
+    if (pathname.startsWith(lang ? `/${lang}${key}` : key)) {
       return true;
     }
   });
