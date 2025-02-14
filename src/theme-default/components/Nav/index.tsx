@@ -3,6 +3,7 @@ import { usePageData } from '../../hooks/usePageData';
 import { SwitchAppearance } from '../SwitchAppearance';
 import { NavItemWithLink } from '@/node/types';
 import { useI18n } from '@/theme-default/hooks/useI18n';
+import { ChooseI18n } from '../ChooseI18n';
 
 export function MenuItem({ item }: { item: NavItemWithLink }) {
   const lang = useI18n();
@@ -11,7 +12,7 @@ export function MenuItem({ item }: { item: NavItemWithLink }) {
   return (
     <div className="text-sm font-medium mx-3">
       <a href={link.join('/')} className={styles.link}>
-        {lang ? item[`text-${lang}`] : item.text}
+        {item[`text-${lang}`] || item.text}
       </a>
     </div>
   );
@@ -37,6 +38,10 @@ export function Nav() {
             {nav.map((item) => (
               <MenuItem item={item} key={item.link} />
             ))}
+            {/* 语言切换 */}
+            <div before="menu-item-before" flex="~">
+              <ChooseI18n />
+            </div>
             {/* 白天/夜间模式切换 */}
 
             <div before="menu-item-before" flex="~">

@@ -10,7 +10,12 @@ export const useI18n = () => {
   // 获取siteData中的themeConfig.i18n
   const i18n = siteData.themeConfig.i18n || [];
   // 在i18n中查找value等于pathname.split('/')[1]的项
-  const currentLang = i18n.find((item) => item.value === pathname.split('/')[1]).value;
+
+  const currentLang = (
+    i18n.find((item) => item.value === pathname.split('/')[1]) || {
+      value: ''
+    }
+  ).value;
   // 返回currentLang
   return currentLang;
 };

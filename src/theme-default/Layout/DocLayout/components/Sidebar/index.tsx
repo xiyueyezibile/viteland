@@ -19,7 +19,7 @@ export function Sidebar(props: SidebarProps) {
     return (
       <div ml="5">
         <div p="1" block="~" text="sm" font-medium="~" className={`${active ? 'text-brand' : 'text-text-2'}`}>
-          <Link href={item.link}>{lang ? item[`text-${lang}`] : item.text}</Link>
+          <Link href={item.link}>{item[`text-${lang}`] || item.text}</Link>
         </div>
       </div>
     );

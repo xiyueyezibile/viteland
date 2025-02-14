@@ -1,0 +1,8 @@
+.choose {
+    cursor: pointer;
+    position: relative;
+    transition: color 0.2s;
+    &:hover {
+        color: var(--viteland-c-brand);
+    }
+}
