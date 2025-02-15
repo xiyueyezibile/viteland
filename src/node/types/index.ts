@@ -54,3 +54,18 @@ export interface SiteConfig {
 export function defineConfig(config: UserConfig) {
   return config;
 }
+export interface PageData {
+  /** 唯一标识 */
+  id: number;
+  /** 路由路径 */
+  routePath: string;
+  /** 对应的 toc 标题 */
+  tocTitle: string;
+  /** 对应内容 */
+  content: string;
+  /** code 类型对应的语言 */
+  lang?: string;
+}
+export interface PageDatas {
+  [key: string]: PageData[];
+}

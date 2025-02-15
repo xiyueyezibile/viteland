@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import { usePageData } from './usePageData';
 
-// 导出一个名为useI18n的函数
+// 导出一个名为useI18n的函数, zh-CH or ''
 export const useI18n = () => {
   // 使用usePageData获取siteData
   const { siteData } = usePageData();

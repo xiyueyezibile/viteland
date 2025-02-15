@@ -4,6 +4,8 @@ import { SwitchAppearance } from '../SwitchAppearance';
 import { NavItemWithLink } from '@/node/types';
 import { useI18n } from '@/theme-default/hooks/useI18n';
 import { ChooseI18n } from '../ChooseI18n';
+import { Search } from '../Search';
+import { PropsWithIsland } from '@/theme-default/types';
 
 export function MenuItem({ item }: { item: NavItemWithLink }) {
   const lang = useI18n();
@@ -18,7 +20,7 @@ export function MenuItem({ item }: { item: NavItemWithLink }) {
   );
 }
 
-export function Nav() {
+export function Nav(props: PropsWithIsland) {
   const { siteData } = usePageData();
   const title = siteData.title || '';
   const nav = siteData.themeConfig.nav || [];
@@ -27,10 +29,12 @@ export function Nav() {
   return (
     <header position="fixed" pos="t-0 l-0" w="full" z="10">
       <div flex="~" items="center" justify="between" className={`h-14 divider-bottom ${styles.nav}`}>
-        <div>
+        <div flex="~">
           <a href="/" hover="opacity-60" className="w-full h-full text-1rem font-semibold flex items-center">
             {title}
           </a>
+          {/* 搜索 */}
+          <Search />
         </div>
         <div>
           {/* 普通菜单 */}
@@ -38,6 +42,7 @@ export function Nav() {
             {nav.map((item) => (
               <MenuItem item={item} key={item.link} />
             ))}
+
             {/* 语言切换 */}
             <div before="menu-item-before" flex="~">
               <ChooseI18n />

@@ -24,7 +24,7 @@ export const ChooseI18n = () => {
     <div display="block">
       <div onClick={chooseClick} text="sm" className={`${styles.choose}`}>
         {/* 一个语言切换的图标 */}
-        <div className="i-carbon-language w-5 h-5 fill-current"></div>
+        <div className="i-carbon-language w-5 h-[24px] fill-current"></div>
       </div>
       <div className="relative w-full">
         {/* 一个语言切换的图标 */}

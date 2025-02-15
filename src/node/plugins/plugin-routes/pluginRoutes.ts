@@ -16,10 +16,10 @@ export const CONVENTIONAL_ROUTE_ID = 'viteland:routes';
  * @description 注入 viteland:routes 虚拟模块， 获取C端路由
  */
 export function pluginRoutes(options: PluginOptions): Plugin {
-  routeService = new RouteService(options.root, options.i18n)
+  routeService = new RouteService(options.root, options.i18n);
   return {
     name: CONVENTIONAL_ROUTE_ID,
-    enforce: "pre",
+    enforce: 'pre',
     async configResolved() {
       // Vite 启动时，对 RouteService 进行初始化
       await routeService.init();

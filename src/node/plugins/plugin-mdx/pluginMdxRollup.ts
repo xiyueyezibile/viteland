@@ -12,7 +12,7 @@ import { rehypePluginShiki } from './rehypePlugins/shiki';
 import { getHighlighter } from 'shiki/bundle/full';
 import { remarkPluginToc } from './remarkPlugins/toc';
 import { rehypePluginPreWrapper } from './rehypePlugins/preWrapper';
-import {  ThemeConfig } from '@/node/types';
+import { ThemeConfig } from '@/node/types';
 
 export async function pluginMdxRollup(options: ThemeConfig) {
   return pluginMdx({
@@ -24,7 +24,7 @@ export async function pluginMdxRollup(options: ThemeConfig) {
       // 支持解析 MDX 文件中 YAML 格式的前置数据，并将其作为属性，包括在内容中。 被命名为 frontmatter 并用于提取元数据。
       [remarkPluginMDXFrontMatter, { name: 'frontmatter' }],
       // 生成表格 (Table of Contents，TOC)，帮助构建文章的章节目录。
-      [remarkPluginToc, options.i18n],
+      [remarkPluginToc, options.i18n]
     ],
     rehypePlugins: [
       // 为每个标题元素生成唯一的 slug（用于锚点链接的 ID）。被用来配合 rehype-autolink-headings 为每个标题生成 ID

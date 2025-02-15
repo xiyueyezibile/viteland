@@ -395,7 +395,7 @@
   z-index: 2;
   font-size: 12px;
   font-weight: 500;
-  color: var(--viteland-c-text-dark-3);
+  color: var(--viteland-c-text-light-3);
   transition: color 0.4s, opacity 0.4s;
 }
 
@@ -403,3 +403,4 @@
 .viteland-doc [class*='language-'] > button.copy:focus + span.lang {
   opacity: 0;
 }
+
