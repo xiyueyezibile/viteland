@@ -6,6 +6,7 @@ import fastGlob from 'fast-glob';
 import { normalizePath } from 'vite';
 import path from 'path';
 import { I18nConfig } from '@/node/types';
+import { getLang } from '@/node/utils/lang';
 
 interface RouteMeta {
   /** C端路由路径 */
@@ -76,17 +77,15 @@ ${this.#routeData
 export const routes = [
 ${this.#routeData
   .map((route, index) => {
-    const routeAbsoluteName = route.absolutePath.split('.');
-    const lang =
-      routeAbsoluteName.length >= 3 &&
-      this.#i18n.find((item) => item.value === routeAbsoluteName[routeAbsoluteName.length - 2])
-        ? `/${routeAbsoluteName[routeAbsoluteName.length - 2]}`
-        : '';
+    const lang = getLang(route.absolutePath, this.#i18n);
     // 暴露 routes, 添加国际化路由
     return `{ path: '${lang}${route.routePath}', element: Route${index}, preload: () => import('${route.absolutePath}') }`;
   })
   .join(',\n')}
 ];
 `;
+  }
+  getRouteData() {
+    return this.#routeData;
   }
 }

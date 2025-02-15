@@ -29,6 +29,6 @@ export const commonPlugins = async ({ config, isSSR = false, restartServer }: Ic
     pluginUnocss(unocssOptions),
     pluginConfig(config, restartServer),
     pluginRoutes({ root: config.root, isSSR: isSSR, i18n: config.siteData.themeConfig.i18n }),
-    await createPluginMdx()
+    await createPluginMdx(config.siteData.themeConfig)
   ];
 };

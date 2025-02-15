@@ -5,6 +5,7 @@ import { SiteConfig } from '../types';
 import { pathToFileURL } from 'url';
 import { commonPlugins } from '../commonPlugins';
 import { PACKAGE_ROOT, SERVER_ENTRY_PATH, CLIENT_ENTRY_PATH, CLIENT_ROOT } from '../constants';
+import { pageSearch } from '../plugins/plugin-mdx/remarkPlugins/toc';
 // import * as fs2 from 'fs-extra';
 
 /**
@@ -70,6 +71,8 @@ export async function bundle(root: string, config: SiteConfig) {
       // server build
       viteBuild(await resolveViteConfig(true))
     ]);
+    // 写入搜索信息到 build目录下
+    pageSearch.writePageSearchToJSONFile(join(root, 'build'))
     return [clientBundle, serverBundle];
   } catch (e) {
     console.log(e, 'client build and server build error');
