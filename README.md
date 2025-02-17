@@ -1,3 +1,7 @@
+---
+title: 'viteland'
+---
+import MyComponent from '../MyComponent'
 
 欢迎使用我们基于 Vite 的强大静态站点生成器！这个工具不仅提供了丰富的开发体验，还支持在 Markdown 文件中编写 React 组件，并拥有强大的默认全文搜索主题。让我们开始快速创建您的静态站点吧。
 
@@ -11,7 +15,7 @@
 
 ## 快速开始
 
-```bash
+```js
 npm install -g viteland
 vl dev
 ```
@@ -21,14 +25,29 @@ vl dev
 
 在 content 目录中，创建一个新的 Markdown 文件（例如：index.mdx），编写您的内容并添加 React 组件：
 
-```markdown
-# 欢迎使用我的网站
+```js
 
-<MyComponent />
+interface MyComponentProps {
+  title: string;
+}
 
-一些介绍内容...
+const MyComponent: React.FC<MyComponentProps> = ({ title }) => {
+  return (
+    <div>
+      <h1>{title}</h1>
+    </div>
+  );
+};
+
+export default MyComponent;
+
+
+import MyComponent from '../MyComponent'
+
+<MyComponent title='hello world' />
+
 ```
-您可以在该文件中直接使用 React 组件，如 <MyComponent />。
+您可以在该文件中直接使用 React 组件，如 <MyComponent title='hello world' />
 
 ## 配置项目：
 
@@ -37,12 +56,14 @@ vl dev
 这是一份基本的配置示例：
 ```js
 export default {
-  title:'Viteland',
+  title:'Viteland',// 站点标题
   themeConfig: {
+    // 导航栏配置
     nav: [
-      {text: "主页", link: "/"},
+      {text: "主页", link: "/"}, 
       {text: "指南", link: '/guide/'}
     ],
+    // 侧边栏配置
     sidebar: {
       '/guide/': [
         {
@@ -63,10 +84,23 @@ export default {
           ]
         }
       ]
-    }
+    },
+    // github 链接
+    github: 'https://github.com/xiyueyezibile/viteland',
+    // 国际化配置
+    i18n: [{
+      value: 'zh-CN',
+      text: '中文'
+    }, {
+      value: 'en-US',
+      text: 'English'
+    }]
   }
 }
 ```
 
 ## 部署
-在选择部署平台后，根据平台要求将 dist 目录中的文件上传即可完成网站上线。
+在选择部署平台后，根据平台要求将 build 目录中的文件上传即可完成网站上线。
+
+
+
