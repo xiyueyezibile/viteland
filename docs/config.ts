@@ -17,9 +17,14 @@ export default {
               link: '/guide/start'
             },
             {
-              text: '如何安装',
-              'text-en-US': 'How to install',
-              link: '/guide/install'
+              text: '配置文件',
+              'text-en-US': 'Config',
+              link: '/guide/config'
+            },
+            {
+              text: '国际化',
+              'text-en-US': 'i18n',
+              link: '/guide/i18n'
             },
             {
              text: '注意事项',

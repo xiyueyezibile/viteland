@@ -1,0 +1,91 @@
+# Internationalization Configuration Guide
+
+In a Viteland project, you can achieve internationalization support through the `config.js` configuration file. Below is a detailed configuration guide.
+
+## Basic Configuration
+
+Create or modify the `docs/config.js` file and add the following content:
+
+```js
+export default {
+  title: 'Viteland', // Site title
+  themeConfig: {
+    // Navigation bar configuration
+    nav: [
+      { text: "Home", link: "/", 'text-zh-CN': '主页' },
+      { text: "Guide", link: '/guide/', 'text-zh-CN': '指南' }
+    ],
+    // Sidebar configuration
+    sidebar: {
+      '/guide': [
+        {
+          text: 'Guide',
+          'text-zh-CN': '教程',
+          items: [
+            { text: 'Quick Start', 'text-zh-CN': '快速上手', link: '/guide/start' },
+            { text: 'How to Install', 'text-zh-CN': '如何安装', link: '/guide/install' },
+            { text: 'Precautions', 'text-zh-CN': '注意事项', link: '/guide/attention' }
+          ]
+        }
+      ]
+    },
+    // GitHub link
+    github: 'https://github.com/xiyueyezibile/viteland',
+    // Internationalization configuration
+    i18n: [
+      { value: 'zh-CN', text: '中文' },
+      { value: 'en-US', text: 'English' }
+    ]
+  }
+}
+```
+
+## Configuration Item Description
+
+### i18n
+
+`i18n` is the internationalization configuration, containing language codes and corresponding texts. Each language code corresponds to a text representing the name of that language.
+
+### nav
+
+`nav` is the configuration of the navigation bar, containing the text and links of the navigation items. By adding attributes such as `text-zh-CN`, you can set different texts for different languages.
+
+### sidebar
+
+`sidebar` is the configuration of the sidebar, containing the text and links of the sidebar items. By adding attributes such as `text-zh-CN`, you can set different texts for different languages.
+
+## Example
+
+Below is a complete configuration example:
+
+```js
+export default {
+  title: 'Viteland', // Site title
+  themeConfig: {
+    nav: [
+      { text: "Home", link: "/", 'text-zh-CN': '主页' },
+      { text: "Guide", link: '/guide/', 'text-zh-CN': '指南' }
+    ],
+    sidebar: {
+      '/guide': [
+        {
+          text: 'Guide',
+          'text-zh-CN': '教程',
+          items: [
+            { text: 'Quick Start', 'text-zh-CN': '快速上手', link: '/guide/start' },
+            { text: 'How to Install', 'text-zh-CN': '如何安装', link: '/guide/install' },
+            { text: 'Precautions', 'text-zh-CN': '注意事项', link: '/guide/attention' }
+          ]
+        }
+      ]
+    },
+    github: 'https://github.com/xiyueyezibile/viteland',
+    i18n: [
+      { value: 'zh-CN', text: '中文' },
+      { value: 'en-US', text: 'English' }
+    ]
+  }
+}
+```
+
+With the above configuration, you can easily achieve internationalization support for the Viteland site.

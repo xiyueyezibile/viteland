@@ -3,27 +3,27 @@ title: 'viteland'
 ---
 import MyComponent from '../MyComponent'
 
-欢迎使用我们基于 Vite 的强大静态站点生成器！这个工具不仅提供了丰富的开发体验，还支持在 Markdown 文件中编写 React 组件，并拥有强大的默认全文搜索主题。让我们开始快速创建您的静态站点吧。
+Welcome to our powerful static site generator based on Vite! This tool not only provides a rich development experience but also supports writing React components in Markdown files and has a powerful default full-text search theme. Let's start quickly creating your static site.
 
-## 简介
-我们的静态站点生成器具备以下核心功能：
+## Introduction
+Our static site generator has the following core features:
 
-- 🚀 基于 Vite：带来快速的开发和构建体验。
-- 📝 MDX 支持：使您可以在 Markdown 文件中无缝编写和使用 React 组件。
-- 🔥 全功能搜索主题：支持多语言（i18n）等特性，让您的网站内容检索更高效。
-- 🏝️ 岛屿架构：通过减少客户端捆绑包大小和实现部分水化，提升性能。
+- 🚀 Based on Vite: Provides a fast development and build experience.
+- 📝 MDX support: Allows you to seamlessly write and use React components in Markdown files.
+- 🔥 Full-featured search theme: Supports features such as multilingual (i18n), making your website content retrieval more efficient.
+- 🏝️ Island architecture: Improves performance by reducing client bundle size and achieving partial hydration.
 
-## 快速开始
+## Quick Start
 
 ```js
 npm install -g viteland
 vl dev
 ```
 
-## 编写内容
-创建 Markdown 文件：
+## Writing Content
+Create a Markdown file:
 
-在 content 目录中，创建一个新的 Markdown 文件（例如：index.mdx），编写您的内容并添加 React 组件：
+In the content directory, create a new Markdown file (e.g., index.mdx), write your content, and add React components:
 
 ```js
 
@@ -47,36 +47,38 @@ import MyComponent from '../MyComponent'
 <MyComponent title='hello world' />
 
 ```
-您可以在该文件中直接使用 React 组件，如 <MyComponent title='hello world' />
+You can directly use React components in this file, such as <MyComponent title='hello world' />
 
-## 配置项目：
+## Configuring the Project:
 
-在项目的 docs 目录创建或修改配置文件（如 config.js），定义站点的基本信息、导航、搜索等功能。
+Create or modify the configuration file (e.g., config.js) in the project's docs directory to define the basic information, navigation, search, and other functions of the site.
 
-这是一份基本的配置示例：
+Here is a basic configuration example:
 ```js
 export default {
-  title:'Viteland',
+  title: 'Viteland', // Site title
   themeConfig: {
+    // Navigation bar configuration
     nav: [
-      {text: "主页", link: "/"},
-      {text: "指南", link: '/guide/'}
+      { text: "Home", link: "/" },
+      { text: "Guide", link: '/guide/' }
     ],
+    // Sidebar configuration
     sidebar: {
       '/guide/': [
         {
-          text: '教程',
+          text: 'Guide',
           items: [
             {
-              text: '快速上手',
+              text: 'Quick Start',
               link: '/guide/a'
             },
             {
-              text: '如何安装',
+              text: 'How to Install',
               link: '/guide/b'
             },
             {
-             text: '注意事项',
+             text: 'Precautions',
              link: '/guide/c'
             }
           ]
@@ -87,8 +89,5 @@ export default {
 }
 ```
 
-## 部署
-在选择部署平台后，根据平台要求将 dist 目录中的文件上传即可完成网站上线。
-
-
-
+## Deployment
+After selecting the deployment platform, upload the files in the build directory according to the platform requirements to complete the website launch.

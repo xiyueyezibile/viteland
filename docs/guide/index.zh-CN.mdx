@@ -56,12 +56,14 @@ import MyComponent from '../MyComponent'
 这是一份基本的配置示例：
 ```js
 export default {
-  title:'Viteland',
+  title:'Viteland',// 站点标题
   themeConfig: {
+    // 导航栏配置
     nav: [
-      {text: "主页", link: "/"},
+      {text: "主页", link: "/"}, 
       {text: "指南", link: '/guide/'}
     ],
+    // 侧边栏配置
     sidebar: {
       '/guide/': [
         {
@@ -82,13 +84,23 @@ export default {
           ]
         }
       ]
-    }
+    },
+    // github 链接
+    github: 'https://github.com/xiyueyezibile/viteland',
+    // 国际化配置
+    i18n: [{
+      value: 'zh-CN',
+      text: '中文'
+    }, {
+      value: 'en-US',
+      text: 'English'
+    }]
   }
 }
 ```
 
 ## 部署
-在选择部署平台后，根据平台要求将 dist 目录中的文件上传即可完成网站上线。
+在选择部署平台后，根据平台要求将 build 目录中的文件上传即可完成网站上线。
 
 
 
