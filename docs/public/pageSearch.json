@@ -1,0 +1,2362 @@
+{
+  "zh-CN": [
+    {
+      "tocTitle": "",
+      "content": "注意事项",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 0
+    },
+    {
+      "tocTitle": "",
+      "content": "注意事项在使用 Viteland 构建静态站点时，请注意以下事项，以确保项目顺利进行。",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 1
+    },
+    {
+      "tocTitle": "目录结构",
+      "content": "目录结构",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 3
+    },
+    {
+      "tocTitle": "",
+      "content": "目录结构确保项目目录结构清晰，建议如下：",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 4
+    },
+    {
+      "tocTitle": "",
+      "lang": null,
+      "content": "my-viteland-site/\n├── docs/\n│   ├── config.js\n│   ├── guide/\n│   │   ├── start/\n│   │   │   └── index.zh-CN.md\n│   │   ├── install/\n│   │   │   └── index.zh-CN.md\n│   │   ├── config/\n│   │   │   └── index.zh-CN.md\n│   │   └── attention/\n│   │       └── index.zh-CN.md\n│   └── index.mdx\n└── package.json",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 6
+    },
+    {
+      "tocTitle": "文件命名",
+      "content": "文件命名",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 7
+    },
+    {
+      "tocTitle": "",
+      "content": "文件命名使用小写字母和连字符（-）命名文件和目录。确保文件扩展名正确，例如 `.md` 或 `.mdx`。",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 8
+    },
+    {
+      "tocTitle": "配置文件",
+      "content": "配置文件",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 15
+    },
+    {
+      "tocTitle": "",
+      "content": "配置文件确保 `docs/config.js` 文件存在且配置正确。配置文件中的路径和链接应与实际文件结构一致。",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 16
+    },
+    {
+      "tocTitle": "国际化",
+      "content": "国际化",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 21
+    },
+    {
+      "tocTitle": "",
+      "content": "国际化在配置文件中正确设置 `i18n` 配置项。确保每个语言版本的文档都存在，并且路径正确。",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 22
+    },
+    {
+      "tocTitle": "插件使用",
+      "content": "插件使用",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 27
+    },
+    {
+      "tocTitle": "",
+      "content": "插件使用在 `vite.config.ts` 中正确引入和配置插件，例如 `pluginRoutes`。确保插件配置项与项目需求匹配。",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 28
+    },
+    {
+      "tocTitle": "构建和部署",
+      "content": "构建和部署",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 35
+    },
+    {
+      "tocTitle": "",
+      "content": "构建和部署在构建之前，确保所有文档和配置文件都已保存并且没有错误。构建完成后，将 `build` 目录中的文件上传到部署平台。",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 36
+    },
+    {
+      "tocTitle": "常见问题",
+      "content": "常见问题",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 41
+    },
+    {
+      "tocTitle": "",
+      "content": "常见问题",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 42
+    },
+    {
+      "tocTitle": "开发服务器无法启动",
+      "content": "开发服务器无法启动",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 43
+    },
+    {
+      "tocTitle": "",
+      "content": "开发服务器无法启动检查 `vite.config.ts` 文件中的配置是否正确。确保所有依赖项已正确安装。",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 44
+    },
+    {
+      "tocTitle": "路由无法生成",
+      "content": "路由无法生成",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 49
+    },
+    {
+      "tocTitle": "",
+      "content": "路由无法生成检查 `pluginRoutes` 插件的配置是否正确。确保项目目录结构符合插件要求。通过遵循以上注意事项，您可以更顺利地使用 Viteland 构建和部署静态站点。",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 50
+    },
+    {
+      "tocTitle": "",
+      "content": "配置指南",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 90
+    },
+    {
+      "tocTitle": "",
+      "content": "配置指南在 Viteland 项目中，您可以通过配置文件 `config.js` 来定义站点的基本信息、导航、搜索等功能。以下是配置文件的详细说明。",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 91
+    },
+    {
+      "tocTitle": "基本配置",
+      "content": "基本配置",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 95
+    },
+    {
+      "tocTitle": "",
+      "content": "基本配置创建或修改 `docs/config.js` 文件，添加以下内容：",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 96
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "export default {\n  title: 'Viteland', // 站点标题\n  themeConfig: {\n    // 导航栏配置\n    nav: [\n      { text: \"主页\", link: \"/\" },\n      { text: \"指南\", link: '/guide/' }\n    ],\n    // 侧边栏配置\n    sidebar: {\n      '/guide/': [\n        {\n          text: '教程',\n          items: [\n            { text: '快速上手', link: '/guide/start' },\n            { text: '如何安装', link: '/guide/install' },\n            { text: '注意事项', link: '/guide/notes' }\n          ]\n        }\n      ]\n    },\n    // GitHub 链接\n    github: 'https://github.com/xiyueyezibile/viteland',\n    // 国际化配置\n    i18n: [\n      { value: 'zh-CN', text: '中文' },\n      { value: 'en-US', text: 'English' }\n    ]\n  }\n}",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 100
+    },
+    {
+      "tocTitle": "配置项说明",
+      "content": "配置项说明",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 101
+    },
+    {
+      "tocTitle": "",
+      "content": "配置项说明",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 102
+    },
+    {
+      "tocTitle": "title",
+      "content": "title",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 103
+    },
+    {
+      "tocTitle": "",
+      "content": "title`title` 是站点的标题，将显示在浏览器标签页和站点的顶部。",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 104
+    },
+    {
+      "tocTitle": "themeconfig",
+      "content": "themeConfig",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 107
+    },
+    {
+      "tocTitle": "",
+      "content": "themeConfig`themeConfig` 包含站点主题的配置项。",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 108
+    },
+    {
+      "tocTitle": "nav-1",
+      "content": "nav",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 111
+    },
+    {
+      "tocTitle": "",
+      "content": "nav`nav` 是导航栏的配置，包含导航项的文本和链接。",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 112
+    },
+    {
+      "tocTitle": "sidebar-1",
+      "content": "sidebar",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 115
+    },
+    {
+      "tocTitle": "",
+      "content": "sidebar`sidebar` 是侧边栏的配置，包含侧边栏的文本和链接。",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 116
+    },
+    {
+      "tocTitle": "github",
+      "content": "github",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 119
+    },
+    {
+      "tocTitle": "",
+      "content": "github`github` 是 GitHub 仓库的链接，将显示在站点的右上角。",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 120
+    },
+    {
+      "tocTitle": "i18n-1",
+      "content": "i18n",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 123
+    },
+    {
+      "tocTitle": "",
+      "content": "i18n`i18n` 是国际化配置，包含语言代码和对应的文本。",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 124
+    },
+    {
+      "tocTitle": "示例",
+      "content": "示例",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 127
+    },
+    {
+      "tocTitle": "",
+      "content": "示例以下是一个完整的配置示例：",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 128
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "export default {\n  title: 'Viteland', // 站点标题\n  themeConfig: {\n    nav: [\n      { text: \"主页\", link: \"/\", 'text-en-US': 'Home' },\n      { text: \"指南\", link: '/guide/', 'text-en-US': 'Guide' }\n    ],\n    sidebar: {\n      '/guide': [\n        {\n          text: '教程',\n          'text-en-US': 'Guide',\n          items: [\n            { text: '快速上手', 'text-en-US': 'Quick Start', link: '/guide/start' },\n            { text: '如何安装', 'text-en-US': 'How to install', link: '/guide/install' },\n            { text: '注意事项', 'text-en-US': 'Precautions', link: '/guide/attention' }\n          ]\n        }\n      ]\n    },\n    github: 'https://github.com/xiyueyezibile/viteland',\n    i18n: [\n      { value: 'zh-CN', text: '中文' },\n      { value: 'en-US', text: 'English' }\n    ]\n  }\n}",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 130
+    },
+    {
+      "tocTitle": "",
+      "content": "通过以上配置，您可以轻松自定义 Viteland 站点的外观和功能。",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 131
+    },
+    {
+      "tocTitle": "",
+      "content": "国际化配置指南",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 255
+    },
+    {
+      "tocTitle": "",
+      "content": "国际化配置指南在 Viteland 项目中，您可以通过配置文件 `config.js` 来实现国际化支持。以下是详细的配置说明。",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 256
+    },
+    {
+      "tocTitle": "基本配置-1",
+      "content": "基本配置",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 260
+    },
+    {
+      "tocTitle": "",
+      "content": "基本配置创建或修改 `docs/config.js` 文件，添加以下内容：",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 261
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "export default {\n  title: 'Viteland', // 站点标题\n  themeConfig: {\n    // 导航栏配置\n    nav: [\n      { text: \"主页\", link: \"/\", 'text-en-US': 'Home' },\n      { text: \"指南\", link: '/guide/', 'text-en-US': 'Guide' }\n    ],\n    // 侧边栏配置\n    sidebar: {\n      '/guide': [\n        {\n          text: '教程',\n          'text-en-US': 'Guide',\n          items: [\n            { text: '快速上手', 'text-en-US': 'Quick Start', link: '/guide/start' },\n            { text: '如何安装', 'text-en-US': 'How to install', link: '/guide/install' },\n            { text: '注意事项', 'text-en-US': 'Precautions', link: '/guide/attention' }\n          ]\n        }\n      ]\n    },\n    // GitHub 链接\n    github: 'https://github.com/xiyueyezibile/viteland',\n    // 国际化配置\n    i18n: [\n      { value: 'zh-CN', text: '中文' },\n      { value: 'en-US', text: 'English' }\n    ]\n  }\n}",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 265
+    },
+    {
+      "tocTitle": "配置项说明-1",
+      "content": "配置项说明",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 266
+    },
+    {
+      "tocTitle": "",
+      "content": "配置项说明",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 267
+    },
+    {
+      "tocTitle": "i18n-3",
+      "content": "i18n",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 268
+    },
+    {
+      "tocTitle": "",
+      "content": "i18n`i18n` 是国际化配置，包含语言代码和对应的文本。每个语言代码对应一个文本，表示该语言的名称。",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 269
+    },
+    {
+      "tocTitle": "nav-3",
+      "content": "nav",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 272
+    },
+    {
+      "tocTitle": "",
+      "content": "nav`nav` 是导航栏的配置，包含导航项的文本和链接。通过添加 `text-en-US` 等属性，可以为不同语言设置不同的文本。",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 273
+    },
+    {
+      "tocTitle": "sidebar-3",
+      "content": "sidebar",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 278
+    },
+    {
+      "tocTitle": "",
+      "content": "sidebar`sidebar` 是侧边栏的配置，包含侧边栏的文本和链接。通过添加 `text-en-US` 等属性，可以为不同语言设置不同的文本。",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 279
+    },
+    {
+      "tocTitle": "示例-1",
+      "content": "示例",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 284
+    },
+    {
+      "tocTitle": "",
+      "content": "示例以下是一个完整的配置示例：",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 285
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "export default {\n  title: 'Viteland', // 站点标题\n  themeConfig: {\n    nav: [\n      { text: \"主页\", link: \"/\", 'text-en-US': 'Home' },\n      { text: \"指南\", link: '/guide/', 'text-en-US': 'Guide' }\n    ],\n    sidebar: {\n      '/guide': [\n        {\n          text: '教程',\n          'text-en-US': 'Guide',\n          items: [\n            { text: '快速上手', 'text-en-US': 'Quick Start', link: '/guide/start' },\n            { text: '如何安装', 'text-en-US': 'How to install', link: '/guide/install' },\n            { text: '注意事项', 'text-en-US': 'Precautions', link: '/guide/attention' }\n          ]\n        }\n      ]\n    },\n    github: 'https://github.com/xiyueyezibile/viteland',\n    i18n: [\n      { value: 'zh-CN', text: '中文' },\n      { value: 'en-US', text: 'English' }\n    ]\n  }\n}",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 287
+    },
+    {
+      "tocTitle": "",
+      "content": "通过以上配置，您可以轻松实现 Viteland 站点的国际化支持。",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 288
+    },
+    {
+      "tocTitle": "",
+      "content": "快速启动",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 289
+    },
+    {
+      "tocTitle": "",
+      "content": "快速启动欢迎使用 Viteland！以下是快速启动指南，帮助您快速搭建一个基于 Viteland 的静态站点。",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 290
+    },
+    {
+      "tocTitle": "安装",
+      "content": "安装",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 292
+    },
+    {
+      "tocTitle": "",
+      "content": "安装首先，全局安装 Viteland：",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 293
+    },
+    {
+      "tocTitle": "",
+      "lang": "bash",
+      "content": "npm install -g viteland",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 295
+    },
+    {
+      "tocTitle": "开发",
+      "content": "开发",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 296
+    },
+    {
+      "tocTitle": "",
+      "content": "开发启动开发服务器：",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 297
+    },
+    {
+      "tocTitle": "",
+      "lang": "bash",
+      "content": "vl dev",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 299
+    },
+    {
+      "tocTitle": "",
+      "content": "打开浏览器访问，您将看到默认的 Viteland 站点。",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 300
+    },
+    {
+      "tocTitle": "编写内容",
+      "content": "编写内容",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 301
+    },
+    {
+      "tocTitle": "",
+      "content": "编写内容在 `docs` 目录中创建一个新的 Markdown 文件（例如：`index.mdx`），并编写您的内容：",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 302
+    },
+    {
+      "tocTitle": "",
+      "lang": "markdown",
+      "content": "# 欢迎使用 Viteland\r\n\r\n这是您的第一个 Viteland 页面！",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 308
+    },
+    {
+      "tocTitle": "配置项目",
+      "content": "配置项目",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 309
+    },
+    {
+      "tocTitle": "",
+      "content": "配置项目在项目的 `docs` 目录中创建或修改配置文件（如 `config.js`），定义站点的基本信息、导航、搜索等功能：",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 310
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "export default {\r\n  title: 'Viteland', // 站点标题\r\n  themeConfig: {\r\n    // 导航栏配置\r\n    nav: [\r\n      { text: \"主页\", link: \"/\" },\r\n      { text: \"指南\", link: '/guide/' }\r\n    ],\r\n    // 侧边栏配置\r\n    sidebar: {\r\n      '/guide/': [\r\n        {\r\n          text: '教程',\r\n          items: [\r\n            { text: '快速上手', link: '/guide/start' },\r\n            { text: '如何安装', link: '/guide/install' },\r\n            { text: '注意事项', link: '/guide/notes' }\r\n          ]\r\n        }\r\n      ]\r\n    },\r\n    // GitHub 链接\r\n    github: 'https://github.com/xiyueyezibile/viteland',\r\n    // 国际化配置\r\n    i18n: [\r\n      { value: 'zh-CN', text: '中文' },\r\n      { value: 'en-US', text: 'English' }\r\n    ]\r\n  }\r\n}",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 316
+    },
+    {
+      "tocTitle": "构建",
+      "content": "构建",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 317
+    },
+    {
+      "tocTitle": "",
+      "content": "构建构建您的静态站点：",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 318
+    },
+    {
+      "tocTitle": "",
+      "lang": "bash",
+      "content": "vl build",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 320
+    },
+    {
+      "tocTitle": "部署",
+      "content": "部署",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 321
+    },
+    {
+      "tocTitle": "",
+      "content": "部署将 `build` 目录中的文件上传到您的部署平台，即可完成网站上线。恭喜！您已经成功搭建了一个基于 Viteland 的静态站点。",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 322
+    },
+    {
+      "tocTitle": "",
+      "content": "欢迎使用我们基于 Vite 的强大静态站点生成器！这个工具不仅提供了丰富的开发体验，还支持在 Markdown 文件中编写 React 组件，并拥有强大的默认全文搜索主题。让我们开始快速创建您的静态站点吧。",
+      "routePath": "/zh-CN/guide/",
+      "id": 327
+    },
+    {
+      "tocTitle": "简介",
+      "content": "简介",
+      "routePath": "/zh-CN/guide/",
+      "id": 328
+    },
+    {
+      "tocTitle": "",
+      "content": "简介我们的静态站点生成器具备以下核心功能：🚀 基于 Vite：带来快速的开发和构建体验。📝 MDX 支持：使您可以在 Markdown 文件中无缝编写和使用 React 组件。🔥 全功能搜索主题：支持多语言（i18n）等特性，让您的网站内容检索更高效。🏝️ 岛屿架构：通过减少客户端捆绑包大小和实现部分水化，提升性能。",
+      "routePath": "/zh-CN/guide/",
+      "id": 329
+    },
+    {
+      "tocTitle": "快速开始",
+      "content": "快速开始",
+      "routePath": "/zh-CN/guide/",
+      "id": 335
+    },
+    {
+      "tocTitle": "",
+      "content": "快速开始",
+      "routePath": "/zh-CN/guide/",
+      "id": 336
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "npm install -g viteland\nvl dev",
+      "routePath": "/zh-CN/guide/",
+      "id": 337
+    },
+    {
+      "tocTitle": "编写内容-1",
+      "content": "编写内容",
+      "routePath": "/zh-CN/guide/",
+      "id": 338
+    },
+    {
+      "tocTitle": "",
+      "content": "编写内容创建 Markdown 文件：在 content 目录中，创建一个新的 Markdown 文件（例如：index.mdx），编写您的内容并添加 React 组件：",
+      "routePath": "/zh-CN/guide/",
+      "id": 339
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "\ninterface MyComponentProps {\n  title: string;\n}\n\nconst MyComponent: React.FC<MyComponentProps> = ({ title }) => {\n  return (\n    <div>\n      <h1>{title}</h1>\n    </div>\n  );\n};\n\nexport default MyComponent;\n\n\nimport MyComponent from '../MyComponent'\n\n<MyComponent title='hello world' />\n",
+      "routePath": "/zh-CN/guide/",
+      "id": 342
+    },
+    {
+      "tocTitle": "",
+      "content": "您可以在该文件中直接使用 React 组件，如 ",
+      "routePath": "/zh-CN/guide/",
+      "id": 343
+    },
+    {
+      "tocTitle": "配置项目-1",
+      "content": "配置项目：",
+      "routePath": "/zh-CN/guide/",
+      "id": 344
+    },
+    {
+      "tocTitle": "",
+      "content": "配置项目：在项目的 docs 目录创建或修改配置文件（如 config.js），定义站点的基本信息、导航、搜索等功能。这是一份基本的配置示例：",
+      "routePath": "/zh-CN/guide/",
+      "id": 345
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "export default {\n  title:'Viteland',// 站点标题\n  themeConfig: {\n    // 导航栏配置\n    nav: [\n      {text: \"主页\", link: \"/\"}, \n      {text: \"指南\", link: '/guide/'}\n    ],\n    // 侧边栏配置\n    sidebar: {\n      '/guide/': [\n        {\n          text: '教程',\n          items: [\n            {\n              text: '快速上手',\n              link: '/guide/a'\n            },\n            {\n              text: '如何安装',\n              link: '/guide/b'\n            },\n            {\n             text: '注意事项',\n             link: '/guide/c'\n            }\n          ]\n        }\n      ]\n    },\n    // github 链接\n    github: 'https://github.com/xiyueyezibile/viteland',\n    // 国际化配置\n    i18n: [{\n      value: 'zh-CN',\n      text: '中文'\n    }, {\n      value: 'en-US',\n      text: 'English'\n    }]\n  }\n}",
+      "routePath": "/zh-CN/guide/",
+      "id": 348
+    },
+    {
+      "tocTitle": "部署-1",
+      "content": "部署",
+      "routePath": "/zh-CN/guide/",
+      "id": 349
+    },
+    {
+      "tocTitle": "",
+      "content": "部署在选择部署平台后，根据平台要求将 build 目录中的文件上传即可完成网站上线。",
+      "routePath": "/zh-CN/guide/",
+      "id": 350
+    },
+    {
+      "tocTitle": "",
+      "content": "配置指南",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 426
+    },
+    {
+      "tocTitle": "",
+      "content": "配置指南在 Viteland 项目中，您可以通过配置文件 `config.js` 来定义站点的基本信息、导航、搜索等功能。以下是配置文件的详细说明。",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 427
+    },
+    {
+      "tocTitle": "基本配置-2",
+      "content": "基本配置",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 431
+    },
+    {
+      "tocTitle": "",
+      "content": "基本配置创建或修改 `docs/config.js` 文件，添加以下内容：",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 432
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "export default {\n  title: 'Viteland', // 站点标题\n  themeConfig: {\n    // 导航栏配置\n    nav: [\n      { text: \"主页\", link: \"/\" },\n      { text: \"指南\", link: '/guide/' }\n    ],\n    // 侧边栏配置\n    sidebar: {\n      '/guide/': [\n        {\n          text: '教程',\n          items: [\n            { text: '快速上手', link: '/guide/start' },\n            { text: '如何安装', link: '/guide/install' },\n            { text: '注意事项', link: '/guide/notes' }\n          ]\n        }\n      ]\n    },\n    // GitHub 链接\n    github: 'https://github.com/xiyueyezibile/viteland',\n    // 国际化配置\n    i18n: [\n      { value: 'zh-CN', text: '中文' },\n      { value: 'en-US', text: 'English' }\n    ]\n  }\n}",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 436
+    },
+    {
+      "tocTitle": "配置项说明-2",
+      "content": "配置项说明",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 437
+    },
+    {
+      "tocTitle": "",
+      "content": "配置项说明",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 438
+    },
+    {
+      "tocTitle": "title-2",
+      "content": "title",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 439
+    },
+    {
+      "tocTitle": "",
+      "content": "title`title` 是站点的标题，将显示在浏览器标签页和站点的顶部。",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 440
+    },
+    {
+      "tocTitle": "themeconfig-2",
+      "content": "themeConfig",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 443
+    },
+    {
+      "tocTitle": "",
+      "content": "themeConfig`themeConfig` 包含站点主题的配置项。",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 444
+    },
+    {
+      "tocTitle": "nav-5",
+      "content": "nav",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 447
+    },
+    {
+      "tocTitle": "",
+      "content": "nav`nav` 是导航栏的配置，包含导航项的文本和链接。",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 448
+    },
+    {
+      "tocTitle": "sidebar-5",
+      "content": "sidebar",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 451
+    },
+    {
+      "tocTitle": "",
+      "content": "sidebar`sidebar` 是侧边栏的配置，包含侧边栏的文本和链接。",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 452
+    },
+    {
+      "tocTitle": "github-2",
+      "content": "github",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 455
+    },
+    {
+      "tocTitle": "",
+      "content": "github`github` 是 GitHub 仓库的链接，将显示在站点的右上角。",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 456
+    },
+    {
+      "tocTitle": "i18n-5",
+      "content": "i18n",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 459
+    },
+    {
+      "tocTitle": "",
+      "content": "i18n`i18n` 是国际化配置，包含语言代码和对应的文本。",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 460
+    },
+    {
+      "tocTitle": "示例-2",
+      "content": "示例",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 463
+    },
+    {
+      "tocTitle": "",
+      "content": "示例以下是一个完整的配置示例：",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 464
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "export default {\n  title: 'Viteland', // 站点标题\n  themeConfig: {\n    nav: [\n      { text: \"主页\", link: \"/\", 'text-en-US': 'Home' },\n      { text: \"指南\", link: '/guide/', 'text-en-US': 'Guide' }\n    ],\n    sidebar: {\n      '/guide': [\n        {\n          text: '教程',\n          'text-en-US': 'Guide',\n          items: [\n            { text: '快速上手', 'text-en-US': 'Quick Start', link: '/guide/start' },\n            { text: '如何安装', 'text-en-US': 'How to install', link: '/guide/install' },\n            { text: '注意事项', 'text-en-US': 'Precautions', link: '/guide/attention' }\n          ]\n        }\n      ]\n    },\n    github: 'https://github.com/xiyueyezibile/viteland',\n    i18n: [\n      { value: 'zh-CN', text: '中文' },\n      { value: 'en-US', text: 'English' }\n    ]\n  }\n}",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 466
+    },
+    {
+      "tocTitle": "",
+      "content": "通过以上配置，您可以轻松自定义 Viteland 站点的外观和功能。",
+      "routePath": "/zh-CN/guide/config/",
+      "id": 467
+    },
+    {
+      "tocTitle": "",
+      "content": "注意事项",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 468
+    },
+    {
+      "tocTitle": "",
+      "content": "注意事项在使用 Viteland 构建静态站点时，请注意以下事项，以确保项目顺利进行。",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 469
+    },
+    {
+      "tocTitle": "目录结构-1",
+      "content": "目录结构",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 471
+    },
+    {
+      "tocTitle": "",
+      "content": "目录结构确保项目目录结构清晰，建议如下：",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 472
+    },
+    {
+      "tocTitle": "",
+      "lang": null,
+      "content": "my-viteland-site/\n├── docs/\n│   ├── config.js\n│   ├── guide/\n│   │   ├── start/\n│   │   │   └── index.zh-CN.md\n│   │   ├── install/\n│   │   │   └── index.zh-CN.md\n│   │   ├── config/\n│   │   │   └── index.zh-CN.md\n│   │   └── attention/\n│   │       └── index.zh-CN.md\n│   └── index.mdx\n└── package.json",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 474
+    },
+    {
+      "tocTitle": "文件命名-1",
+      "content": "文件命名",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 475
+    },
+    {
+      "tocTitle": "",
+      "content": "文件命名使用小写字母和连字符（-）命名文件和目录。确保文件扩展名正确，例如 `.md` 或 `.mdx`。",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 476
+    },
+    {
+      "tocTitle": "配置文件-1",
+      "content": "配置文件",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 483
+    },
+    {
+      "tocTitle": "",
+      "content": "配置文件确保 `docs/config.js` 文件存在且配置正确。配置文件中的路径和链接应与实际文件结构一致。",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 484
+    },
+    {
+      "tocTitle": "国际化-1",
+      "content": "国际化",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 489
+    },
+    {
+      "tocTitle": "",
+      "content": "国际化在配置文件中正确设置 `i18n` 配置项。确保每个语言版本的文档都存在，并且路径正确。",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 490
+    },
+    {
+      "tocTitle": "插件使用-1",
+      "content": "插件使用",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 495
+    },
+    {
+      "tocTitle": "",
+      "content": "插件使用在 `vite.config.ts` 中正确引入和配置插件，例如 `pluginRoutes`。确保插件配置项与项目需求匹配。",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 496
+    },
+    {
+      "tocTitle": "构建和部署-1",
+      "content": "构建和部署",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 503
+    },
+    {
+      "tocTitle": "",
+      "content": "构建和部署在构建之前，确保所有文档和配置文件都已保存并且没有错误。构建完成后，将 `build` 目录中的文件上传到部署平台。",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 504
+    },
+    {
+      "tocTitle": "常见问题-1",
+      "content": "常见问题",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 509
+    },
+    {
+      "tocTitle": "",
+      "content": "常见问题",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 510
+    },
+    {
+      "tocTitle": "开发服务器无法启动-1",
+      "content": "开发服务器无法启动",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 511
+    },
+    {
+      "tocTitle": "",
+      "content": "开发服务器无法启动检查 `vite.config.ts` 文件中的配置是否正确。确保所有依赖项已正确安装。",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 512
+    },
+    {
+      "tocTitle": "路由无法生成-1",
+      "content": "路由无法生成",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 517
+    },
+    {
+      "tocTitle": "",
+      "content": "路由无法生成检查 `pluginRoutes` 插件的配置是否正确。确保项目目录结构符合插件要求。通过遵循以上注意事项，您可以更顺利地使用 Viteland 构建和部署静态站点。",
+      "routePath": "/zh-CN/guide/attention/",
+      "id": 518
+    },
+    {
+      "tocTitle": "",
+      "content": "国际化配置指南",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 622
+    },
+    {
+      "tocTitle": "",
+      "content": "国际化配置指南在 Viteland 项目中，您可以通过配置文件 `config.js` 来实现国际化支持。以下是详细的配置说明。",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 623
+    },
+    {
+      "tocTitle": "基本配置-3",
+      "content": "基本配置",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 627
+    },
+    {
+      "tocTitle": "",
+      "content": "基本配置创建或修改 `docs/config.js` 文件，添加以下内容：",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 628
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "export default {\n  title: 'Viteland', // 站点标题\n  themeConfig: {\n    // 导航栏配置\n    nav: [\n      { text: \"主页\", link: \"/\", 'text-en-US': 'Home' },\n      { text: \"指南\", link: '/guide/', 'text-en-US': 'Guide' }\n    ],\n    // 侧边栏配置\n    sidebar: {\n      '/guide': [\n        {\n          text: '教程',\n          'text-en-US': 'Guide',\n          items: [\n            { text: '快速上手', 'text-en-US': 'Quick Start', link: '/guide/start' },\n            { text: '如何安装', 'text-en-US': 'How to install', link: '/guide/install' },\n            { text: '注意事项', 'text-en-US': 'Precautions', link: '/guide/attention' }\n          ]\n        }\n      ]\n    },\n    // GitHub 链接\n    github: 'https://github.com/xiyueyezibile/viteland',\n    // 国际化配置\n    i18n: [\n      { value: 'zh-CN', text: '中文' },\n      { value: 'en-US', text: 'English' }\n    ]\n  }\n}",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 632
+    },
+    {
+      "tocTitle": "配置项说明-3",
+      "content": "配置项说明",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 633
+    },
+    {
+      "tocTitle": "",
+      "content": "配置项说明",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 634
+    },
+    {
+      "tocTitle": "i18n-7",
+      "content": "i18n",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 635
+    },
+    {
+      "tocTitle": "",
+      "content": "i18n`i18n` 是国际化配置，包含语言代码和对应的文本。每个语言代码对应一个文本，表示该语言的名称。",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 636
+    },
+    {
+      "tocTitle": "nav-7",
+      "content": "nav",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 639
+    },
+    {
+      "tocTitle": "",
+      "content": "nav`nav` 是导航栏的配置，包含导航项的文本和链接。通过添加 `text-en-US` 等属性，可以为不同语言设置不同的文本。",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 640
+    },
+    {
+      "tocTitle": "sidebar-7",
+      "content": "sidebar",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 645
+    },
+    {
+      "tocTitle": "",
+      "content": "sidebar`sidebar` 是侧边栏的配置，包含侧边栏的文本和链接。通过添加 `text-en-US` 等属性，可以为不同语言设置不同的文本。",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 646
+    },
+    {
+      "tocTitle": "示例-3",
+      "content": "示例",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 651
+    },
+    {
+      "tocTitle": "",
+      "content": "示例以下是一个完整的配置示例：",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 652
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "export default {\n  title: 'Viteland', // 站点标题\n  themeConfig: {\n    nav: [\n      { text: \"主页\", link: \"/\", 'text-en-US': 'Home' },\n      { text: \"指南\", link: '/guide/', 'text-en-US': 'Guide' }\n    ],\n    sidebar: {\n      '/guide': [\n        {\n          text: '教程',\n          'text-en-US': 'Guide',\n          items: [\n            { text: '快速上手', 'text-en-US': 'Quick Start', link: '/guide/start' },\n            { text: '如何安装', 'text-en-US': 'How to install', link: '/guide/install' },\n            { text: '注意事项', 'text-en-US': 'Precautions', link: '/guide/attention' }\n          ]\n        }\n      ]\n    },\n    github: 'https://github.com/xiyueyezibile/viteland',\n    i18n: [\n      { value: 'zh-CN', text: '中文' },\n      { value: 'en-US', text: 'English' }\n    ]\n  }\n}",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 654
+    },
+    {
+      "tocTitle": "",
+      "content": "通过以上配置，您可以轻松实现 Viteland 站点的国际化支持。",
+      "routePath": "/zh-CN/guide/i18n/",
+      "id": 655
+    },
+    {
+      "tocTitle": "",
+      "content": "欢迎使用我们基于 Vite 的强大静态站点生成器！这个工具不仅提供了丰富的开发体验，还支持在 Markdown 文件中编写 React 组件，并拥有强大的默认全文搜索主题。让我们开始快速创建您的静态站点吧。",
+      "routePath": "/zh-CN/guide/",
+      "id": 681
+    },
+    {
+      "tocTitle": "简介-1",
+      "content": "简介",
+      "routePath": "/zh-CN/guide/",
+      "id": 682
+    },
+    {
+      "tocTitle": "",
+      "content": "简介我们的静态站点生成器具备以下核心功能：🚀 基于 Vite：带来快速的开发和构建体验。📝 MDX 支持：使您可以在 Markdown 文件中无缝编写和使用 React 组件。🔥 全功能搜索主题：支持多语言（i18n）等特性，让您的网站内容检索更高效。🏝️ 岛屿架构：通过减少客户端捆绑包大小和实现部分水化，提升性能。",
+      "routePath": "/zh-CN/guide/",
+      "id": 683
+    },
+    {
+      "tocTitle": "快速开始-1",
+      "content": "快速开始",
+      "routePath": "/zh-CN/guide/",
+      "id": 689
+    },
+    {
+      "tocTitle": "",
+      "content": "快速开始",
+      "routePath": "/zh-CN/guide/",
+      "id": 690
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "npm install -g viteland\nvl dev",
+      "routePath": "/zh-CN/guide/",
+      "id": 691
+    },
+    {
+      "tocTitle": "编写内容-2",
+      "content": "编写内容",
+      "routePath": "/zh-CN/guide/",
+      "id": 692
+    },
+    {
+      "tocTitle": "",
+      "content": "编写内容创建 Markdown 文件：在 content 目录中，创建一个新的 Markdown 文件（例如：index.mdx），编写您的内容并添加 React 组件：",
+      "routePath": "/zh-CN/guide/",
+      "id": 693
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "\ninterface MyComponentProps {\n  title: string;\n}\n\nconst MyComponent: React.FC<MyComponentProps> = ({ title }) => {\n  return (\n    <div>\n      <h1>{title}</h1>\n    </div>\n  );\n};\n\nexport default MyComponent;\n\n\nimport MyComponent from '../MyComponent'\n\n<MyComponent title='hello world' />\n",
+      "routePath": "/zh-CN/guide/",
+      "id": 696
+    },
+    {
+      "tocTitle": "",
+      "content": "您可以在该文件中直接使用 React 组件，如 ",
+      "routePath": "/zh-CN/guide/",
+      "id": 697
+    },
+    {
+      "tocTitle": "配置项目-2",
+      "content": "配置项目：",
+      "routePath": "/zh-CN/guide/",
+      "id": 698
+    },
+    {
+      "tocTitle": "",
+      "content": "配置项目：在项目的 docs 目录创建或修改配置文件（如 config.js），定义站点的基本信息、导航、搜索等功能。这是一份基本的配置示例：",
+      "routePath": "/zh-CN/guide/",
+      "id": 699
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "export default {\n  title:'Viteland',// 站点标题\n  themeConfig: {\n    // 导航栏配置\n    nav: [\n      {text: \"主页\", link: \"/\"}, \n      {text: \"指南\", link: '/guide/'}\n    ],\n    // 侧边栏配置\n    sidebar: {\n      '/guide/': [\n        {\n          text: '教程',\n          items: [\n            {\n              text: '快速上手',\n              link: '/guide/a'\n            },\n            {\n              text: '如何安装',\n              link: '/guide/b'\n            },\n            {\n             text: '注意事项',\n             link: '/guide/c'\n            }\n          ]\n        }\n      ]\n    },\n    // github 链接\n    github: 'https://github.com/xiyueyezibile/viteland',\n    // 国际化配置\n    i18n: [{\n      value: 'zh-CN',\n      text: '中文'\n    }, {\n      value: 'en-US',\n      text: 'English'\n    }]\n  }\n}",
+      "routePath": "/zh-CN/guide/",
+      "id": 702
+    },
+    {
+      "tocTitle": "部署-2",
+      "content": "部署",
+      "routePath": "/zh-CN/guide/",
+      "id": 703
+    },
+    {
+      "tocTitle": "",
+      "content": "部署在选择部署平台后，根据平台要求将 build 目录中的文件上传即可完成网站上线。",
+      "routePath": "/zh-CN/guide/",
+      "id": 704
+    },
+    {
+      "tocTitle": "",
+      "content": "快速启动",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 746
+    },
+    {
+      "tocTitle": "",
+      "content": "快速启动欢迎使用 Viteland！以下是快速启动指南，帮助您快速搭建一个基于 Viteland 的静态站点。",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 747
+    },
+    {
+      "tocTitle": "安装-1",
+      "content": "安装",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 749
+    },
+    {
+      "tocTitle": "",
+      "content": "安装首先，全局安装 Viteland：",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 750
+    },
+    {
+      "tocTitle": "",
+      "lang": "bash",
+      "content": "npm install -g viteland",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 752
+    },
+    {
+      "tocTitle": "开发-1",
+      "content": "开发",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 753
+    },
+    {
+      "tocTitle": "",
+      "content": "开发启动开发服务器：",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 754
+    },
+    {
+      "tocTitle": "",
+      "lang": "bash",
+      "content": "vl dev",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 756
+    },
+    {
+      "tocTitle": "",
+      "content": "打开浏览器访问，您将看到默认的 Viteland 站点。",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 757
+    },
+    {
+      "tocTitle": "编写内容-3",
+      "content": "编写内容",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 758
+    },
+    {
+      "tocTitle": "",
+      "content": "编写内容在 `docs` 目录中创建一个新的 Markdown 文件（例如：`index.mdx`），并编写您的内容：",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 759
+    },
+    {
+      "tocTitle": "",
+      "lang": "markdown",
+      "content": "# 欢迎使用 Viteland\r\n\r\n这是您的第一个 Viteland 页面！",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 765
+    },
+    {
+      "tocTitle": "配置项目-3",
+      "content": "配置项目",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 766
+    },
+    {
+      "tocTitle": "",
+      "content": "配置项目在项目的 `docs` 目录中创建或修改配置文件（如 `config.js`），定义站点的基本信息、导航、搜索等功能：",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 767
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "export default {\r\n  title: 'Viteland', // 站点标题\r\n  themeConfig: {\r\n    // 导航栏配置\r\n    nav: [\r\n      { text: \"主页\", link: \"/\" },\r\n      { text: \"指南\", link: '/guide/' }\r\n    ],\r\n    // 侧边栏配置\r\n    sidebar: {\r\n      '/guide/': [\r\n        {\r\n          text: '教程',\r\n          items: [\r\n            { text: '快速上手', link: '/guide/start' },\r\n            { text: '如何安装', link: '/guide/install' },\r\n            { text: '注意事项', link: '/guide/notes' }\r\n          ]\r\n        }\r\n      ]\r\n    },\r\n    // GitHub 链接\r\n    github: 'https://github.com/xiyueyezibile/viteland',\r\n    // 国际化配置\r\n    i18n: [\r\n      { value: 'zh-CN', text: '中文' },\r\n      { value: 'en-US', text: 'English' }\r\n    ]\r\n  }\r\n}",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 773
+    },
+    {
+      "tocTitle": "构建-1",
+      "content": "构建",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 774
+    },
+    {
+      "tocTitle": "",
+      "content": "构建构建您的静态站点：",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 775
+    },
+    {
+      "tocTitle": "",
+      "lang": "bash",
+      "content": "vl build",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 777
+    },
+    {
+      "tocTitle": "部署-3",
+      "content": "部署",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 778
+    },
+    {
+      "tocTitle": "",
+      "content": "部署将 `build` 目录中的文件上传到您的部署平台，即可完成网站上线。恭喜！您已经成功搭建了一个基于 Viteland 的静态站点。",
+      "routePath": "/zh-CN/guide/start/",
+      "id": 779
+    }
+  ],
+  "en-US": [
+    {
+      "tocTitle": "",
+      "content": "Internationalization Configuration Guide",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 56
+    },
+    {
+      "tocTitle": "",
+      "content": "Internationalization Configuration GuideIn a Viteland project, you can achieve internationalization support through the `config.js` configuration file. Below is a detailed configuration guide.",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 57
+    },
+    {
+      "tocTitle": "basic-configuration",
+      "content": "Basic Configuration",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 61
+    },
+    {
+      "tocTitle": "",
+      "content": "Basic ConfigurationCreate or modify the `docs/config.js` file and add the following content:",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 62
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "export default {\n  title: 'Viteland', // Site title\n  themeConfig: {\n    // Navigation bar configuration\n    nav: [\n      { text: \"Home\", link: \"/\", 'text-zh-CN': '主页' },\n      { text: \"Guide\", link: '/guide/', 'text-zh-CN': '指南' }\n    ],\n    // Sidebar configuration\n    sidebar: {\n      '/guide': [\n        {\n          text: 'Guide',\n          'text-zh-CN': '教程',\n          items: [\n            { text: 'Quick Start', 'text-zh-CN': '快速上手', link: '/guide/start' },\n            { text: 'How to Install', 'text-zh-CN': '如何安装', link: '/guide/install' },\n            { text: 'Precautions', 'text-zh-CN': '注意事项', link: '/guide/attention' }\n          ]\n        }\n      ]\n    },\n    // GitHub link\n    github: 'https://github.com/xiyueyezibile/viteland',\n    // Internationalization configuration\n    i18n: [\n      { value: 'zh-CN', text: '中文' },\n      { value: 'en-US', text: 'English' }\n    ]\n  }\n}",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 66
+    },
+    {
+      "tocTitle": "configuration-item-description",
+      "content": "Configuration Item Description",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 67
+    },
+    {
+      "tocTitle": "",
+      "content": "Configuration Item Description",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 68
+    },
+    {
+      "tocTitle": "i18n",
+      "content": "i18n",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 69
+    },
+    {
+      "tocTitle": "",
+      "content": "i18n`i18n` is the internationalization configuration, containing language codes and corresponding texts. Each language code corresponds to a text representing the name of that language.",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 70
+    },
+    {
+      "tocTitle": "nav",
+      "content": "nav",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 73
+    },
+    {
+      "tocTitle": "",
+      "content": "nav`nav` is the configuration of the navigation bar, containing the text and links of the navigation items. By adding attributes such as `text-zh-CN`, you can set different texts for different languages.",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 74
+    },
+    {
+      "tocTitle": "sidebar",
+      "content": "sidebar",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 79
+    },
+    {
+      "tocTitle": "",
+      "content": "sidebar`sidebar` is the configuration of the sidebar, containing the text and links of the sidebar items. By adding attributes such as `text-zh-CN`, you can set different texts for different languages.",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 80
+    },
+    {
+      "tocTitle": "example",
+      "content": "Example",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 85
+    },
+    {
+      "tocTitle": "",
+      "content": "ExampleBelow is a complete configuration example:",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 86
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "export default {\n  title: 'Viteland', // Site title\n  themeConfig: {\n    nav: [\n      { text: \"Home\", link: \"/\", 'text-zh-CN': '主页' },\n      { text: \"Guide\", link: '/guide/', 'text-zh-CN': '指南' }\n    ],\n    sidebar: {\n      '/guide': [\n        {\n          text: 'Guide',\n          'text-zh-CN': '教程',\n          items: [\n            { text: 'Quick Start', 'text-zh-CN': '快速上手', link: '/guide/start' },\n            { text: 'How to Install', 'text-zh-CN': '如何安装', link: '/guide/install' },\n            { text: 'Precautions', 'text-zh-CN': '注意事项', link: '/guide/attention' }\n          ]\n        }\n      ]\n    },\n    github: 'https://github.com/xiyueyezibile/viteland',\n    i18n: [\n      { value: 'zh-CN', text: '中文' },\n      { value: 'en-US', text: 'English' }\n    ]\n  }\n}",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 88
+    },
+    {
+      "tocTitle": "",
+      "content": "With the above configuration, you can easily achieve internationalization support for the Viteland site.",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 89
+    },
+    {
+      "tocTitle": "",
+      "content": "Precautions",
+      "routePath": "/en-US/guide/attention/",
+      "id": 132
+    },
+    {
+      "tocTitle": "",
+      "content": "PrecautionsWhen using Viteland to build static sites, please pay attention to the following points to ensure the project runs smoothly.",
+      "routePath": "/en-US/guide/attention/",
+      "id": 133
+    },
+    {
+      "tocTitle": "directory-structure",
+      "content": "Directory Structure",
+      "routePath": "/en-US/guide/attention/",
+      "id": 135
+    },
+    {
+      "tocTitle": "",
+      "content": "Directory StructureEnsure the project directory structure is clear, suggested as follows:",
+      "routePath": "/en-US/guide/attention/",
+      "id": 136
+    },
+    {
+      "tocTitle": "",
+      "lang": null,
+      "content": "my-viteland-site/\n├── docs/\n│   ├── config.js\n│   ├── guide/\n│   │   ├── start/\n│   │   │   └── index.en-US.md\n│   │   ├── install/\n│   │   │   └── index.en-US.md\n│   │   ├── config/\n│   │   │   └── index.en-US.md\n│   │   └── attention/\n│   │       └── index.en-US.md\n│   └── index.mdx\n└── package.json",
+      "routePath": "/en-US/guide/attention/",
+      "id": 138
+    },
+    {
+      "tocTitle": "file-naming",
+      "content": "File Naming",
+      "routePath": "/en-US/guide/attention/",
+      "id": 139
+    },
+    {
+      "tocTitle": "",
+      "content": "File NamingUse lowercase letters and hyphens (-) to name files and directories.Ensure the file extensions are correct, such as `.md` or `.mdx`.",
+      "routePath": "/en-US/guide/attention/",
+      "id": 140
+    },
+    {
+      "tocTitle": "configuration-file",
+      "content": "Configuration File",
+      "routePath": "/en-US/guide/attention/",
+      "id": 147
+    },
+    {
+      "tocTitle": "",
+      "content": "Configuration FileEnsure the `docs/config.js` file exists and is configured correctly.The paths and links in the configuration file should match the actual file structure.",
+      "routePath": "/en-US/guide/attention/",
+      "id": 148
+    },
+    {
+      "tocTitle": "internationalization",
+      "content": "Internationalization",
+      "routePath": "/en-US/guide/attention/",
+      "id": 153
+    },
+    {
+      "tocTitle": "",
+      "content": "InternationalizationCorrectly set the `i18n` configuration item in the configuration file.Ensure that documents for each language version exist and the paths are correct.",
+      "routePath": "/en-US/guide/attention/",
+      "id": 154
+    },
+    {
+      "tocTitle": "plugin-usage",
+      "content": "Plugin Usage",
+      "routePath": "/en-US/guide/attention/",
+      "id": 159
+    },
+    {
+      "tocTitle": "",
+      "content": "Plugin UsageCorrectly import and configure plugins in `vite.config.ts`, such as `pluginRoutes`.Ensure the plugin configuration items match the project requirements.",
+      "routePath": "/en-US/guide/attention/",
+      "id": 160
+    },
+    {
+      "tocTitle": "build-and-deployment",
+      "content": "Build and Deployment",
+      "routePath": "/en-US/guide/attention/",
+      "id": 167
+    },
+    {
+      "tocTitle": "",
+      "content": "Build and DeploymentBefore building, ensure all documents and configuration files are saved and there are no errors.After the build is complete, upload the files in the `build` directory to the deployment platform.",
+      "routePath": "/en-US/guide/attention/",
+      "id": 168
+    },
+    {
+      "tocTitle": "common-issues",
+      "content": "Common Issues",
+      "routePath": "/en-US/guide/attention/",
+      "id": 173
+    },
+    {
+      "tocTitle": "",
+      "content": "Common Issues",
+      "routePath": "/en-US/guide/attention/",
+      "id": 174
+    },
+    {
+      "tocTitle": "development-server-cannot-start",
+      "content": "Development Server Cannot Start",
+      "routePath": "/en-US/guide/attention/",
+      "id": 175
+    },
+    {
+      "tocTitle": "",
+      "content": "Development Server Cannot StartCheck if the configuration in the `vite.config.ts` file is correct.Ensure all dependencies are installed correctly.",
+      "routePath": "/en-US/guide/attention/",
+      "id": 176
+    },
+    {
+      "tocTitle": "routes-cannot-be-generated",
+      "content": "Routes Cannot Be Generated",
+      "routePath": "/en-US/guide/attention/",
+      "id": 181
+    },
+    {
+      "tocTitle": "",
+      "content": "Routes Cannot Be GeneratedCheck if the configuration of the `pluginRoutes` plugin is correct.Ensure the project directory structure meets the plugin requirements.By following the above precautions, you can use Viteland to build and deploy static sites more smoothly.",
+      "routePath": "/en-US/guide/attention/",
+      "id": 182
+    },
+    {
+      "tocTitle": "",
+      "content": "Configuration Guide",
+      "routePath": "/en-US/guide/config/",
+      "id": 188
+    },
+    {
+      "tocTitle": "",
+      "content": "Configuration GuideIn a Viteland project, you can define the basic information, navigation, search, and other functions of the site through the `config.js` configuration file. Below is a detailed explanation of the configuration file.",
+      "routePath": "/en-US/guide/config/",
+      "id": 189
+    },
+    {
+      "tocTitle": "basic-configuration-1",
+      "content": "Basic Configuration",
+      "routePath": "/en-US/guide/config/",
+      "id": 193
+    },
+    {
+      "tocTitle": "",
+      "content": "Basic ConfigurationCreate or modify the `docs/config.js` file and add the following content:",
+      "routePath": "/en-US/guide/config/",
+      "id": 194
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "export default {\n  title: 'Viteland', // Site title\n  themeConfig: {\n    // Navigation bar configuration\n    nav: [\n      { text: \"Home\", link: \"/\" },\n      { text: \"Guide\", link: '/guide/' }\n    ],\n    // Sidebar configuration\n    sidebar: {\n      '/guide/': [\n        {\n          text: 'Guide',\n          items: [\n            { text: 'Quick Start', link: '/guide/start' },\n            { text: 'How to Install', link: '/guide/install' },\n            { text: 'Precautions', link: '/guide/notes' }\n          ]\n        }\n      ]\n    },\n    // GitHub link\n    github: 'https://github.com/xiyueyezibile/viteland',\n    // Internationalization configuration\n    i18n: [\n      { value: 'zh-CN', text: '中文' },\n      { value: 'en-US', text: 'English' }\n    ]\n  }\n}",
+      "routePath": "/en-US/guide/config/",
+      "id": 198
+    },
+    {
+      "tocTitle": "configuration-item-description-1",
+      "content": "Configuration Item Description",
+      "routePath": "/en-US/guide/config/",
+      "id": 199
+    },
+    {
+      "tocTitle": "",
+      "content": "Configuration Item Description",
+      "routePath": "/en-US/guide/config/",
+      "id": 200
+    },
+    {
+      "tocTitle": "title-1",
+      "content": "title",
+      "routePath": "/en-US/guide/config/",
+      "id": 201
+    },
+    {
+      "tocTitle": "",
+      "content": "title`title` is the title of the site, which will be displayed in the browser tab and at the top of the site.",
+      "routePath": "/en-US/guide/config/",
+      "id": 202
+    },
+    {
+      "tocTitle": "themeconfig-1",
+      "content": "themeConfig",
+      "routePath": "/en-US/guide/config/",
+      "id": 205
+    },
+    {
+      "tocTitle": "",
+      "content": "themeConfig`themeConfig` contains the configuration items for the site theme.",
+      "routePath": "/en-US/guide/config/",
+      "id": 206
+    },
+    {
+      "tocTitle": "nav-2",
+      "content": "nav",
+      "routePath": "/en-US/guide/config/",
+      "id": 209
+    },
+    {
+      "tocTitle": "",
+      "content": "nav`nav` is the configuration of the navigation bar, containing the text and links of the navigation items.",
+      "routePath": "/en-US/guide/config/",
+      "id": 210
+    },
+    {
+      "tocTitle": "sidebar-2",
+      "content": "sidebar",
+      "routePath": "/en-US/guide/config/",
+      "id": 213
+    },
+    {
+      "tocTitle": "",
+      "content": "sidebar`sidebar` is the configuration of the sidebar, containing the text and links of the sidebar items.",
+      "routePath": "/en-US/guide/config/",
+      "id": 214
+    },
+    {
+      "tocTitle": "github-1",
+      "content": "github",
+      "routePath": "/en-US/guide/config/",
+      "id": 217
+    },
+    {
+      "tocTitle": "",
+      "content": "github`github` is the link to the GitHub repository, which will be displayed in the upper right corner of the site.",
+      "routePath": "/en-US/guide/config/",
+      "id": 218
+    },
+    {
+      "tocTitle": "i18n-2",
+      "content": "i18n",
+      "routePath": "/en-US/guide/config/",
+      "id": 221
+    },
+    {
+      "tocTitle": "",
+      "content": "i18n`i18n` is the internationalization configuration, containing the language codes and corresponding texts.",
+      "routePath": "/en-US/guide/config/",
+      "id": 222
+    },
+    {
+      "tocTitle": "example-1",
+      "content": "Example",
+      "routePath": "/en-US/guide/config/",
+      "id": 225
+    },
+    {
+      "tocTitle": "",
+      "content": "ExampleBelow is a complete configuration example:",
+      "routePath": "/en-US/guide/config/",
+      "id": 226
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "export default {\n  title: 'Viteland', // Site title\n  themeConfig: {\n    nav: [\n      { text: \"Home\", link: \"/\", 'text-en-US': 'Home' },\n      { text: \"Guide\", link: '/guide/', 'text-en-US': 'Guide' }\n    ],\n    sidebar: {\n      '/guide': [\n        {\n          text: 'Guide',\n          'text-en-US': 'Guide',\n          items: [\n            { text: 'Quick Start', 'text-en-US': 'Quick Start', link: '/guide/start' },\n            { text: 'How to Install', 'text-en-US': 'How to install', link: '/guide/install' },\n            { text: 'Precautions', 'text-en-US': 'Precautions', link: '/guide/attention' }\n          ]\n        }\n      ]\n    },\n    github: 'https://github.com/xiyueyezibile/viteland',\n    i18n: [\n      { value: 'zh-CN', text: '中文' },\n      { value: 'en-US', text: 'English' }\n    ]\n  }\n}",
+      "routePath": "/en-US/guide/config/",
+      "id": 228
+    },
+    {
+      "tocTitle": "",
+      "content": "With the above configuration, you can easily customize the appearance and functionality of the Viteland site.",
+      "routePath": "/en-US/guide/config/",
+      "id": 229
+    },
+    {
+      "tocTitle": "",
+      "content": "Welcome to our powerful static site generator based on Vite! This tool not only provides a rich development experience but also supports writing React components in Markdown files and has a powerful default full-text search theme. Let's start quickly creating your static site.",
+      "routePath": "/en-US/guide/",
+      "id": 230
+    },
+    {
+      "tocTitle": "introduction",
+      "content": "Introduction",
+      "routePath": "/en-US/guide/",
+      "id": 231
+    },
+    {
+      "tocTitle": "",
+      "content": "IntroductionOur static site generator has the following core features:🚀 Based on Vite: Provides a fast development and build experience.📝 MDX support: Allows you to seamlessly write and use React components in Markdown files.🔥 Full-featured search theme: Supports features such as multilingual (i18n), making your website content retrieval more efficient.🏝️ Island architecture: Improves performance by reducing client bundle size and achieving partial hydration.",
+      "routePath": "/en-US/guide/",
+      "id": 232
+    },
+    {
+      "tocTitle": "quick-start",
+      "content": "Quick Start",
+      "routePath": "/en-US/guide/",
+      "id": 238
+    },
+    {
+      "tocTitle": "",
+      "content": "Quick Start",
+      "routePath": "/en-US/guide/",
+      "id": 239
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "npm install -g viteland\r\nvl dev",
+      "routePath": "/en-US/guide/",
+      "id": 240
+    },
+    {
+      "tocTitle": "writing-content",
+      "content": "Writing Content",
+      "routePath": "/en-US/guide/",
+      "id": 241
+    },
+    {
+      "tocTitle": "",
+      "content": "Writing ContentCreate a Markdown file:In the content directory, create a new Markdown file (e.g., index.mdx), write your content, and add React components:",
+      "routePath": "/en-US/guide/",
+      "id": 242
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "\r\ninterface MyComponentProps {\r\n  title: string;\r\n}\r\n\r\nconst MyComponent: React.FC<MyComponentProps> = ({ title }) => {\r\n  return (\r\n    <div>\r\n      <h1>{title}</h1>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default MyComponent;\r\n\r\n\r\nimport MyComponent from '../MyComponent'\r\n\r\n<MyComponent title='hello world' />\r\n",
+      "routePath": "/en-US/guide/",
+      "id": 245
+    },
+    {
+      "tocTitle": "",
+      "content": "You can directly use React components in this file, such as ",
+      "routePath": "/en-US/guide/",
+      "id": 246
+    },
+    {
+      "tocTitle": "configuring-the-project",
+      "content": "Configuring the Project:",
+      "routePath": "/en-US/guide/",
+      "id": 247
+    },
+    {
+      "tocTitle": "",
+      "content": "Configuring the Project:Create or modify the configuration file (e.g., config.js) in the project's docs directory to define the basic information, navigation, search, and other functions of the site.Here is a basic configuration example:",
+      "routePath": "/en-US/guide/",
+      "id": 248
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "export default {\r\n  title: 'Viteland', // Site title\r\n  themeConfig: {\r\n    // Navigation bar configuration\r\n    nav: [\r\n      { text: \"Home\", link: \"/\" },\r\n      { text: \"Guide\", link: '/guide/' }\r\n    ],\r\n    // Sidebar configuration\r\n    sidebar: {\r\n      '/guide/': [\r\n        {\r\n          text: 'Guide',\r\n          items: [\r\n            {\r\n              text: 'Quick Start',\r\n              link: '/guide/a'\r\n            },\r\n            {\r\n              text: 'How to Install',\r\n              link: '/guide/b'\r\n            },\r\n            {\r\n             text: 'Precautions',\r\n             link: '/guide/c'\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}",
+      "routePath": "/en-US/guide/",
+      "id": 251
+    },
+    {
+      "tocTitle": "deployment",
+      "content": "Deployment",
+      "routePath": "/en-US/guide/",
+      "id": 252
+    },
+    {
+      "tocTitle": "",
+      "content": "DeploymentAfter selecting the deployment platform, upload the files in the build directory according to the platform requirements to complete the website launch.",
+      "routePath": "/en-US/guide/",
+      "id": 253
+    },
+    {
+      "tocTitle": "",
+      "content": "Quick Start",
+      "routePath": "/en-US/guide/start/",
+      "id": 352
+    },
+    {
+      "tocTitle": "",
+      "content": "Quick StartWelcome to Viteland! Here is a quick start guide to help you quickly set up a static site based on Viteland.",
+      "routePath": "/en-US/guide/start/",
+      "id": 353
+    },
+    {
+      "tocTitle": "installation",
+      "content": "Installation",
+      "routePath": "/en-US/guide/start/",
+      "id": 355
+    },
+    {
+      "tocTitle": "",
+      "content": "InstallationFirst, install Viteland globally:",
+      "routePath": "/en-US/guide/start/",
+      "id": 356
+    },
+    {
+      "tocTitle": "",
+      "lang": "bash",
+      "content": "npm install -g viteland",
+      "routePath": "/en-US/guide/start/",
+      "id": 358
+    },
+    {
+      "tocTitle": "development",
+      "content": "Development",
+      "routePath": "/en-US/guide/start/",
+      "id": 359
+    },
+    {
+      "tocTitle": "",
+      "content": "DevelopmentStart the development server:",
+      "routePath": "/en-US/guide/start/",
+      "id": 360
+    },
+    {
+      "tocTitle": "",
+      "lang": "bash",
+      "content": "vl dev",
+      "routePath": "/en-US/guide/start/",
+      "id": 362
+    },
+    {
+      "tocTitle": "",
+      "content": "Open your browser and visit `http://localhost:3000`, you will see the default Viteland site.",
+      "routePath": "/en-US/guide/start/",
+      "id": 363
+    },
+    {
+      "tocTitle": "writing-content-1",
+      "content": "Writing Content",
+      "routePath": "/en-US/guide/start/",
+      "id": 366
+    },
+    {
+      "tocTitle": "",
+      "content": "Writing ContentCreate a new Markdown file (e.g., `index.mdx`) in the `docs` directory and write your content:",
+      "routePath": "/en-US/guide/start/",
+      "id": 367
+    },
+    {
+      "tocTitle": "",
+      "lang": "markdown",
+      "content": "# Welcome to Viteland\n\nThis is your first Viteland page!",
+      "routePath": "/en-US/guide/start/",
+      "id": 373
+    },
+    {
+      "tocTitle": "configuring-the-project-1",
+      "content": "Configuring the Project",
+      "routePath": "/en-US/guide/start/",
+      "id": 374
+    },
+    {
+      "tocTitle": "",
+      "content": "Configuring the ProjectCreate or modify the configuration file (e.g., `config.js`) in the project's `docs` directory to define the basic information, navigation, search, and other functions of the site:",
+      "routePath": "/en-US/guide/start/",
+      "id": 375
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "export default {\n  title: 'Viteland', // Site title\n  themeConfig: {\n    // Navigation bar configuration\n    nav: [\n      { text: \"Home\", link: \"/\" },\n      { text: \"Guide\", link: '/guide/' }\n    ],\n    // Sidebar configuration\n    sidebar: {\n      '/guide/': [\n        {\n          text: 'Guide',\n          items: [\n            { text: 'Quick Start', link: '/guide/start' },\n            { text: 'How to Install', link: '/guide/install' },\n            { text: 'Precautions', link: '/guide/notes' }\n          ]\n        }\n      ]\n    },\n    // GitHub link\n    github: 'https://github.com/xiyueyezibile/viteland',\n    // Internationalization configuration\n    i18n: [\n      { value: 'zh-CN', text: '中文' },\n      { value: 'en-US', text: 'English' }\n    ]\n  }\n}",
+      "routePath": "/en-US/guide/start/",
+      "id": 381
+    },
+    {
+      "tocTitle": "build",
+      "content": "Build",
+      "routePath": "/en-US/guide/start/",
+      "id": 382
+    },
+    {
+      "tocTitle": "",
+      "content": "BuildBuild your static site:",
+      "routePath": "/en-US/guide/start/",
+      "id": 383
+    },
+    {
+      "tocTitle": "",
+      "lang": "bash",
+      "content": "vl build",
+      "routePath": "/en-US/guide/start/",
+      "id": 385
+    },
+    {
+      "tocTitle": "deployment-1",
+      "content": "Deployment",
+      "routePath": "/en-US/guide/start/",
+      "id": 386
+    },
+    {
+      "tocTitle": "",
+      "content": "DeploymentUpload the files in the `build` directory to your deployment platform to complete the website launch.Congratulations! You have successfully set up a static site based on Viteland.",
+      "routePath": "/en-US/guide/start/",
+      "id": 387
+    },
+    {
+      "tocTitle": "",
+      "content": "Internationalization Configuration Guide",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 392
+    },
+    {
+      "tocTitle": "",
+      "content": "Internationalization Configuration GuideIn a Viteland project, you can achieve internationalization support through the `config.js` configuration file. Below is a detailed configuration guide.",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 393
+    },
+    {
+      "tocTitle": "basic-configuration-2",
+      "content": "Basic Configuration",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 397
+    },
+    {
+      "tocTitle": "",
+      "content": "Basic ConfigurationCreate or modify the `docs/config.js` file and add the following content:",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 398
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "export default {\n  title: 'Viteland', // Site title\n  themeConfig: {\n    // Navigation bar configuration\n    nav: [\n      { text: \"Home\", link: \"/\", 'text-zh-CN': '主页' },\n      { text: \"Guide\", link: '/guide/', 'text-zh-CN': '指南' }\n    ],\n    // Sidebar configuration\n    sidebar: {\n      '/guide': [\n        {\n          text: 'Guide',\n          'text-zh-CN': '教程',\n          items: [\n            { text: 'Quick Start', 'text-zh-CN': '快速上手', link: '/guide/start' },\n            { text: 'How to Install', 'text-zh-CN': '如何安装', link: '/guide/install' },\n            { text: 'Precautions', 'text-zh-CN': '注意事项', link: '/guide/attention' }\n          ]\n        }\n      ]\n    },\n    // GitHub link\n    github: 'https://github.com/xiyueyezibile/viteland',\n    // Internationalization configuration\n    i18n: [\n      { value: 'zh-CN', text: '中文' },\n      { value: 'en-US', text: 'English' }\n    ]\n  }\n}",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 402
+    },
+    {
+      "tocTitle": "configuration-item-description-2",
+      "content": "Configuration Item Description",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 403
+    },
+    {
+      "tocTitle": "",
+      "content": "Configuration Item Description",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 404
+    },
+    {
+      "tocTitle": "i18n-4",
+      "content": "i18n",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 405
+    },
+    {
+      "tocTitle": "",
+      "content": "i18n`i18n` is the internationalization configuration, containing language codes and corresponding texts. Each language code corresponds to a text representing the name of that language.",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 406
+    },
+    {
+      "tocTitle": "nav-4",
+      "content": "nav",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 409
+    },
+    {
+      "tocTitle": "",
+      "content": "nav`nav` is the configuration of the navigation bar, containing the text and links of the navigation items. By adding attributes such as `text-zh-CN`, you can set different texts for different languages.",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 410
+    },
+    {
+      "tocTitle": "sidebar-4",
+      "content": "sidebar",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 415
+    },
+    {
+      "tocTitle": "",
+      "content": "sidebar`sidebar` is the configuration of the sidebar, containing the text and links of the sidebar items. By adding attributes such as `text-zh-CN`, you can set different texts for different languages.",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 416
+    },
+    {
+      "tocTitle": "example-2",
+      "content": "Example",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 421
+    },
+    {
+      "tocTitle": "",
+      "content": "ExampleBelow is a complete configuration example:",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 422
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "export default {\n  title: 'Viteland', // Site title\n  themeConfig: {\n    nav: [\n      { text: \"Home\", link: \"/\", 'text-zh-CN': '主页' },\n      { text: \"Guide\", link: '/guide/', 'text-zh-CN': '指南' }\n    ],\n    sidebar: {\n      '/guide': [\n        {\n          text: 'Guide',\n          'text-zh-CN': '教程',\n          items: [\n            { text: 'Quick Start', 'text-zh-CN': '快速上手', link: '/guide/start' },\n            { text: 'How to Install', 'text-zh-CN': '如何安装', link: '/guide/install' },\n            { text: 'Precautions', 'text-zh-CN': '注意事项', link: '/guide/attention' }\n          ]\n        }\n      ]\n    },\n    github: 'https://github.com/xiyueyezibile/viteland',\n    i18n: [\n      { value: 'zh-CN', text: '中文' },\n      { value: 'en-US', text: 'English' }\n    ]\n  }\n}",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 424
+    },
+    {
+      "tocTitle": "",
+      "content": "With the above configuration, you can easily achieve internationalization support for the Viteland site.",
+      "routePath": "/en-US/guide/i18n/",
+      "id": 425
+    },
+    {
+      "tocTitle": "",
+      "content": "Precautions",
+      "routePath": "/en-US/guide/attention/",
+      "id": 524
+    },
+    {
+      "tocTitle": "",
+      "content": "PrecautionsWhen using Viteland to build static sites, please pay attention to the following points to ensure the project runs smoothly.",
+      "routePath": "/en-US/guide/attention/",
+      "id": 525
+    },
+    {
+      "tocTitle": "directory-structure-1",
+      "content": "Directory Structure",
+      "routePath": "/en-US/guide/attention/",
+      "id": 527
+    },
+    {
+      "tocTitle": "",
+      "content": "Directory StructureEnsure the project directory structure is clear, suggested as follows:",
+      "routePath": "/en-US/guide/attention/",
+      "id": 528
+    },
+    {
+      "tocTitle": "",
+      "lang": null,
+      "content": "my-viteland-site/\n├── docs/\n│   ├── config.js\n│   ├── guide/\n│   │   ├── start/\n│   │   │   └── index.en-US.md\n│   │   ├── install/\n│   │   │   └── index.en-US.md\n│   │   ├── config/\n│   │   │   └── index.en-US.md\n│   │   └── attention/\n│   │       └── index.en-US.md\n│   └── index.mdx\n└── package.json",
+      "routePath": "/en-US/guide/attention/",
+      "id": 530
+    },
+    {
+      "tocTitle": "file-naming-1",
+      "content": "File Naming",
+      "routePath": "/en-US/guide/attention/",
+      "id": 531
+    },
+    {
+      "tocTitle": "",
+      "content": "File NamingUse lowercase letters and hyphens (-) to name files and directories.Ensure the file extensions are correct, such as `.md` or `.mdx`.",
+      "routePath": "/en-US/guide/attention/",
+      "id": 532
+    },
+    {
+      "tocTitle": "configuration-file-1",
+      "content": "Configuration File",
+      "routePath": "/en-US/guide/attention/",
+      "id": 539
+    },
+    {
+      "tocTitle": "",
+      "content": "Configuration FileEnsure the `docs/config.js` file exists and is configured correctly.The paths and links in the configuration file should match the actual file structure.",
+      "routePath": "/en-US/guide/attention/",
+      "id": 540
+    },
+    {
+      "tocTitle": "internationalization-1",
+      "content": "Internationalization",
+      "routePath": "/en-US/guide/attention/",
+      "id": 545
+    },
+    {
+      "tocTitle": "",
+      "content": "InternationalizationCorrectly set the `i18n` configuration item in the configuration file.Ensure that documents for each language version exist and the paths are correct.",
+      "routePath": "/en-US/guide/attention/",
+      "id": 546
+    },
+    {
+      "tocTitle": "plugin-usage-1",
+      "content": "Plugin Usage",
+      "routePath": "/en-US/guide/attention/",
+      "id": 551
+    },
+    {
+      "tocTitle": "",
+      "content": "Plugin UsageCorrectly import and configure plugins in `vite.config.ts`, such as `pluginRoutes`.Ensure the plugin configuration items match the project requirements.",
+      "routePath": "/en-US/guide/attention/",
+      "id": 552
+    },
+    {
+      "tocTitle": "build-and-deployment-1",
+      "content": "Build and Deployment",
+      "routePath": "/en-US/guide/attention/",
+      "id": 559
+    },
+    {
+      "tocTitle": "",
+      "content": "Build and DeploymentBefore building, ensure all documents and configuration files are saved and there are no errors.After the build is complete, upload the files in the `build` directory to the deployment platform.",
+      "routePath": "/en-US/guide/attention/",
+      "id": 560
+    },
+    {
+      "tocTitle": "common-issues-1",
+      "content": "Common Issues",
+      "routePath": "/en-US/guide/attention/",
+      "id": 565
+    },
+    {
+      "tocTitle": "",
+      "content": "Common Issues",
+      "routePath": "/en-US/guide/attention/",
+      "id": 566
+    },
+    {
+      "tocTitle": "development-server-cannot-start-1",
+      "content": "Development Server Cannot Start",
+      "routePath": "/en-US/guide/attention/",
+      "id": 567
+    },
+    {
+      "tocTitle": "",
+      "content": "Development Server Cannot StartCheck if the configuration in the `vite.config.ts` file is correct.Ensure all dependencies are installed correctly.",
+      "routePath": "/en-US/guide/attention/",
+      "id": 568
+    },
+    {
+      "tocTitle": "routes-cannot-be-generated-1",
+      "content": "Routes Cannot Be Generated",
+      "routePath": "/en-US/guide/attention/",
+      "id": 573
+    },
+    {
+      "tocTitle": "",
+      "content": "Routes Cannot Be GeneratedCheck if the configuration of the `pluginRoutes` plugin is correct.Ensure the project directory structure meets the plugin requirements.By following the above precautions, you can use Viteland to build and deploy static sites more smoothly.",
+      "routePath": "/en-US/guide/attention/",
+      "id": 574
+    },
+    {
+      "tocTitle": "",
+      "content": "Configuration Guide",
+      "routePath": "/en-US/guide/config/",
+      "id": 580
+    },
+    {
+      "tocTitle": "",
+      "content": "Configuration GuideIn a Viteland project, you can define the basic information, navigation, search, and other functions of the site through the `config.js` configuration file. Below is a detailed explanation of the configuration file.",
+      "routePath": "/en-US/guide/config/",
+      "id": 581
+    },
+    {
+      "tocTitle": "basic-configuration-3",
+      "content": "Basic Configuration",
+      "routePath": "/en-US/guide/config/",
+      "id": 585
+    },
+    {
+      "tocTitle": "",
+      "content": "Basic ConfigurationCreate or modify the `docs/config.js` file and add the following content:",
+      "routePath": "/en-US/guide/config/",
+      "id": 586
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "export default {\n  title: 'Viteland', // Site title\n  themeConfig: {\n    // Navigation bar configuration\n    nav: [\n      { text: \"Home\", link: \"/\" },\n      { text: \"Guide\", link: '/guide/' }\n    ],\n    // Sidebar configuration\n    sidebar: {\n      '/guide/': [\n        {\n          text: 'Guide',\n          items: [\n            { text: 'Quick Start', link: '/guide/start' },\n            { text: 'How to Install', link: '/guide/install' },\n            { text: 'Precautions', link: '/guide/notes' }\n          ]\n        }\n      ]\n    },\n    // GitHub link\n    github: 'https://github.com/xiyueyezibile/viteland',\n    // Internationalization configuration\n    i18n: [\n      { value: 'zh-CN', text: '中文' },\n      { value: 'en-US', text: 'English' }\n    ]\n  }\n}",
+      "routePath": "/en-US/guide/config/",
+      "id": 590
+    },
+    {
+      "tocTitle": "configuration-item-description-3",
+      "content": "Configuration Item Description",
+      "routePath": "/en-US/guide/config/",
+      "id": 591
+    },
+    {
+      "tocTitle": "",
+      "content": "Configuration Item Description",
+      "routePath": "/en-US/guide/config/",
+      "id": 592
+    },
+    {
+      "tocTitle": "title-3",
+      "content": "title",
+      "routePath": "/en-US/guide/config/",
+      "id": 593
+    },
+    {
+      "tocTitle": "",
+      "content": "title`title` is the title of the site, which will be displayed in the browser tab and at the top of the site.",
+      "routePath": "/en-US/guide/config/",
+      "id": 594
+    },
+    {
+      "tocTitle": "themeconfig-3",
+      "content": "themeConfig",
+      "routePath": "/en-US/guide/config/",
+      "id": 597
+    },
+    {
+      "tocTitle": "",
+      "content": "themeConfig`themeConfig` contains the configuration items for the site theme.",
+      "routePath": "/en-US/guide/config/",
+      "id": 598
+    },
+    {
+      "tocTitle": "nav-6",
+      "content": "nav",
+      "routePath": "/en-US/guide/config/",
+      "id": 601
+    },
+    {
+      "tocTitle": "",
+      "content": "nav`nav` is the configuration of the navigation bar, containing the text and links of the navigation items.",
+      "routePath": "/en-US/guide/config/",
+      "id": 602
+    },
+    {
+      "tocTitle": "sidebar-6",
+      "content": "sidebar",
+      "routePath": "/en-US/guide/config/",
+      "id": 605
+    },
+    {
+      "tocTitle": "",
+      "content": "sidebar`sidebar` is the configuration of the sidebar, containing the text and links of the sidebar items.",
+      "routePath": "/en-US/guide/config/",
+      "id": 606
+    },
+    {
+      "tocTitle": "github-3",
+      "content": "github",
+      "routePath": "/en-US/guide/config/",
+      "id": 609
+    },
+    {
+      "tocTitle": "",
+      "content": "github`github` is the link to the GitHub repository, which will be displayed in the upper right corner of the site.",
+      "routePath": "/en-US/guide/config/",
+      "id": 610
+    },
+    {
+      "tocTitle": "i18n-6",
+      "content": "i18n",
+      "routePath": "/en-US/guide/config/",
+      "id": 613
+    },
+    {
+      "tocTitle": "",
+      "content": "i18n`i18n` is the internationalization configuration, containing the language codes and corresponding texts.",
+      "routePath": "/en-US/guide/config/",
+      "id": 614
+    },
+    {
+      "tocTitle": "example-3",
+      "content": "Example",
+      "routePath": "/en-US/guide/config/",
+      "id": 617
+    },
+    {
+      "tocTitle": "",
+      "content": "ExampleBelow is a complete configuration example:",
+      "routePath": "/en-US/guide/config/",
+      "id": 618
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "export default {\n  title: 'Viteland', // Site title\n  themeConfig: {\n    nav: [\n      { text: \"Home\", link: \"/\", 'text-en-US': 'Home' },\n      { text: \"Guide\", link: '/guide/', 'text-en-US': 'Guide' }\n    ],\n    sidebar: {\n      '/guide': [\n        {\n          text: 'Guide',\n          'text-en-US': 'Guide',\n          items: [\n            { text: 'Quick Start', 'text-en-US': 'Quick Start', link: '/guide/start' },\n            { text: 'How to Install', 'text-en-US': 'How to install', link: '/guide/install' },\n            { text: 'Precautions', 'text-en-US': 'Precautions', link: '/guide/attention' }\n          ]\n        }\n      ]\n    },\n    github: 'https://github.com/xiyueyezibile/viteland',\n    i18n: [\n      { value: 'zh-CN', text: '中文' },\n      { value: 'en-US', text: 'English' }\n    ]\n  }\n}",
+      "routePath": "/en-US/guide/config/",
+      "id": 620
+    },
+    {
+      "tocTitle": "",
+      "content": "With the above configuration, you can easily customize the appearance and functionality of the Viteland site.",
+      "routePath": "/en-US/guide/config/",
+      "id": 621
+    },
+    {
+      "tocTitle": "",
+      "content": "Welcome to our powerful static site generator based on Vite! This tool not only provides a rich development experience but also supports writing React components in Markdown files and has a powerful default full-text search theme. Let's start quickly creating your static site.",
+      "routePath": "/en-US/guide/",
+      "id": 656
+    },
+    {
+      "tocTitle": "introduction-1",
+      "content": "Introduction",
+      "routePath": "/en-US/guide/",
+      "id": 657
+    },
+    {
+      "tocTitle": "",
+      "content": "IntroductionOur static site generator has the following core features:🚀 Based on Vite: Provides a fast development and build experience.📝 MDX support: Allows you to seamlessly write and use React components in Markdown files.🔥 Full-featured search theme: Supports features such as multilingual (i18n), making your website content retrieval more efficient.🏝️ Island architecture: Improves performance by reducing client bundle size and achieving partial hydration.",
+      "routePath": "/en-US/guide/",
+      "id": 658
+    },
+    {
+      "tocTitle": "quick-start-1",
+      "content": "Quick Start",
+      "routePath": "/en-US/guide/",
+      "id": 664
+    },
+    {
+      "tocTitle": "",
+      "content": "Quick Start",
+      "routePath": "/en-US/guide/",
+      "id": 665
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "npm install -g viteland\r\nvl dev",
+      "routePath": "/en-US/guide/",
+      "id": 666
+    },
+    {
+      "tocTitle": "writing-content-2",
+      "content": "Writing Content",
+      "routePath": "/en-US/guide/",
+      "id": 667
+    },
+    {
+      "tocTitle": "",
+      "content": "Writing ContentCreate a Markdown file:In the content directory, create a new Markdown file (e.g., index.mdx), write your content, and add React components:",
+      "routePath": "/en-US/guide/",
+      "id": 668
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "\r\ninterface MyComponentProps {\r\n  title: string;\r\n}\r\n\r\nconst MyComponent: React.FC<MyComponentProps> = ({ title }) => {\r\n  return (\r\n    <div>\r\n      <h1>{title}</h1>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default MyComponent;\r\n\r\n\r\nimport MyComponent from '../MyComponent'\r\n\r\n<MyComponent title='hello world' />\r\n",
+      "routePath": "/en-US/guide/",
+      "id": 671
+    },
+    {
+      "tocTitle": "",
+      "content": "You can directly use React components in this file, such as ",
+      "routePath": "/en-US/guide/",
+      "id": 672
+    },
+    {
+      "tocTitle": "configuring-the-project-2",
+      "content": "Configuring the Project:",
+      "routePath": "/en-US/guide/",
+      "id": 673
+    },
+    {
+      "tocTitle": "",
+      "content": "Configuring the Project:Create or modify the configuration file (e.g., config.js) in the project's docs directory to define the basic information, navigation, search, and other functions of the site.Here is a basic configuration example:",
+      "routePath": "/en-US/guide/",
+      "id": 674
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "export default {\r\n  title: 'Viteland', // Site title\r\n  themeConfig: {\r\n    // Navigation bar configuration\r\n    nav: [\r\n      { text: \"Home\", link: \"/\" },\r\n      { text: \"Guide\", link: '/guide/' }\r\n    ],\r\n    // Sidebar configuration\r\n    sidebar: {\r\n      '/guide/': [\r\n        {\r\n          text: 'Guide',\r\n          items: [\r\n            {\r\n              text: 'Quick Start',\r\n              link: '/guide/a'\r\n            },\r\n            {\r\n              text: 'How to Install',\r\n              link: '/guide/b'\r\n            },\r\n            {\r\n             text: 'Precautions',\r\n             link: '/guide/c'\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}",
+      "routePath": "/en-US/guide/",
+      "id": 677
+    },
+    {
+      "tocTitle": "deployment-2",
+      "content": "Deployment",
+      "routePath": "/en-US/guide/",
+      "id": 678
+    },
+    {
+      "tocTitle": "",
+      "content": "DeploymentAfter selecting the deployment platform, upload the files in the build directory according to the platform requirements to complete the website launch.",
+      "routePath": "/en-US/guide/",
+      "id": 679
+    },
+    {
+      "tocTitle": "",
+      "content": "Quick Start",
+      "routePath": "/en-US/guide/start/",
+      "id": 706
+    },
+    {
+      "tocTitle": "",
+      "content": "Quick StartWelcome to Viteland! Here is a quick start guide to help you quickly set up a static site based on Viteland.",
+      "routePath": "/en-US/guide/start/",
+      "id": 707
+    },
+    {
+      "tocTitle": "installation-1",
+      "content": "Installation",
+      "routePath": "/en-US/guide/start/",
+      "id": 709
+    },
+    {
+      "tocTitle": "",
+      "content": "InstallationFirst, install Viteland globally:",
+      "routePath": "/en-US/guide/start/",
+      "id": 710
+    },
+    {
+      "tocTitle": "",
+      "lang": "bash",
+      "content": "npm install -g viteland",
+      "routePath": "/en-US/guide/start/",
+      "id": 712
+    },
+    {
+      "tocTitle": "development-1",
+      "content": "Development",
+      "routePath": "/en-US/guide/start/",
+      "id": 713
+    },
+    {
+      "tocTitle": "",
+      "content": "DevelopmentStart the development server:",
+      "routePath": "/en-US/guide/start/",
+      "id": 714
+    },
+    {
+      "tocTitle": "",
+      "lang": "bash",
+      "content": "vl dev",
+      "routePath": "/en-US/guide/start/",
+      "id": 716
+    },
+    {
+      "tocTitle": "",
+      "content": "Open your browser and visit `http://localhost:3000`, you will see the default Viteland site.",
+      "routePath": "/en-US/guide/start/",
+      "id": 717
+    },
+    {
+      "tocTitle": "writing-content-3",
+      "content": "Writing Content",
+      "routePath": "/en-US/guide/start/",
+      "id": 720
+    },
+    {
+      "tocTitle": "",
+      "content": "Writing ContentCreate a new Markdown file (e.g., `index.mdx`) in the `docs` directory and write your content:",
+      "routePath": "/en-US/guide/start/",
+      "id": 721
+    },
+    {
+      "tocTitle": "",
+      "lang": "markdown",
+      "content": "# Welcome to Viteland\n\nThis is your first Viteland page!",
+      "routePath": "/en-US/guide/start/",
+      "id": 727
+    },
+    {
+      "tocTitle": "configuring-the-project-3",
+      "content": "Configuring the Project",
+      "routePath": "/en-US/guide/start/",
+      "id": 728
+    },
+    {
+      "tocTitle": "",
+      "content": "Configuring the ProjectCreate or modify the configuration file (e.g., `config.js`) in the project's `docs` directory to define the basic information, navigation, search, and other functions of the site:",
+      "routePath": "/en-US/guide/start/",
+      "id": 729
+    },
+    {
+      "tocTitle": "",
+      "lang": "js",
+      "content": "export default {\n  title: 'Viteland', // Site title\n  themeConfig: {\n    // Navigation bar configuration\n    nav: [\n      { text: \"Home\", link: \"/\" },\n      { text: \"Guide\", link: '/guide/' }\n    ],\n    // Sidebar configuration\n    sidebar: {\n      '/guide/': [\n        {\n          text: 'Guide',\n          items: [\n            { text: 'Quick Start', link: '/guide/start' },\n            { text: 'How to Install', link: '/guide/install' },\n            { text: 'Precautions', link: '/guide/notes' }\n          ]\n        }\n      ]\n    },\n    // GitHub link\n    github: 'https://github.com/xiyueyezibile/viteland',\n    // Internationalization configuration\n    i18n: [\n      { value: 'zh-CN', text: '中文' },\n      { value: 'en-US', text: 'English' }\n    ]\n  }\n}",
+      "routePath": "/en-US/guide/start/",
+      "id": 735
+    },
+    {
+      "tocTitle": "build-1",
+      "content": "Build",
+      "routePath": "/en-US/guide/start/",
+      "id": 736
+    },
+    {
+      "tocTitle": "",
+      "content": "BuildBuild your static site:",
+      "routePath": "/en-US/guide/start/",
+      "id": 737
+    },
+    {
+      "tocTitle": "",
+      "lang": "bash",
+      "content": "vl build",
+      "routePath": "/en-US/guide/start/",
+      "id": 739
+    },
+    {
+      "tocTitle": "deployment-3",
+      "content": "Deployment",
+      "routePath": "/en-US/guide/start/",
+      "id": 740
+    },
+    {
+      "tocTitle": "",
+      "content": "DeploymentUpload the files in the `build` directory to your deployment platform to complete the website launch.Congratulations! You have successfully set up a static site based on Viteland.",
+      "routePath": "/en-US/guide/start/",
+      "id": 741
+    }
+  ]
+}

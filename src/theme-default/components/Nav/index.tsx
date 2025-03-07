@@ -4,7 +4,7 @@ import { SwitchAppearance } from '../SwitchAppearance';
 import { NavItemWithLink } from '@/node/types';
 import { useI18n } from '@/theme-default/hooks/useI18n';
 import { ChooseI18n } from '../ChooseI18n';
-import { Search } from '../Search';
+import {  Search } from '../Search';
 import { PropsWithIsland } from '@/theme-default/types';
 
 export function MenuItem({ item }: { item: NavItemWithLink }) {

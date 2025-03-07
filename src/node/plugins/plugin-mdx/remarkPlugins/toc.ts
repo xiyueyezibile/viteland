@@ -69,28 +69,50 @@ export const remarkPluginToc: Plugin<[I18nConfig[]], Root> = (i18n) => {
     let title = '';
     visit(tree, (node) => {
       if (node.type === 'text') {
-        pageSearch.push(lang ? lang.slice(1) : lang, {
-          tocTitle: '',
-          content: node.value,
-          routePath: `${lang}${routes.find((route) => route.absolutePath === file.path).routePath}`
-        });
+        pageSearch.push(
+          lang ? lang.slice(1) : lang,
+          {
+            tocTitle: '',
+            content: node.value,
+            routePath: `${lang}${routes.find((route) => route.absolutePath === file.path).routePath}`
+          },
+          'text'
+        );
       } else if (node.type === 'heading') {
         // 获取toc数据
         title = collectTocContent(node, toc);
         // title 存在代表时h1，也就是标题，否则则是大纲
-        pageSearch.push(lang ? lang.slice(1) : lang, {
-          tocTitle: title ? '' : toc[toc.length - 1].id,
-          content: title || toc[toc.length - 1].text,
-          routePath: `${lang}${routes.find((route) => route.absolutePath === file.path).routePath}`
-        });
+        pageSearch.push(
+          lang ? lang.slice(1) : lang,
+          {
+            tocTitle: title ? '' : toc[toc.length - 1].id,
+            content: title || toc[toc.length - 1].text,
+            routePath: `${lang}${routes.find((route) => route.absolutePath === file.path).routePath}`
+          },
+          'heading'
+        );
       } else if (node.type === 'code') {
         // 获取代码块内容
-        pageSearch.push(lang ? lang.slice(1) : lang, {
-          tocTitle: '',
-          lang: node.lang,
-          content: node.value,
-          routePath: `${lang}${routes.find((route) => route.absolutePath === file.path).routePath}`
-        });
+        pageSearch.push(
+          lang ? lang.slice(1) : lang,
+          {
+            tocTitle: '',
+            lang: node.lang,
+            content: node.value,
+            routePath: `${lang}${routes.find((route) => route.absolutePath === file.path).routePath}`
+          },
+          'code'
+        );
+      } else if (node.type === 'inlineCode') {
+        pageSearch.push(
+          lang ? lang.slice(1) : lang,
+          {
+            tocTitle: '',
+            content: `\`${node.value}\``,
+            routePath: `${lang}${routes.find((route) => route.absolutePath === file.path).routePath}`
+          },
+          'inlineCode'
+        );
       }
     });
 
